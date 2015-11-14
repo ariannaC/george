@@ -1,0 +1,33 @@
+﻿body {
+}
+
+#imgProduct 
+{
+    float: left;
+    padding: 1em 2em;
+    margin-left: 143px;
+}
+
+#ddlProducts 
+{
+    width: 15em;
+    margin-top: 1em;
+}
+
+#productData 
+{
+    padding: 1em 0;
+    width: 400px;
+    float: left;
+    height: 278px;
+}
+
+#lblName, #lblShortDescription, #lblLongDescription, #lblUnitPrice 
+{
+    display: block;
+    margin-bottom: 1em;
+}
+
+#btnAdd {
+    margin-right: 1em;
+}

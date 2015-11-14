@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace TermProject
 {
-    public partial class TP_AmazonMasterPage : System.Web.UI.MasterPage
+    public partial class Product : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // lblWelcomeUser.Text = "Welcome " + email +"!";
+
         }
 
-        protected void lnkbtnViewCart_Click(object sender, EventArgs e)
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Cart.aspx");
+
         }
     }
 }
