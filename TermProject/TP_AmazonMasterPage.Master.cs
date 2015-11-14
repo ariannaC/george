@@ -18,5 +18,10 @@ namespace TermProject
         {
             Response.Redirect("Cart.aspx");
         }
+
+        protected void lnkbtnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Product.aspx");
+        }
     }
 }

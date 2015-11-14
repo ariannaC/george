@@ -51,7 +51,7 @@
 
         <nav>
             <ul style="width: 1047px; height: 26px; margin-left: 7px; margin-bottom: 36px"> 
-            <asp:LinkButton ID="lnkbtnHome" runat="server">Home</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMunchies" runat="server">Munchies</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMovies" runat="server">Movies</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnGames" runat="server">Games</asp:LinkButton>
