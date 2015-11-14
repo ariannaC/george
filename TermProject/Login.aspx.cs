@@ -1,14 +1,19 @@
-﻿using System;
+﻿using TP_Amazon_ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+
 namespace TP
 {
     public partial class Login : System.Web.UI.Page
     {
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -16,33 +21,46 @@ namespace TP
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            //check against database
-            //grant access to next page based on successful login
+            //1. check against database
+            //2. grant access to next page based on successful login
             //GetAccountBy_CustomerEmail Stored Procedure to get the email stored in DB
 
+            //Register object from the Register class in the "TP_Amazon_ClassLibrary"
+            Register register = new Register();
+            bool loginWorked = register.ValidLogin(txtUserName.Text, txtPassword.Text);            
 
-           // if (chkbxRemeberMe.Checked)
-            //{
-                //if "Remember Me" is checked, store userName and password in cookie
-                HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                myCookie.Values["userName"] = txtUserName.Text;
-                myCookie.Values["Password"] = txtPassword.Text;
-                myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                myCookie.Expires = new DateTime(2025, 1, 1);
+            //if user enters a valid username and password
+            if (loginWorked == true)
+            {
+                    //if "Remember Me" is checked, store userName in cookie
+                    if (chkbxRemeberMe.Checked)
+                    {
+                        HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                        myCookie.Values["userName"] = txtUserName.Text;
+                        myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                        myCookie.Expires = new DateTime(2025, 1, 1);
 
-                Response.Cookies.Add(myCookie);
-           // }
+                        Response.Cookies.Add(myCookie);
+                    }
+                    else 
+                    {
+                        //remove user's email from username textbox
+                        Response.Cookies.Remove("mycookie"); 
+                    }
+
+            }//end of loginWorked if statement
+
+            //else not a valid login
+            else
+            {
+
+            }
 
 
-            //DBConnect objDB = new DBConnect();
-            //SqlCommand objCommand = new SqlCommand();
-            //objCommand.CommandType = CommandType.StoredProcedure;
-            //objCommand.CommandText = "AddTPCustomer";
-            //// objCommand.Parameters.AddWithValue("@email",  );
-
-            //objDB.DoUpdateUsingCmdObj(objCommand);
+        }//end of login button click event 
+   
+    
+    }//end of Login class
 
 
-        }
-    }
-}
+}//end of namespace
