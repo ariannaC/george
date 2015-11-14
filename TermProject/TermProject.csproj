@@ -60,6 +60,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="stylesheets\CreditCardStyle.css" />
+    <Content Include="stylesheets\MasterPage.css" />
     <Content Include="stylesheets\Registration.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -79,8 +80,16 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TP_AmazonMasterPage.Master.cs">
+      <DependentUpon>TP_AmazonMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TP_AmazonMasterPage.Master.designer.cs">
+      <DependentUpon>TP_AmazonMasterPage.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TP_AmazonMasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

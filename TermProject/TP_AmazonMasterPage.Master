@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TP_AmazonMasterPage.master.cs" Inherits="TermProject.TP_AmazonMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .contentHolder {
+            width: 1214px;
+            height: 320px;
+            margin-left: 24px;
+            margin-top: 34px;
+        }
+        #form1 {
+            margin-top: 0px;
+        }
+        .menuMasterPage {
+            height: 52px;
+            width: 866px;
+            margin-right: 62px;
+            margin-top: 3px;
+        }
+    </style>
+
+    <link href="stylesheets/MasterPage.css" rel="stylesheet" />
+</head>
+<body style="height: 491px; margin-left: 14px; width: 1056px; margin-right: 88px;">
+
+    <form id="form1" runat="server">
+
+    <div class="banner" style="height: 78px; margin-left: 0px; margin-bottom: 15px; width: 1048px;">
+        <ul>
+            <asp:LinkButton ID="lnkbtnViewCart" runat="server">View Cart</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnCheckOut" runat="server">Check Out</asp:LinkButton> 
+            <asp:LinkButton ID="lnkbtnLogOut" runat="server" Width="106px">Logout</asp:LinkButton>
+        </ul>
+        <div>
+             <h1 style="margin-top: 38px; height: 37px; margin-right: 26px; margin-bottom: 18px;">Site Name</h1>
+        </div>
+    </div>
+
+        <nav>
+            <ul style="width: 1047px; height: 26px; margin-left: 7px; margin-bottom: 36px"> 
+            <asp:LinkButton ID="lnkbtnHome" runat="server">Home</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnMunchies" runat="server">Munchies</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnMovies" runat="server">Movies</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnGames" runat="server">Games</asp:LinkButton>
+            </ul>
+        </nav>
+
+
+
+
+    <div class="contentHolder">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

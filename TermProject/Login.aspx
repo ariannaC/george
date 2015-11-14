@@ -17,7 +17,7 @@
        
          <br />
          <h1>Login</h1>
-        <div class="content" style="height: 346px; width: 539px">
+        <div class="content" style="height: 346px; width: 539px; margin-top: 0px;">
 
             <div class="floating-box">
                 <asp:Label ID="Label1" runat="server" Text="User Name: "></asp:Label> &nbsp; 
