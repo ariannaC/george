@@ -13,15 +13,6 @@ namespace TermProject {
     public partial class Product {
         
         /// <summary>
-        /// ddlProducts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProducts;
-        
-        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -65,24 +56,6 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtQuantity;
-        
-        /// <summary>
-        /// rfvQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvQuantity;
-        
-        /// <summary>
-        /// rgvQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rgvQuantity;
         
         /// <summary>
         /// btnAdd control.

@@ -27,11 +27,11 @@
 
     <link href="stylesheets/MasterPage.css" rel="stylesheet" />
 </head>
-<body style="height: 584px; margin-left: 14px; width: 1056px; margin-right: 88px;">
+<body style="height: 584px; margin-left: 14px; width: 1258px; margin-right: 88px;">
 
     <form id="form1" runat="server">
 
-    <div class="banner" style="height: 61px; margin-left: 0px; margin-bottom: 15px; width: 1048px; margin-top: 0px;">
+    <div class="banner" style="height: 61px; margin-left: 0px; margin-bottom: 15px; width: 1191px; margin-top: 0px;">
          <ul>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server">Check Out</asp:LinkButton> 
@@ -50,7 +50,7 @@
         </div>
 
         <nav>
-            <ul style="width: 1047px; height: 26px; margin-left: 7px; margin-bottom: 36px"> 
+            <ul style="width: 1249px; height: 26px; margin-left: 7px; margin-bottom: 36px"> 
             <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMunchies" runat="server">Munchies</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMovies" runat="server">Movies</asp:LinkButton>
