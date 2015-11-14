@@ -53,7 +53,7 @@ namespace TP
             //else not a valid login
             else
             {
-
+                //lblLoginErrorMessage.Text = "Invalid Credentials. To create a new account select New User";
             }
 
 

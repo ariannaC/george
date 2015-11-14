@@ -17,7 +17,7 @@
        
          <br />
          <h1>Login</h1>
-        <div class="content" style="height: 383px; width: 531px">
+        <div class="content" style="height: 346px; width: 539px">
 
             <div class="floating-box">
                 <asp:Label ID="Label1" runat="server" Text="User Name: "></asp:Label> &nbsp; 
@@ -31,8 +31,11 @@
                  <asp:TextBox ID="txtPassword" runat="server" Width="218px" TextMode="Password"></asp:TextBox>
              *<br />
             </div>
+            <div style="height: 63px; margin-top: 16px">
              <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me" />
             <br />
+            <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
+                </div>
             <br />
             <div class="box">
                 <asp:Button ID="btnLogin" runat="server" Height="35px" Text="Login" Width="100px" Font-Names="Century Gothic" OnClick="btnLogin_Click" />
