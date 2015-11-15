@@ -57,6 +57,7 @@ namespace TP
                         //remove user's email from username textbox
                         Response.Cookies.Remove("mycookie"); 
                     }
+                    Response.Redirect("~/Product.aspx");
 
             }//end of loginWorked if statement
 
