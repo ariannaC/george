@@ -17,7 +17,7 @@ namespace TP_Amazon_ClassLibrary
         public string shippingAddress;
         public string shippingCity;
         public string shippingState;
-        private int shippingZipcode;
+        public int shippingZipcode;
         public string shippingCountry;
 
         //Billing Address Variables
