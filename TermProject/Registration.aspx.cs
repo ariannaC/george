@@ -24,6 +24,7 @@ namespace TermProject
             newCustomer.Email = txtEmail.Text;
             newCustomer.Password = txtpassword.Text;
             
+            
             //all fields are valid
             if (ValidFields())
             {
@@ -105,6 +106,11 @@ namespace TermProject
         {
             Response.Redirect("Login.aspx");
 
+        }
+
+        protected void btnRegisterforBusinessAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
         }
 
     

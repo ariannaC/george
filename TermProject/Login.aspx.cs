@@ -47,6 +47,7 @@ namespace TP
                     {
                         HttpCookie myCookie = new HttpCookie("Login_Cookie");
                         myCookie.Values["email"] = txtEmail.Text;
+
                         myCookie.Values["LastVisited"] = DateTime.Now.ToString();
                         myCookie.Expires = new DateTime(2025, 1, 1);
 
@@ -57,6 +58,7 @@ namespace TP
                         //remove user's email from username textbox
                         Response.Cookies.Remove("mycookie"); 
                     }
+                    Response.Redirect("~/Product.aspx");
 
             }//end of loginWorked if statement
 

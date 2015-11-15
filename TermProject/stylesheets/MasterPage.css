@@ -65,7 +65,7 @@ a:link, a:visited
 {
     float: right;
     height: 25px;
-    width: 347px;
+    width: 396px;
     padding:4px 0px;
     margin:0px 0px 23px 11px;
     display:inline-block;
@@ -73,7 +73,7 @@ a:link, a:visited
 
     .banner ul a 
     {
-        width:106px;
+        width:30%;
 
     }
 

@@ -38,7 +38,7 @@
             <asp:LinkButton ID="lnkbtnLogOut" runat="server">Logout</asp:LinkButton>
         </ul>
        
-      <div class="welcome" position="absolute" style="width: 202px; height: 29px; margin-left: 24px;" >
+      <div class="welcome" position="absolute" style="width: 273px; height: 29px; margin-left: 24px;" >
           
           <asp:Label ID="lblWelcomeUser" runat="server" Font-Names="Times New Roman" Font-Size="Large"></asp:Label>
           
@@ -46,7 +46,7 @@
        
     </div>
          <div style="margin-top: 14px">
-             <h1 style="margin-top: 0px; height: 69px; margin-right: 26px; margin-bottom: 18px;">Site Name</h1>
+             <h1 style="margin-top: 0px; height: 69px; margin-right: 26px; margin-bottom: 18px;">ONE STOP MUCNCHIE SHOP</h1>
         </div>
 
         <nav>

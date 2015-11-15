@@ -47,16 +47,21 @@ namespace TP_Amazon_ClassLibrary
             DBConnect objDB = new DBConnect();
             myDS = objDB.GetDataSetUsingCmdObj(objCommand);
 
+            bool returnvalue;
+
             //if the values are found in the DB return true
             if (myDS.Tables[0].Rows.Count == 1)
             {
-                return true;
+                returnvalue = true;
             }
+
             //the user does not exist in the DB
             else
             {
-                return false;
+                returnvalue = false;
             }
+            return returnvalue;
+            
  
         }
 
