@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Util
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermProjectWS", "TermProjectWS\TermProjectWS.csproj", "{1BAAA74A-5BE5-4B27-8213-797D14494C49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_Amazon_ClassLibrary", "ClassLibrary1\TP_Amazon_ClassLibrary.csproj", "{50A20593-4A47-426F-8741-B5A1179D8203}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{1BAAA74A-5BE5-4B27-8213-797D14494C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAAA74A-5BE5-4B27-8213-797D14494C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAAA74A-5BE5-4B27-8213-797D14494C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A20593-4A47-426F-8741-B5A1179D8203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A20593-4A47-426F-8741-B5A1179D8203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A20593-4A47-426F-8741-B5A1179D8203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A20593-4A47-426F-8741-B5A1179D8203}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
