@@ -9,29 +9,28 @@ namespace TP_Amazon_ClassLibrary
     public class Customer
     {
         //Personal Customer Variables 
-        private string name;
-        private string email;
-        private string password;
+        public string name;
+        public string email;
+        public string password;
 
         //Shipping Addresss Variables
-        private string shippingAddress;
-        private string shippingCity;
-        private string shippingState;
+        public string shippingAddress;
+        public string shippingCity;
+        public string shippingState;
         private int shippingZipcode;
-        private string shippingCountry;
+        public string shippingCountry;
 
         //Billing Address Variables
-        private string billingAddress;
-        private string billingCity;
-        private string billingState;
-        private string billingZipcode;
-        private string billingCountry;
+        public string billingAddress;
+        public string billingCity;
+        public string billingState;
+        public string billingZipcode;
+        public string billingCountry;
 
         //Constructor
         public Customer()
         {
         }
-
 
         //Getters and Setters 
         public string Name
@@ -48,6 +47,18 @@ namespace TP_Amazon_ClassLibrary
         {
             get { return password; }
             set { password = value; }
+        }
+
+        public string ShippingAddress
+        {
+            get{return shippingAddress;}
+            set { shippingAddress = value; }
+        }
+
+        public string ShippingCity
+        {
+            get { return shippingCity; }
+            set { shippingCity = value; }
         }
 
 

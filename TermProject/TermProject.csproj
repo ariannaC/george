@@ -60,6 +60,7 @@
     <Content Include="Cart.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Product.aspx" />
+    <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
@@ -91,6 +92,13 @@
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterMerchant.aspx.cs">
+      <DependentUpon>RegisterMerchant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterMerchant.aspx.designer.cs">
+      <DependentUpon>RegisterMerchant.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

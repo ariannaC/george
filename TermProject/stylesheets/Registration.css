@@ -6,7 +6,7 @@
 h1 
 {
     text-align:center;
-    width: 753px;
+    width: 671px;
     height: 45px;
     top: 50px;
     margin-left: 20px;
@@ -18,8 +18,16 @@ h1
 
 .floating-box {
     float: left;
-    width: 562px;
-    height: 81px;
+    width: 561px;
+    height: 52px;
+    margin: 0px 5px 20px 108px;
+    font-family: "Century Gothic", 12px;
+}
+
+.floating-boxxx {
+    float: left;
+    width: 561px;
+    height: 97px;
     margin: 0px 5px 20px 108px;
     font-family: "Century Gothic", 12px;
 }
@@ -34,7 +42,7 @@ h1
 
 .FBtxtbox 
 {
-    margin-left: 6px; margin-top: 8px; 
+    margin-left: 6px; margin-top: 12px; 
 margin-bottom: 0px;
     font-family: 'Century Gothic';
 }
@@ -49,8 +57,8 @@ margin-bottom: 0px;
 .content 
 {
     background-color:#c2e9e9;
-    height: 710px;
-    width: 777px;
+    height: 1293px;
+    width: 707px;
     display:inline-block;
     margin-right: 92px;
     margin-bottom: 33px;

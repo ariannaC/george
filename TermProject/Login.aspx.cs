@@ -47,6 +47,7 @@ namespace TP
                     {
                         HttpCookie myCookie = new HttpCookie("Login_Cookie");
                         myCookie.Values["email"] = txtEmail.Text;
+
                         myCookie.Values["LastVisited"] = DateTime.Now.ToString();
                         myCookie.Expires = new DateTime(2025, 1, 1);
 

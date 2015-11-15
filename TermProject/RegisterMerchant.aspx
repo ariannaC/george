@@ -1,19 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="TermProject.Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterMerchant.aspx.cs" Inherits="TermProject.RegisterMerchant" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        #form1 {
-            height: 1323px;
-            width: 901px;
-            margin-right: 62px;
-            margin-bottom: 39px;
-            margin-left: 37px;
-        }
-    </style>
     <link href="stylesheets/Registration.css" rel="stylesheet" />
 </head>
 <body style="height: 1357px; width: 1059px; margin-top: 21px; margin-bottom: 39px;">
@@ -21,7 +12,7 @@
        
   &nbsp;<div class ="content">
        <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="37px" />
-       <h1>Register </h1>
+       <h1>Register as a Business </h1>
      
             <div class="floating-box">
                 
@@ -78,7 +69,7 @@
 
        
        
-         <div class="floating-boxxx" Height="50px">
+         <div class="floating-boxxx">
 
           
              <asp:Button ID="btnRegister" runat="server" Height="35px" OnClick="btnContinue_Click" Text="Register" Width="481px" Font-Names="Century Gothic" Font-Size="Medium" />
@@ -87,16 +78,6 @@
              <br />
              <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" />
               </div>
-      <div class="floating-box">
-
-
-          <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="WANT TO REGISTER AS A BUSINESS?"></asp:Label>
-          <br />
-          <br />
-          <asp:Button ID="btnRegisterforBusinessAccount" runat="server" Font-Names="Century Gothic" Height="49px" style="margin-top: 0px" Text="Register for business account" Width="484px" OnClick="btnRegisterforBusinessAccount_Click" />
-
-
-      </div>
 
                     
          </div>                                                                           
