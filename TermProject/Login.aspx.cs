@@ -28,6 +28,15 @@ namespace TP
             //Register object from the Register class in the "TP_Amazon_ClassLibrary"
             Register register = new Register();
             bool loginWorked = register.ValidLogin(txtEmail.Text, txtPassword.Text);            
+            //bool cookieExists =  ;
+
+            //if cookie exists
+            if (Session["email"] !=null)
+            {
+                HttpCookie emailCookie = Request.Cookies["UserEmail"];
+                txtEmail.Text = emailCookie.Value.ToString();
+                chkbxRemeberMe.Checked = true;
+            }
 
             //if user enters a valid username and password
             if (loginWorked == true)

@@ -45,13 +45,14 @@ namespace TermProject
                     Response.Cookies.Remove("mycookie");
                 }
 
+                Response.Redirect("~/Login.aspx");
             }
 
+            //not all fields are valid
             else 
             {
                 clearFields();
                 lblGeneralError.Text = "Error. Try Again.";
- 
             }
 
 
