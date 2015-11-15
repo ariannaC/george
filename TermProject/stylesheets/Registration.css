@@ -51,7 +51,7 @@ margin-bottom: 0px;
 {
     float:right;
     margin-right: 12px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .content 
@@ -64,6 +64,11 @@ margin-bottom: 0px;
     margin-bottom: 33px;
      color: #2b3e50;
     margin-left: 77px;
+}
+
+.statusbar 
+{    height: 32px;
+     background-color:ButtonShadow;
 }
 
  

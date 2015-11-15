@@ -11,7 +11,11 @@
     <form id="form1" runat="server">
        
   &nbsp;<div class ="content">
-       <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="37px" />
+
+      <div class ="statusbar">
+          <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="37px" />
+          <asp:Button ID="Button1" runat="server" Height="33px" OnClick="Button1_Click" Text="&lt;" Width="33px" />
+      </div> 
        <h1>Register as a Business </h1>
      
             <div class="floating-box">
