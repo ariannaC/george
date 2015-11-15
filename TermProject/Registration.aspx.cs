@@ -20,7 +20,7 @@ namespace TermProject
         {
             Register register = new Register();
             Customer newCustomer = new Customer();
-            newCustomer.FirstName = txtName.Text;
+            newCustomer.Name = txtName.Text;
             newCustomer.Email = txtEmail.Text;
             newCustomer.Password = txtpassword.Text;
             

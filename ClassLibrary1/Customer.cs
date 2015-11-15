@@ -9,8 +9,7 @@ namespace TP_Amazon_ClassLibrary
     public class Customer
     {
         //Personal Customer Variables 
-        private string firstName;
-        private string lastName;
+        private string name;
         private string email;
         private string password;
 
@@ -35,16 +34,10 @@ namespace TP_Amazon_ClassLibrary
 
 
         //Getters and Setters 
-        public string FirstName
+        public string Name
         {
-            get { return firstName;} 
-            set {firstName = value;} 
-        }
-
-        public string LastName
-        {
-            get {return lastName ;}
-            set {lastName = value ;} 
+            get { return name;} 
+            set {name = value;} 
         }
 
         public string Email 

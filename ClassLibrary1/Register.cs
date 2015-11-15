@@ -20,17 +20,19 @@ namespace TP_Amazon_ClassLibrary
             objCommand.CommandText = "AddTPCustomer";
             objCommand.Parameters.AddWithValue("@Email", newCustomer.Email );
             objCommand.Parameters.AddWithValue("@password", newCustomer.Password);
+            objCommand.Parameters.AddWithValue("@Name", newCustomer.Name);
 
             //integer to determine if value was added into DB or not
             int result= objDB.DoUpdateUsingCmdObj(objCommand);
 
             if (!(result <= 0)) //if a new row was successsfully added
             {
-                return true;
+                return false;
             }
             else               //else the row was not added successfully
             {
-                return false;
+                return true;
+
             }
         }
 
@@ -47,18 +49,16 @@ namespace TP_Amazon_ClassLibrary
 
             //if the values are found in the DB return true
             if (myDS.Tables[0].Rows.Count == 1)
+            {
                 return true;
-
+            }
             //the user does not exist in the DB
             else
+            {
                 return false;
+            }
  
         }
-
-       
-
-
-
 
 
     }//end of Register class
