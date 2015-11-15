@@ -35,7 +35,7 @@
          <ul>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server">Check Out</asp:LinkButton> 
-            <asp:LinkButton ID="lnkbtnLogOut" runat="server" Width="106px">Logout</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnLogOut" runat="server">Logout</asp:LinkButton>
         </ul>
        
       <div class="welcome" position="absolute" style="width: 185px; height: 29px;" >

@@ -53,10 +53,15 @@ namespace TP
             //else not a valid login
             else
             {
-                //lblLoginErrorMessage.Text = "Invalid Credentials. To create a new account select New User";
+                lblLoginErrorMessage.Text = "Invalid Credentials. To create a new account select New User";
             }
 
 
+        }
+
+        protected void btnNewUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registration.aspx");
         }//end of login button click event 
    
     

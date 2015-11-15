@@ -41,7 +41,7 @@
                 <asp:Button ID="btnLogin" runat="server" Height="35px" Text="Login" Width="100px" Font-Names="Century Gothic" OnClick="btnLogin_Click" />
             </div>
               <div class="box">
-                     <asp:Button ID="btnNewUser" runat="server" Height="33px" style="margin-top: 0px" Text="New User" Width="102px" Font-Names="Century Gothic" />
+                     <asp:Button ID="btnNewUser" runat="server" Height="33px" style="margin-top: 0px" Text="New User" Width="102px" Font-Names="Century Gothic" OnClick="btnNewUser_Click" />
               </div>
                
           

@@ -2,4 +2,18 @@
 }
 
 
+.floating-box {
+    float: left;
+    width: 501px;
+    height: 51px;
+    margin: 5px;
+}
 
+.content 
+{
+    background-color:#c2e9e9;
+    height: 323px;
+    width: 1064px;
+    display:inline-block;
+    
+}

@@ -26,6 +26,11 @@ nav
         margin-left: 5px;
 
     }
+    nav a.current {
+	color: yellow;
+}
+
+
 
 a:link, a:visited 
 {
