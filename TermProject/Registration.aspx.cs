@@ -17,8 +17,46 @@ namespace TermProject
         //Register Button
         protected void btnContinue_Click(object sender, EventArgs e)
         {
+            //if "Remember Me" is checked, store userName in cookie
+            if (chkbxRemeberMe.Checked)
+            {
+                HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                myCookie.Values["email"] = txtEmail.Text;
+                myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                myCookie.Expires = new DateTime(2025, 1, 1);
+
+                Response.Cookies.Add(myCookie);
+            }
+            else
+            {
+                //remove user's email from username textbox
+                Response.Cookies.Remove("mycookie");
+            }
+
+
+
+        }//end of Registerbutton click event
+
+
+        public bool ValidFields()
+        {
+            bool validInput;
+
+            if (txtEmail.Text.IndexOf("@") == -1 || txtEmail.Text.IndexOf(".") == -1)
+            {
+                return false;
+            }
+
+           // if (  bool passwordsEqual = String.Equals(textBox1.ToString(), textBox2.ToString())) 
+            else 
+            {
+                return true;
+            }
+
+
 
         }
+
     
     
     

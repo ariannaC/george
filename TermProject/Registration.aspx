@@ -8,7 +8,7 @@
     <style type="text/css">
         #form1 {
             height: 739px;
-            width: 951px;
+            width: 930px;
             margin-right: 62px;
             margin-bottom: 39px;
             margin-left: 37px;

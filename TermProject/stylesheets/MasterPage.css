@@ -4,7 +4,7 @@
 .contentHolder 
 {
     float:right;
-    height: 256px;
+    height: 366px;
     width:1081px;
     top: 160px;
     margin-bottom: 0px;
@@ -20,8 +20,9 @@ nav
 
     nav ul 
     {
-        width:1146px;
-    margin-right: 14px;
+        width:1154px;
+    margin-right: 3px;
+    margin-left: 53px;
 }
 
     nav ul a {

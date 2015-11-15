@@ -24,7 +24,7 @@
                      <h1>Login</h1>
             <div class="floating-box">
                 <asp:Label ID="Label1" runat="server" Text="Email:" Font-Bold="True"></asp:Label> &nbsp; 
-                <asp:TextBox ID="txtUserName" runat="server" Width="292px" style="margin-left: 32px"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" Width="292px" style="margin-left: 32px"></asp:TextBox>
             *</div> 
 
 

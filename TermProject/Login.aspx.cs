@@ -27,7 +27,7 @@ namespace TP
 
             //Register object from the Register class in the "TP_Amazon_ClassLibrary"
             Register register = new Register();
-            bool loginWorked = register.ValidLogin(txtUserName.Text, txtPassword.Text);            
+            bool loginWorked = register.ValidLogin(txtEmail.Text, txtPassword.Text);            
 
             //if user enters a valid username and password
             if (loginWorked == true)
@@ -36,7 +36,7 @@ namespace TP
                     if (chkbxRemeberMe.Checked)
                     {
                         HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                        myCookie.Values["userName"] = txtUserName.Text;
+                        myCookie.Values["email"] = txtEmail.Text;
                         myCookie.Values["LastVisited"] = DateTime.Now.ToString();
                         myCookie.Expires = new DateTime(2025, 1, 1);
 
