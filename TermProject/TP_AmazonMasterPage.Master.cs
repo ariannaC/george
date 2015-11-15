@@ -11,7 +11,9 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // lblWelcomeUser.Text = "Welcome " + email +"!";
+            HttpCookie emailCookie = Request.Cookies["UserEmail"];
+            string email = emailCookie.Value.ToString();
+           lblWelcomeUser.Text = "Welcome " + email +"!";
         }
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
