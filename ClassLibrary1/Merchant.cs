@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Amazon_ClassLibrary
 {
-    class Merchant
+    public class Merchant
     {
         //Personal Merchant Variables 
         public string name;
@@ -27,6 +27,9 @@ namespace TP_Amazon_ClassLibrary
         public string billingZipcode;
         public string billingCountry;
 
+        public Merchant()
+        { 
+        }
 
     }//end of class
 

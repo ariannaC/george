@@ -23,11 +23,11 @@ namespace TermProject
         protected void btnContinue_Click(object sender, EventArgs e)
         {
             Register register = new Register();
-           // Merchant newMerchant = new Merchant();
+            Merchant newMerchant = new Merchant();
 
-            //newMerchant.Name = txtName.Text;
-            //newMerchant.Email = txtEmail.Text;
-            //newMerchant.Password = txtpassword.Text;
+            newMerchant.name = txtName.Text;
+            newMerchant.email = txtEmail.Text;
+            newMerchant.password = txtpassword.Text;
 
             //Stored procedure to insert new merchant into a merchant table
         }
