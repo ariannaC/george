@@ -18,9 +18,9 @@ namespace TP_Amazon_ClassLibrary
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "AddTPCustomer";
-            objCommand.Parameters.AddWithValue("@Email", newCustomer.Email );
-            objCommand.Parameters.AddWithValue("@password", newCustomer.Password);
-            objCommand.Parameters.AddWithValue("@Name", newCustomer.Name);
+            objCommand.Parameters.AddWithValue("@Email", newCustomer.email );
+            objCommand.Parameters.AddWithValue("@password", newCustomer.password);
+            objCommand.Parameters.AddWithValue("@Name", newCustomer.name);
 
             //integer to determine if value was added into DB or not
             int result= objDB.DoUpdateUsingCmdObj(objCommand);

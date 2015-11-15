@@ -30,35 +30,7 @@ namespace TP_Amazon_ClassLibrary
         //Constructor
         public Customer()
         {
-        }
 
-        //Getters and Setters 
-        public string Name
-        {
-            get { return name;} 
-            set {name = value;} 
-        }
-
-        public string Email 
-        { get { return email; } 
-          set { email = value; } 
-        }
-        public string Password
-        {
-            get { return password; }
-            set { password = value; }
-        }
-
-        public string ShippingAddress
-        {
-            get{return shippingAddress;}
-            set { shippingAddress = value; }
-        }
-
-        public string ShippingCity
-        {
-            get { return shippingCity; }
-            set { shippingCity = value; }
         }
 
 

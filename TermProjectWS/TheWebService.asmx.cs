@@ -90,53 +90,65 @@ namespace TermProjectWS
                  command.Parameters.AddWithValue("@ProductID", ProductID);
                  command.Parameters.AddWithValue("@Quantity", Quantity);
                  command.Parameters.AddWithValue("@APIKey", APIKey);
+                 command.Parameters.AddWithValue("@Email", cust.email);
+                 command.Parameters.AddWithValue("@Name", cust.name);
+                 command.Parameters.AddWithValue("@ShippingAddress", cust.shippingAddress);
+    //        @ShippingCity varchar(MAX),
+    //@ShippingState varchar(MAX),
+    //@ShippingZipCode int,
+    //@ShippingCountry varchar(MAX),
+    //@BillingAddress varchar(MAX),
+    //@BillingCity varchar(MAX),
+    //@BillingState varchar(MAX),
+    //@BillingCountry varchar(MAX),
+    //@BillingZip varchar(MAX)
 
 
                  return true;
              }
 
-        [WebMethod]
-        public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)
-        {
-            DBConnect DB = new DBConnect();
+        //[WebMethod]
+        //public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)
+        //{
+        //    DBConnect DB = new DBConnect();
    
-            SqlCommand sandy = new SqlCommand();
-            sandy.CommandType = CommandType.StoredProcedure;
-            sandy.CommandText = "VerifyInfo";
-            sandy.Parameters.AddWithValue("@CreditCardNum", cc.CardNumber);
-            sandy.Parameters.AddWithValue("@CVV", cc.CVV);
-            sandy.Parameters.AddWithValue("@TransAmnt", float.Parse(stupid[2].ToString()));
-            sandy.Parameters.AddWithValue("@FirstName", fred.Name);
-            SqlParameter returnParam = new SqlParameter("@RVAL", DbType.Int32);
-            returnParam.Direction = ParameterDirection.ReturnValue;
-            sandy.Parameters.Add(returnParam);
+        //    SqlCommand sandy = new SqlCommand();
+        //    sandy.CommandType = CommandType.StoredProcedure;
+        //    sandy.CommandText = "VerifyInfo";
+        //    sandy.Parameters.AddWithValue("@CreditCardNum", cc.CardNumber);
+        //    sandy.Parameters.AddWithValue("@CVV", cc.CVV);
+        //    sandy.Parameters.AddWithValue("@TransAmnt", float.Parse(stupid[2].ToString()));
+        //    sandy.Parameters.AddWithValue("@FirstName", fred.Name);
+        //    SqlParameter returnParam = new SqlParameter("@RVAL", DbType.Int32);
+        //    returnParam.Direction = ParameterDirection.ReturnValue;
+        //    sandy.Parameters.Add(returnParam);
 
-            //            DataSet ds = DB.GetDataSetUsingCmdObj(sandy);
-            DB.GetDataSetUsingCmdObj(sandy);
-            //meh[1] = sandy.Parameters["@RVAL"].Value.ToString();
-            //meh[2] = ec.GetErrorCodeMessage(int.Parse(meh[1]));
+        //    //            DataSet ds = DB.GetDataSetUsingCmdObj(sandy);
+        //    DB.GetDataSetUsingCmdObj(sandy);
+        //    //meh[1] = sandy.Parameters["@RVAL"].Value.ToString();
+        //    //meh[2] = ec.GetErrorCodeMessage(int.Parse(meh[1]));
 
 
-            //return meh;
-        }
+        //    //return meh;
+        //}
 
-        [WebMethod]
-        public bool AddCard(CreditCardClass cc, Customer matilda)
-        {
-            DBConnect DB = new DBConnect();
-            SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "AddCard";
-            command.Parameters.AddWithValue("@CreditCardNumber", cc.CardNumber);
-            command.Parameters.AddWithValue("@CVV", cc.CVV);
-            command.Parameters.AddWithValue("@AccountNumber", cc.AccountNumber);
-            command.Parameters.AddWithValue("@CreditLimit", cc.CreditLimit);
-            command.Parameters.AddWithValue("@AccountBalance", cc.AccountBalance);
-            command.Parameters.AddWithValue("@Name", matilda.Name);
+        //[WebMethod]
+        //public bool AddCard(CreditCardClass cc, Customer matilda)
+        //{
+        //    DBConnect DB = new DBConnect();
+        //    SqlCommand command = new SqlCommand();
+        //    command.CommandType = CommandType.StoredProcedure;
+        //    command.CommandText = "AddCard";
+        //    command.Parameters.AddWithValue("@CreditCardNumber", cc.CardNumber);
+        //    command.Parameters.AddWithValue("@CVV", cc.CVV);
+        //    command.Parameters.AddWithValue("@AccountNumber", cc.AccountNumber);
+        //    command.Parameters.AddWithValue("@CreditLimit", cc.CreditLimit);
+        //    command.Parameters.AddWithValue("@AccountBalance", cc.AccountBalance);
+        //    command.Parameters.AddWithValue("@Name", matilda.Name);
           
-            return (DB.DoUpdateUsingCmdObj(command) > 0) ? true : false;
+        //    return (DB.DoUpdateUsingCmdObj(command) > 0) ? true : false;
 
-        }
+        //}
 
        
     }

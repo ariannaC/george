@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace TermProjectWS.TPServiceRef {
+namespace TermProject.TPServiceRef {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -40,7 +40,7 @@ namespace TermProjectWS.TPServiceRef {
         
         /// <remarks/>
         public TheWebService() {
-            this.Url = global::TermProjectWS.Properties.Settings.Default.TermProjectWS_TPServiceRef_TheWebService;
+            this.Url = global::TermProject.Properties.Settings.Default.TermProject_TPServiceRef_TheWebService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
