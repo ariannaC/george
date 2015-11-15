@@ -20,35 +20,38 @@
     <form id="form1" runat="server">
        
   &nbsp;<div class ="content">
-       <h1>Register</h1>
+       <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="37px" />
+       <h1>Register </h1>
+     
+            <div class="floating-box">
+                
+                <asp:Label ID="Label1" runat="server" Text="Email" CssClass="FBlabel"></asp:Label>
+               <asp:TextBox ID="txtEmail" runat="server" Width="423px" style="margin-left: 6px" CssClass="FBtxtbox" Height="21px"></asp:TextBox>
+            </div>
+     
         <div class="floating-box">
            
             <asp:Label ID="lbl" runat="server" Text="Name" CssClass="FBlabel"></asp:Label>
 
             <asp:TextBox ID="txtName" runat="server" Width="412px" Height="18px" style="margin-left: 4px; margin-top: 11px; margin-bottom: 0px;" CssClass="FBtxtbox"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="lblInvalidName" runat="server"></asp:Label>
         </div>
            
-            <div class="floating-box">
-                
-                <asp:Label ID="Label1" runat="server" Text="Email" CssClass="FBlabel"></asp:Label>
-               <asp:TextBox ID="txtEmail" runat="server" Width="423px" style="margin-left: 6px" CssClass="FBtxtbox" Height="21px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-            </div>
       <div class="floating-box">
                
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label2" runat="server" Text="Password" CssClass="FBlabel"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtpassword" runat="server" Height="22px" TextMode="Password" Width="324px"></asp:TextBox>
-&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+&nbsp;<br />
+                <asp:Label ID="lblPasswordsDontmatch" runat="server"></asp:Label>
             </div>
                 <div class="floating-box">
                
                     <asp:Label ID="Label3" runat="server" Text="Re-enter Password" CssClass="FBlabel"></asp:Label>
                     <asp:TextBox ID="txtReenterPassword" runat="server" CssClass="FBtxtbox" Height="23px" Width="314px" TextMode="Password"></asp:TextBox>
-&nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-            </div>
+&nbsp;</div>
 
 
        
@@ -58,6 +61,7 @@
           
              <asp:Button ID="btnRegister" runat="server" Height="40px" OnClick="btnContinue_Click" Text="Register" Width="481px" Font-Names="Century Gothic" Font-Size="Medium" />
              &nbsp;
+             <asp:Label ID="lblGeneralError" runat="server"></asp:Label>
              <br />
              <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" />
               </div>

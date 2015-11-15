@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TP_Amazon_ClassLibrary;
 
 namespace TermProject
 {
@@ -17,22 +18,42 @@ namespace TermProject
         //Register Button
         protected void btnContinue_Click(object sender, EventArgs e)
         {
-            //if "Remember Me" is checked, store userName in cookie
-            if (chkbxRemeberMe.Checked)
+            Register register = new Register();
+            Customer newCustomer = new Customer();
+            newCustomer.Name = txtName.Text;
+            newCustomer.Email = txtEmail.Text;
+            newCustomer.Password = txtpassword.Text;
+            
+            //all fields are valid
+            if (ValidFields())
             {
-                HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                myCookie.Values["email"] = txtEmail.Text;
-                myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                myCookie.Expires = new DateTime(2025, 1, 1);
+                //Add new Customer to TP_Customer DB
+                register.AddNewCustomer(newCustomer);
 
-                Response.Cookies.Add(myCookie);
+                //if "Remember Me" is checked, store userName in cookie
+                if (chkbxRemeberMe.Checked)
+                {
+                    HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                    myCookie.Values["email"] = txtEmail.Text;
+                    myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                    myCookie.Expires = new DateTime(2025, 1, 1);
+                    Response.Cookies.Add(myCookie);
+                }
+                else
+                {
+                    //remove user's email from username textbox
+                    Response.Cookies.Remove("mycookie");
+                }
+
+                Response.Redirect("~/Login.aspx");
             }
-            else
+
+            //not all fields are valid
+            else 
             {
-                //remove user's email from username textbox
-                Response.Cookies.Remove("mycookie");
+                clearFields();
+                lblGeneralError.Text = "Error. Try Again.";
             }
-
 
 
         }//end of Registerbutton click event
@@ -41,19 +62,48 @@ namespace TermProject
         public bool ValidFields()
         {
             bool validInput;
+            bool passwordsEqual = String.Equals(txtpassword.ToString(), txtReenterPassword.ToString());
 
+            if(txtName.Text == "")
+            {
+                lblInvalidName.Text = "Please enter your name.";
+                validInput = false;
+            }
+
+            //check if email is valid
             if (txtEmail.Text.IndexOf("@") == -1 || txtEmail.Text.IndexOf(".") == -1)
             {
-                return false;
+                validInput = false;
             }
 
-           // if (  bool passwordsEqual = String.Equals(textBox1.ToString(), textBox2.ToString())) 
-            else 
+            //passwords dont match
+            if (!passwordsEqual)
             {
-                return true;
+                lblPasswordsDontmatch.Text = "Passwords Must Match";
+                txtpassword.Text = "";
+                txtReenterPassword.Text = "";
+                validInput = false;
+            }
+            else
+            {
+                validInput= true;
             }
 
+            return validInput;
+        }
 
+
+        public void clearFields()
+        {
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtpassword.Text = "";
+            txtReenterPassword.Text = "";
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
 
         }
 

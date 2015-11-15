@@ -6,7 +6,7 @@
 h1 
 {
     text-align:center;
-    width: 743px;
+    width: 753px;
     height: 45px;
     top: 50px;
     margin-left: 20px;
@@ -18,8 +18,8 @@ h1
 
 .floating-box {
     float: left;
-    width: 481px;
-    height: 79px;
+    width: 562px;
+    height: 81px;
     margin: 0px 5px 20px 108px;
     font-family: "Century Gothic", 12px;
 }
@@ -37,6 +37,13 @@ h1
     margin-left: 6px; margin-top: 8px; 
 margin-bottom: 0px;
     font-family: 'Century Gothic';
+}
+
+.cancelbtn 
+{
+    float:right;
+    margin-right: 12px;
+    margin-top: 10px;
 }
 
 .content 
