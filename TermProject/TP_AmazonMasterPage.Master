@@ -11,7 +11,7 @@
         .contentHolder {
             width: 1214px;
             height: 320px;
-            margin-left: 24px;
+            margin-left: 50px;
             margin-top: 34px;
         }
         #form1 {
@@ -27,18 +27,18 @@
 
     <link href="stylesheets/MasterPage.css" rel="stylesheet" />
 </head>
-<body style="height: 584px; margin-left: 14px; width: 1258px; margin-right: 88px;">
+<body style="height: 576px; margin-left: 14px; width: 1202px; margin-right: 88px;">
 
     <form id="form1" runat="server">
 
-    <div class="banner" style="height: 61px; margin-left: 0px; margin-bottom: 15px; width: 1191px; margin-top: 0px;">
+    <div class="banner" style="height: 38px; margin-left: 0px; margin-bottom: 15px; width: 1210px; margin-top: 11px; margin-right: 7px;">
          <ul>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server">Check Out</asp:LinkButton> 
             <asp:LinkButton ID="lnkbtnLogOut" runat="server">Logout</asp:LinkButton>
         </ul>
        
-      <div class="welcome" position="absolute" style="width: 185px; height: 29px;" >
+      <div class="welcome" position="absolute" style="width: 202px; height: 29px; margin-left: 24px;" >
           
           <asp:Label ID="lblWelcomeUser" runat="server" Font-Names="Times New Roman" Font-Size="Large"></asp:Label>
           
@@ -46,11 +46,11 @@
        
     </div>
          <div style="margin-top: 14px">
-             <h1 style="margin-top: 12px; height: 37px; margin-right: 26px; margin-bottom: 18px;">Site Name</h1>
+             <h1 style="margin-top: 0px; height: 69px; margin-right: 26px; margin-bottom: 18px;">Site Name</h1>
         </div>
 
         <nav>
-            <ul style="width: 1249px; height: 26px; margin-left: 7px; margin-bottom: 36px"> 
+            <ul height: 26px; margin-left: 30px; margin-bottom: 36px"> 
             <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMunchies" runat="server">Munchies</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMovies" runat="server">Movies</asp:LinkButton>

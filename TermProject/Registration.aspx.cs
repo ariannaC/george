@@ -13,5 +13,20 @@ namespace TermProject
         {
 
         }
-    }
-}
+
+        //Register Button
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+
+        }
+    
+    
+    
+    
+    }//end of class
+
+
+
+
+}//end of namespace
+

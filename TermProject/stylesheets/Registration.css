@@ -1,19 +1,56 @@
-﻿body {
+﻿body
+ {
+       background-color:#2b3e50;
+       height:867px;
+}
+h1 
+{
+    text-align:center;
+    width: 743px;
+    height: 45px;
+    top: 50px;
+    margin-left: 20px;
+    margin-right: 8px;
+    margin-bottom: 19px;
+    font-family: "Century Gothic";
 }
 
 
 .floating-box {
     float: left;
-    width: 501px;
-    height: 51px;
-    margin: 5px;
+    width: 481px;
+    height: 79px;
+    margin: 0px 5px 20px 108px;
+    font-family: "Century Gothic", 12px;
+}
+
+.FBlabel
+{
+    font-family: 'Century Gothic';
+    margin-right:5px;
+    text-align:left;
+    margin-bottom:2px;
+}
+
+.FBtxtbox 
+{
+    margin-left: 6px; margin-top: 8px; 
+margin-bottom: 0px;
+    font-family: 'Century Gothic';
 }
 
 .content 
 {
     background-color:#c2e9e9;
-    height: 323px;
-    width: 1064px;
+    height: 710px;
+    width: 777px;
     display:inline-block;
-    
+    margin-right: 92px;
+    margin-bottom: 33px;
+     color: #2b3e50;
+    margin-left: 77px;
 }
+
+ 
+  
+  
