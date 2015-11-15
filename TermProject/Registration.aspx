@@ -27,6 +27,8 @@
 
             <asp:TextBox ID="txtName" runat="server" Width="412px" Height="18px" style="margin-left: 4px; margin-top: 11px; margin-bottom: 0px;" CssClass="FBtxtbox"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+            <br />
+            <asp:Label ID="lblInvalidName" runat="server"></asp:Label>
         </div>
            
             <div class="floating-box">
@@ -42,6 +44,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:TextBox ID="txtpassword" runat="server" Height="22px" TextMode="Password" Width="324px"></asp:TextBox>
 &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <br />
+                <asp:Label ID="lblPasswordsDontmatch" runat="server"></asp:Label>
             </div>
                 <div class="floating-box">
                
