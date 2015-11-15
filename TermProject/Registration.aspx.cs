@@ -27,25 +27,33 @@ namespace TermProject
             //all fields are valid
             if (ValidFields())
             {
-               
+                //Add new Customer to TP_Customer DB
                 register.AddNewCustomer(newCustomer);
 
-                    //if "Remember Me" is checked, store userName in cookie
-                    if (chkbxRemeberMe.Checked)
-                    {
-                        HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                        myCookie.Values["email"] = txtEmail.Text;
-                        myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                        myCookie.Expires = new DateTime(2025, 1, 1);
-                        Response.Cookies.Add(myCookie);
-                    }
-                    else
-                    {
-                        //remove user's email from username textbox
-                        Response.Cookies.Remove("mycookie");
-                    }
+                //if "Remember Me" is checked, store userName in cookie
+                if (chkbxRemeberMe.Checked)
+                {
+                    HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                    myCookie.Values["email"] = txtEmail.Text;
+                    myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                    myCookie.Expires = new DateTime(2025, 1, 1);
+                    Response.Cookies.Add(myCookie);
+                }
+                else
+                {
+                    //remove user's email from username textbox
+                    Response.Cookies.Remove("mycookie");
+                }
 
             }
+
+            else 
+            {
+                clearFields();
+                lblGeneralError.Text = "Error. Try Again.";
+ 
+            }
+
 
         }//end of Registerbutton click event
 
@@ -61,7 +69,6 @@ namespace TermProject
                 validInput = false;
             }
 
-
             //check if email is valid
             if (txtEmail.Text.IndexOf("@") == -1 || txtEmail.Text.IndexOf(".") == -1)
             {
@@ -76,14 +83,12 @@ namespace TermProject
                 txtReenterPassword.Text = "";
                 validInput = false;
             }
-
             else
             {
                 validInput= true;
             }
 
             return validInput;
-
         }
 
 
@@ -93,6 +98,12 @@ namespace TermProject
             txtEmail.Text = "";
             txtpassword.Text = "";
             txtReenterPassword.Text = "";
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+
         }
 
     

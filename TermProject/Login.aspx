@@ -33,11 +33,13 @@
                  <asp:TextBox ID="txtPassword" runat="server" Width="299px" TextMode="Password"></asp:TextBox>
              *<br />
             </div>
-            <div style="height: 63px; margin-top: 16px">
+
+            <div class="floating-box" style="height: 65px; margin-top: 16px">
              <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me" />
             <br />
             <asp:Label ID="lblLoginErrorMessage" runat="server"></asp:Label>
                 </div>
+
             <br />
             <div class="box">
                 <asp:Button ID="btnLogin" runat="server" Height="35px" Text="Login" Width="100px" Font-Names="Century Gothic" OnClick="btnLogin_Click" />

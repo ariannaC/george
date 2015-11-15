@@ -61,7 +61,7 @@ namespace TP
 
         protected void btnNewUser_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registration.aspx");
+            Response.Redirect("~/Registration.aspx");
         }//end of login button click event 
    
     
