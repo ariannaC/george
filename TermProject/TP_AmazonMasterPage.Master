@@ -34,7 +34,7 @@
     <div class="banner" style="height: 38px; margin-left: 0px; margin-bottom: 15px; width: 1210px; margin-top: 11px; margin-right: 7px;">
          <ul>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
-            <asp:LinkButton ID="lnkbtnCheckOut" runat="server">Check Out</asp:LinkButton> 
+            <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton> 
             <asp:LinkButton ID="lnkbtnLogOut" runat="server">Logout</asp:LinkButton>
         </ul>
        

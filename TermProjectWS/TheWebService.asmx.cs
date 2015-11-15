@@ -6,6 +6,7 @@ using System.Web.Services;
 using System.Data;
 using Utilities;
 using System.Data.SqlClient;
+using TP_Amazon_ClassLibrary;
 
 namespace TermProjectWS
 {
@@ -67,7 +68,7 @@ namespace TermProjectWS
             command.Parameters.AddWithValue("@Desccription", Description);
             command.Parameters.AddWithValue("@Email", email);
             command.Parameters.AddWithValue("@Contact", contactInfo);
-            SqlParameter outputparam = new SqlParameter("@RETVAL", 0);
+            SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
             outputparam.Direction = ParameterDirection.Output;
             command.Parameters.Add(outputparam);
             int RETVAL;
@@ -75,53 +76,66 @@ namespace TermProjectWS
             if (RETVAL == 1)
             {
                 return true;
-            }
+          }
 
             return false;
         }
 
-        public Boolean Purchase(String ProductID, int Quantity, String APIKey /*String[] Customer Information, Customer CreditCard Information*/)
+        public Boolean Purchase(String ProductID, int Quantity, String APIKey, Customer cust)
              {
-                
+                 DBConnect db = new DBConnect();
+                 SqlCommand command = new SqlCommand();
+                 command.CommandType = CommandType.StoredProcedure;
+                 command.CommandText = "PurchaseItem";
+                 command.Parameters.AddWithValue("@ProductID", ProductID);
+                 command.Parameters.AddWithValue("@Quantity", Quantity);
+                 command.Parameters.AddWithValue("@APIKey", APIKey);
 
 
                  return true;
              }
 
         [WebMethod]
-        public string[] UpdateCustomer(CustomerClass fred, CreditCardClass cc, object[] stupid)
+        public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)
         {
             DBConnect DB = new DBConnect();
-            SqlCommand command = new SqlCommand();
-            string[] meh = new string[3];
-            ErrorCodes ec = new ErrorCodes();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "CustomerUpdate";
-            command.Parameters.AddWithValue("@FirstName", fred.Firstname);
-            command.Parameters.AddWithValue("@Address", fred.Address);
-            command.Parameters.AddWithValue("@City", fred.City);
-            command.Parameters.AddWithValue("@State", fred.State);
-            command.Parameters.AddWithValue("@ZipCode", fred.ZipCode);
-            command.Parameters.AddWithValue("@AccountBalance", cc.AccountBalance);
-            meh[0] = (DB.DoUpdateUsingCmdObj(command) > 0) ? "true" : "false";
+   
             SqlCommand sandy = new SqlCommand();
             sandy.CommandType = CommandType.StoredProcedure;
             sandy.CommandText = "VerifyInfo";
             sandy.Parameters.AddWithValue("@CreditCardNum", cc.CardNumber);
             sandy.Parameters.AddWithValue("@CVV", cc.CVV);
             sandy.Parameters.AddWithValue("@TransAmnt", float.Parse(stupid[2].ToString()));
-            sandy.Parameters.AddWithValue("@FirstName", fred.Firstname);
+            sandy.Parameters.AddWithValue("@FirstName", fred.Name);
             SqlParameter returnParam = new SqlParameter("@RVAL", DbType.Int32);
             returnParam.Direction = ParameterDirection.ReturnValue;
             sandy.Parameters.Add(returnParam);
 
             //            DataSet ds = DB.GetDataSetUsingCmdObj(sandy);
             DB.GetDataSetUsingCmdObj(sandy);
-            meh[1] = sandy.Parameters["@RVAL"].Value.ToString();
-            meh[2] = ec.GetErrorCodeMessage(int.Parse(meh[1]));
+            //meh[1] = sandy.Parameters["@RVAL"].Value.ToString();
+            //meh[2] = ec.GetErrorCodeMessage(int.Parse(meh[1]));
 
 
-            return meh;
+            //return meh;
+        }
+
+        [WebMethod]
+        public bool AddCard(CreditCardClass cc, Customer matilda)
+        {
+            DBConnect DB = new DBConnect();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "AddCard";
+            command.Parameters.AddWithValue("@CreditCardNumber", cc.CardNumber);
+            command.Parameters.AddWithValue("@CVV", cc.CVV);
+            command.Parameters.AddWithValue("@AccountNumber", cc.AccountNumber);
+            command.Parameters.AddWithValue("@CreditLimit", cc.CreditLimit);
+            command.Parameters.AddWithValue("@AccountBalance", cc.AccountBalance);
+            command.Parameters.AddWithValue("@Name", matilda.Name);
+          
+            return (DB.DoUpdateUsingCmdObj(command) > 0) ? true : false;
+
         }
 
        

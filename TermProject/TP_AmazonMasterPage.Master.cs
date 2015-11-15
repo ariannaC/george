@@ -23,5 +23,10 @@ namespace TermProject
         {
             Response.Redirect("Product.aspx");
         }
+
+        protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
