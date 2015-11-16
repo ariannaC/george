@@ -141,32 +141,32 @@ namespace TermProject.TPServiceRef {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RegisterSite", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool RegisterSite(string SiteID, string Description, string APIKey, string email, string contactInfo) {
+        public bool RegisterSite(string SiteID, string GroupName, string APIKey, string email, string Address) {
             object[] results = this.Invoke("RegisterSite", new object[] {
                         SiteID,
-                        Description,
+                        GroupName,
                         APIKey,
                         email,
-                        contactInfo});
+                        Address});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email, string contactInfo) {
-            this.RegisterSiteAsync(SiteID, Description, APIKey, email, contactInfo, null);
+        public void RegisterSiteAsync(string SiteID, string GroupName, string APIKey, string email, string Address) {
+            this.RegisterSiteAsync(SiteID, GroupName, APIKey, email, Address, null);
         }
         
         /// <remarks/>
-        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email, string contactInfo, object userState) {
+        public void RegisterSiteAsync(string SiteID, string GroupName, string APIKey, string email, string Address, object userState) {
             if ((this.RegisterSiteOperationCompleted == null)) {
                 this.RegisterSiteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterSiteOperationCompleted);
             }
             this.InvokeAsync("RegisterSite", new object[] {
                         SiteID,
-                        Description,
+                        GroupName,
                         APIKey,
                         email,
-                        contactInfo}, this.RegisterSiteOperationCompleted, userState);
+                        Address}, this.RegisterSiteOperationCompleted, userState);
         }
         
         private void OnRegisterSiteOperationCompleted(object arg) {

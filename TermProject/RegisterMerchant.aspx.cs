@@ -47,7 +47,8 @@ namespace TermProject
             key.CommandText = "InsertKey";
             command.Parameters.AddWithValue("@GroupName", newMerchant.groupName);
             string apikey = DB.GetDataSetUsingCmdObj(key).ToString();
-            lblGeneralError.Text = "Youe APIKey is " + apikey;
+            lblGeneralError.Text = "Your APIKey is " + apikey;
+            
  
             //Stored procedure to insert new merchant into a merchant table
         }
