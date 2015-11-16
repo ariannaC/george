@@ -18,40 +18,44 @@ h1
 
 .floating-box {
     float: left;
-    width: 561px;
+    width: 623px;
     height: 52px;
-    margin: 0px 5px 20px 108px;
+    margin: 0px 0px 20px 36px;
     font-family: "Century Gothic", 12px;
 }
 
 .floating-boxxx {
     float: left;
-    width: 561px;
+    width: 621px;
     height: 97px;
-    margin: 0px 5px 20px 108px;
+    margin: 0px 5px 20px 36px;
     font-family: "Century Gothic", 12px;
 }
 
 .FBlabel
 {
     font-family: 'Century Gothic';
-    margin-right:5px;
+    margin-right:0px;
     text-align:left;
-    margin-bottom:2px;
+    margin-bottom:0px;
+    float:left;
 }
 
 .FBtxtbox 
 {
-    margin-left: 6px; margin-top: 12px; 
+    margin-left: 0px; 
+margin-top: 0px; 
 margin-bottom: 0px;
     font-family: 'Century Gothic';
+    float:right;
 }
 
 .cancelbtn 
 {
     float:right;
-    margin-right: 12px;
+    margin-right: 2px;
     margin-top: 0px;
+    margin-left: 14px;
 }
 
 .content 
