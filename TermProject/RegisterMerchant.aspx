@@ -46,8 +46,8 @@
 
           
              <asp:Button ID="btnRegister" runat="server" Height="47px" OnClick="btnContinue_Click" Text="Register Business" Width="650px" Font-Names="Century Gothic" Font-Size="Medium" />
-             &nbsp;
-             <br />
+             &nbsp;<asp:Label ID="lblGeneralError" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Red"></asp:Label>
+&nbsp;<br />
               </div>
 
                     

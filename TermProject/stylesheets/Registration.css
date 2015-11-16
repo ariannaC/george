@@ -43,7 +43,7 @@ h1
 
 .FBtxtbox 
 {
-    margin-left: 3px; 
+    margin-left: 9px; 
 margin-top: 0px; 
 margin-bottom: 0px;
     font-family: 'Century Gothic';
@@ -61,7 +61,7 @@ margin-bottom: 0px;
 .content 
 {
     background-color:#c2e9e9;
-    height: 431px;
+    height: 904px;
     width: 707px;
     display:inline-block;
     margin-right: 92px;

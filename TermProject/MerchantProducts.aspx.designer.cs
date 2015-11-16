@@ -31,6 +31,24 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.DropDownList ddlDepartments;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// txtDepartmentNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDepartmentNumber;
+        
+        /// <summary>
         /// gvMerchantProducts control.
         /// </summary>
         /// <remarks>

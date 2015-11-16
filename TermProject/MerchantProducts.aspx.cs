@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using Utilities;
 using TP_Amazon_ClassLibrary;
 
+
 namespace TermProject
 {
     public partial class MerchantProducts : System.Web.UI.Page
@@ -31,13 +32,11 @@ namespace TermProject
 
         public void showDepartments()
         {
-            DBConnect dbobj = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "GetDepartments";
-            ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
-            ddlDepartments.DataTextField = "DepartmentName";
-            ddlDepartments.DataBind(); 
+            TPServiceRef.TheWebService pxy = new TPServiceRef.TheWebService();
+            string depNumber = txtDepartmentNumber.Text;
+            DataSet ds = pxy.GetProductCatalog(depNumber);
+            gvMerchantProducts.DataSource = ds;
+            gvMerchantProducts.DataBind();
 
         }
 
