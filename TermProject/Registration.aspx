@@ -46,7 +46,7 @@
                 <div class="floating-box">
                
                     <asp:Label ID="Label3" runat="server" Text="Re-enter Password" CssClass="FBlabel"></asp:Label>
-                    <asp:TextBox ID="txtReenterPassword" runat="server" CssClass="FBtxtbox" Height="23px"  TextMode="Password" Width="377px"></asp:TextBox>
+                    <asp:TextBox ID="txtReenterPassword" runat="server" CssClass="FBtxtbox" Height="23px"  TextMode="Password" Width="453px"></asp:TextBox>
 &nbsp;</div>
        <div class="floating-box">
             <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
@@ -77,7 +77,7 @@
          <div class="floating-boxxx" Height="50px">
 
           
-             <asp:Button ID="btnRegister" runat="server" Height="42px" OnClick="btnContinue_Click" Text="Register" Width="618px" Font-Names="Century Gothic" Font-Size="Medium" />
+             <asp:Button ID="btnRegister" runat="server" Height="42px" OnClick="btnContinue_Click" Text="Register" Width="649px" Font-Names="Century Gothic" Font-Size="Medium" />
              &nbsp;
              <asp:Label ID="lblGeneralError" runat="server"></asp:Label>
              <br />
@@ -89,7 +89,7 @@
           <asp:Label ID="Label4" runat="server" Font-Bold="True" Text="WANT TO REGISTER AS A BUSINESS?"></asp:Label>
           <br />
           <br />
-          <asp:Button ID="btnRegisterforBusinessAccount" runat="server" Font-Names="Century Gothic" Height="49px" style="margin-top: 0px" Text="Register for business account" Width="484px" OnClick="btnRegisterforBusinessAccount_Click" />
+          <asp:Button ID="btnRegisterforBusinessAccount" runat="server" Font-Names="Century Gothic" Height="49px" style="margin-top: 0px" Text="Register for business account" Width="651px" OnClick="btnRegisterforBusinessAccount_Click" />
 
 
       </div>
