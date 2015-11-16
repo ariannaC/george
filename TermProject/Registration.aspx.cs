@@ -20,9 +20,9 @@ namespace TermProject
         {
             Register register = new Register();
             Customer newCustomer = new Customer();
-            newCustomer. = txtName.Text;
-            newCustomer.Email = txtEmail.Text;
-            newCustomer.Password = txtpassword.Text;
+            newCustomer.name = txtName.Text;
+            newCustomer.email = txtEmail.Text;
+            newCustomer.password = txtpassword.Text;
             
             
             //all fields are valid
@@ -110,7 +110,7 @@ namespace TermProject
 
         protected void btnRegisterforBusinessAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registration.aspx");
+            Response.Redirect("~/RegisterMerchant.aspx");
         }
 
     
