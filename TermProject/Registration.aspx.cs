@@ -110,7 +110,7 @@ namespace TermProject
 
         protected void btnRegisterforBusinessAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Registration.aspx");
+            Response.Redirect("~/RegisterMerchant.aspx");
         }
 
     

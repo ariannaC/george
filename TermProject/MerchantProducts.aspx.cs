@@ -7,25 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace TermProject
 {
-    public partial class Product : System.Web.UI.Page
+    public partial class MerchantProducts : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-        }//pageload
-
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
 
         }
-
-
-
-    
-    
-    
-    
-    
-    }//end of class
-}//end of namespace
+    }
+}

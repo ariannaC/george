@@ -12,10 +12,13 @@
             width: 1214px;
             height: 320px;
             margin-left: 50px;
-            margin-top: 34px;
+            margin-top: 1px;
         }
         #form1 {
             margin-top: 0px;
+            height: 1141px;
+            width: 1230px;
+            margin-right: 44px;
         }
         .menuMasterPage {
             height: 52px;
@@ -23,11 +26,17 @@
             margin-right: 62px;
             margin-top: 3px;
         }
+        ..btn-group-justified {
+            margin-bottom: 3px;
+        }
+        ..btn-group-justified {
+            margin-bottom: 4px;
+        }
     </style>
 
     <link href="stylesheets/MasterPage.css" rel="stylesheet" />
 </head>
-<body style="height: 602px; margin-left: 14px; width: 1213px; margin-right: 88px;">
+<body style="height: 1213px; margin-left: 14px; width: 1299px; margin-right: 88px;">
 
     <form id="form1" runat="server">
 
@@ -35,7 +44,7 @@
          <ul>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton> 
-            <asp:LinkButton ID="lnkbtnLogOut" runat="server">Logout</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click">Logout</asp:LinkButton>
         </ul>
        
       <div class="welcome" position="absolute" style="width: 273px; height: 29px; margin-left: 24px;" >
@@ -46,16 +55,18 @@
        
     </div>
          <div style="margin-top: 14px">
-             <h1 style="margin-top: 0px; height: 69px; margin-right: 26px; margin-bottom: 18px;">ONE STOP MUCNCHIE SHOP</h1>
+             <h1 style="margin-top: 0px; height: 72px; margin-right: 26px; margin-bottom: 18px; margin-left: 15px; width: 1158px;">ONE STOP MUCNCHIE SHOP</h1>
         </div>
 
         <nav>
+            <div class =".btn-group-justified">
             <ul height: 26px; margin-left: 30px; margin-bottom: 36px"> 
-            <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click">Home</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnHome" runat="server" OnClick="lnkbtnHome_Click" Width="249px">Home</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMunchies" runat="server">Munchies</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnMovies" runat="server">Movies</asp:LinkButton>
-            <asp:LinkButton ID="lnkbtnGames" runat="server">Games</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnGames" runat="server" Width="270px">Games</asp:LinkButton>
             </ul>
+                </div>
         </nav>
 
 

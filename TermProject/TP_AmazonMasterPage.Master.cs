@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TP_Amazon_ClassLibrary;
 
 namespace TermProject
 {
@@ -11,24 +12,37 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie emailCookie = Request.Cookies["Login_Cookie"];
-            string email = emailCookie.Value.ToString();
-           lblWelcomeUser.Text = "Welcome " + email +"!";
+
+            if (!IsPostBack)
+            {
+                if (!(Request.Cookies["Login_Cookie"] == null))
+                {
+                    HttpCookie emailCookie = Request.Cookies["Login_Cookie"];
+                    lblWelcomeUser.Text = "Welcome " + emailCookie.Values["email"].ToString();   
+                }
+            }
         }
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Cart.aspx");
+            Response.Redirect("~/Cart.aspx");
         }
 
         protected void lnkbtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Product.aspx");
+            Response.Redirect("~/Product.aspx");
         }
 
         protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/CheckOut.aspx");   
+        }
+
+        protected void lnkbtnLogOut_Click(object sender, EventArgs e)
+        {
+            //empty cart
+            //empty email cookie?
+            Response.Redirect("~/Login");
         }
     }
 }

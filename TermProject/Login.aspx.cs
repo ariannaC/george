@@ -17,6 +17,7 @@ namespace TP
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -34,8 +35,8 @@ namespace TP
             //if cookie exists
             if (Session["email"] !=null)
             {
-                HttpCookie emailCookie = Request.Cookies["UserEmail"];
-                txtEmail.Text = emailCookie.Value.ToString();
+                HttpCookie emailCookie = Request.Cookies["Login_Cookie"];
+                txtEmail.Text = emailCookie.Values["email"].ToString();
                 chkbxRemeberMe.Checked = true;
             }
 
@@ -45,13 +46,12 @@ namespace TP
                     //if "Remember Me" is checked, store userName in cookie
                     if (chkbxRemeberMe.Checked)
                     {
-                        HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                        myCookie.Values["email"] = txtEmail.Text;
+                        HttpCookie emailCookie = new HttpCookie("Login_Cookie");//cookie's name
+                        emailCookie.Values["email"] = txtEmail.Text;           //set cookies value
 
-                        myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                        myCookie.Expires = new DateTime(2025, 1, 1);
-
-                        Response.Cookies.Add(myCookie);
+                        emailCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                        emailCookie.Expires = DateTime.Now.AddYears(1);
+                        Response.Cookies.Add(emailCookie);
                     }
                     else 
                     {
