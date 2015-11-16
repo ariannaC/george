@@ -61,6 +61,7 @@
     <Content Include="CheckOut.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MerchantProducts.aspx" />
     <Content Include="Product.aspx" />
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
@@ -108,6 +109,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantProducts.aspx.cs">
+      <DependentUpon>MerchantProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MerchantProducts.aspx.designer.cs">
+      <DependentUpon>MerchantProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>

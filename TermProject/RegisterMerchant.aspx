@@ -12,9 +12,9 @@
        
   &nbsp;<div class ="content">
 
-      <div class ="statusbar">
-          <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="37px" />
-          <asp:Button ID="Button1" runat="server" Height="33px" OnClick="Button1_Click" Text="&lt;" Width="33px" />
+      <div >
+          <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="31px" OnClick="btnCancel_Click" Width="38px"  />
+         
       </div> 
        <h1>Register as a Business </h1>
      
@@ -28,7 +28,7 @@
            
             <asp:Label ID="lbl" runat="server" Text="Name" CssClass="FBlabel"></asp:Label>
 
-            <asp:TextBox ID="txtName" runat="server" Width="486px" Height="30px" style="margin-left: 4px; margin-top: 11px; margin-bottom: 0px;" CssClass="FBtxtbox"></asp:TextBox>
+            <asp:TextBox ID="txtName" runat="server" Width="486px" Height="23px" style="margin-left: 4px; margin-top: 11px; margin-bottom: 0px;" CssClass="FBtxtbox"></asp:TextBox>
             <br />
             <asp:Label ID="lblInvalidName" runat="server"></asp:Label>
         </div>
@@ -38,7 +38,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:Label ID="Label2" runat="server" Text="Password" CssClass="FBlabel"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtpassword" runat="server" Height="22px" TextMode="Password" Width="392px"></asp:TextBox>
+                <asp:TextBox ID="txtpassword" runat="server" Height="23px" TextMode="Password" Width="392px"></asp:TextBox>
 &nbsp;<br />
                 <asp:Label ID="lblPasswordsDontmatch" runat="server"></asp:Label>
             </div>
@@ -76,11 +76,11 @@
          <div class="floating-boxxx">
 
           
-             <asp:Button ID="btnRegister" runat="server" Height="35px" OnClick="btnContinue_Click" Text="Register Business" Width="481px" Font-Names="Century Gothic" Font-Size="Medium" />
+             <asp:Button ID="btnRegister" runat="server" Height="35px" OnClick="btnContinue_Click" Text="Register Business" Width="615px" Font-Names="Century Gothic" Font-Size="Medium" />
              &nbsp;
              <asp:Label ID="lblGeneralError" runat="server"></asp:Label>
              <br />
-             <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" />
+             <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" OnCheckedChanged="chkbxRemeberMe_CheckedChanged" />
               </div>
 
                     
