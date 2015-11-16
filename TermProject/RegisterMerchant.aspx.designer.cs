@@ -67,15 +67,6 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// lblInvalidName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInvalidName;
-        
-        /// <summary>
         /// lblAddress control.
         /// </summary>
         /// <remarks>
@@ -101,23 +92,5 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
-        
-        /// <summary>
-        /// lblGeneralError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGeneralError;
-        
-        /// <summary>
-        /// chkbxRemeberMe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkbxRemeberMe;
     }
 }
