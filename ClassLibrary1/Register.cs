@@ -65,6 +65,7 @@ namespace TP_Amazon_ClassLibrary
  
         }
 
+        
 
     }//end of Register class
 

@@ -53,7 +53,7 @@ namespace TermProjectWS
         }
 
         [WebMethod]
-        public Boolean RegisterSite(String SiteID, String Description, String APIKey, String email, string contactInfo)
+        public Boolean RegisterSite(String SiteID, String GroupName, String APIKey, String email, string Address)
         {
            // This method will create a record for a site that will sell products on your behalf. You will need to store the Site’s 
             //ID and it should return true when it successfully registers a site and false when the registration fails. 
@@ -65,9 +65,9 @@ namespace TermProjectWS
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "RegisterSite";
             command.Parameters.AddWithValue("@APIKey", APIKey);
-            command.Parameters.AddWithValue("@Desccription", Description);
+            command.Parameters.AddWithValue("@GroupName", GroupName);
             command.Parameters.AddWithValue("@Email", email);
-            command.Parameters.AddWithValue("@Contact", contactInfo);
+            command.Parameters.AddWithValue("@Address", Address);
             SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
             outputparam.Direction = ParameterDirection.Output;
             command.Parameters.Add(outputparam);
@@ -93,18 +93,24 @@ namespace TermProjectWS
                  command.Parameters.AddWithValue("@Email", cust.email);
                  command.Parameters.AddWithValue("@Name", cust.name);
                  command.Parameters.AddWithValue("@ShippingAddress", cust.shippingAddress);
-    //        @ShippingCity varchar(MAX),
-    //@ShippingState varchar(MAX),
-    //@ShippingZipCode int,
-    //@ShippingCountry varchar(MAX),
-    //@BillingAddress varchar(MAX),
-    //@BillingCity varchar(MAX),
-    //@BillingState varchar(MAX),
-    //@BillingCountry varchar(MAX),
-    //@BillingZip varchar(MAX)
-
-
-                 return true;
+                 command.Parameters.AddWithValue("@ShippingCity", cust.shippingCity);
+                 command.Parameters.AddWithValue("@ShippingState", cust.shippingState);
+                 command.Parameters.AddWithValue("@ShippingCountry", cust.shippingCountry);
+                 command.Parameters.AddWithValue("@ShippingZipCode", cust.shippingZipcode);
+                 command.Parameters.AddWithValue("@BillingAddress", cust.billingAddress);
+                 command.Parameters.AddWithValue("@BillingCity", cust.billingCity);
+                 command.Parameters.AddWithValue("@BillingState", cust.billingState);
+                 command.Parameters.AddWithValue("@BillingZip", cust.billingZipcode);
+                 SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
+                 outputparam.Direction = ParameterDirection.Output;
+                 command.Parameters.Add(outputparam);
+                 int RETVAL;
+                 RETVAL = int.Parse(command.Parameters["@RETVAL"].Value.ToString());
+                 if (RETVAL == 1)
+                 {
+                     return true;
+                 }
+                 return false;
              }
 
         //[WebMethod]

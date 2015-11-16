@@ -9,9 +9,11 @@ namespace TP_Amazon_ClassLibrary
     public class Merchant
     {
         //Personal Merchant Variables 
-        public string name;
+        public string groupName;
         public string email;
+        public string apikey;
         public string password;
+        public string address;
 
         //Shipping Addresss Variables
         public string shippingAddress;

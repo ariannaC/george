@@ -26,48 +26,17 @@
      
         <div class="floating-box">
            
-            <asp:Label ID="lbl" runat="server" Text="Name" CssClass="FBlabel"></asp:Label>
+            <asp:Label ID="lbl" runat="server" Text="Group" CssClass="FBlabel"></asp:Label>
 
             <asp:TextBox ID="txtName" runat="server" Width="486px" Height="30px" style="margin-left: 4px; margin-top: 11px; margin-bottom: 0px;" CssClass="FBtxtbox"></asp:TextBox>
             <br />
             <asp:Label ID="lblInvalidName" runat="server"></asp:Label>
         </div>
            
-      <div class="floating-box">
-               
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Label ID="Label2" runat="server" Text="Password" CssClass="FBlabel"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="txtpassword" runat="server" Height="22px" TextMode="Password" Width="392px"></asp:TextBox>
-&nbsp;<br />
-                <asp:Label ID="lblPasswordsDontmatch" runat="server"></asp:Label>
-            </div>
-                <div class="floating-box">
-               
-                    <asp:Label ID="Label3" runat="server" Text="Re-enter Password" CssClass="FBlabel"></asp:Label>
-                    <asp:TextBox ID="txtReenterPassword" runat="server" CssClass="FBtxtbox" Height="23px" Width="390px" TextMode="Password"></asp:TextBox>
-&nbsp;</div>
        <div class="floating-box">
             <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtAddress" runat="server" Width="451px" style="margin-left: 0px" CssClass="FBtxtbox" Height="26px"></asp:TextBox>
-        </div>
-            <div class="floating-box">
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblCity" runat="server" Text="City"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCity" runat="server" style="margin-left: 0px" Width="444px" CssClass="FBtxtbox" Height="30px"></asp:TextBox>
-        </div>
-
-            <div class="floating-box">
-            &nbsp;<asp:Label ID="lblState" runat="server" Text="State"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtState" runat="server" Height="26px" Width="452px" MaxLength="2"></asp:TextBox>
-        </div>
-        <div class="floating-box">
-            <asp:Label ID="lblZip" runat="server" Text="Zipcode"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox5" runat="server" Width="458px" Height="35px" MaxLength="5"></asp:TextBox>
         </div>
 
 
@@ -80,8 +49,10 @@
              &nbsp;
              <asp:Label ID="lblGeneralError" runat="server"></asp:Label>
              <br />
-             <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" />
               </div>
+
+                    
+             <asp:CheckBox ID="chkbxRemeberMe" runat="server"  Text="Remember Me at Login" />
 
                     
          </div>                                                                           
