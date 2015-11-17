@@ -65,6 +65,22 @@ namespace TP_Amazon_ClassLibrary
  
         }
 
+        //public bool AddCard(CreditCardClass cc, Customer matilda)
+        //{
+        //    DBConnect DB = new DBConnect();
+        //    SqlCommand command = new SqlCommand();
+        //    command.CommandType = CommandType.StoredProcedure;
+        //    command.CommandText = "AddCard";
+        //    command.Parameters.AddWithValue("@CreditCardNumber", cc.CardNumber);
+        //    command.Parameters.AddWithValue("@CVV", cc.CVV);
+        //    command.Parameters.AddWithValue("@AccountNumber", cc.AccountNumber);
+        //    command.Parameters.AddWithValue("@CreditLimit", cc.CreditLimit);
+        //    command.Parameters.AddWithValue("@AccountBalance", cc.AccountBalance);
+        //    command.Parameters.AddWithValue("@Name", matilda.name);
+
+        //    return (DB.DoUpdateUsingCmdObj(command) > 0) ? true : false;
+
+        //}
         
 
     }//end of Register class

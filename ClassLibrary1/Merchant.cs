@@ -14,6 +14,7 @@ namespace TP_Amazon_ClassLibrary
         public string apikey;
         public string password;
         public string address;
+        public string url;
 
         //Shipping Addresss Variables
         public string shippingAddress;

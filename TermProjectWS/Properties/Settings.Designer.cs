@@ -22,5 +22,16 @@ namespace TermProjectWS.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/theWebService.asm" +
+            "x")]
+        public string TermProjectWS_Project3WebRef_TheWebService {
+            get {
+                return ((string)(this["TermProjectWS_Project3WebRef_TheWebService"]));
+            }
+        }
     }
 }

@@ -37,7 +37,12 @@
             <asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtAddress" runat="server" Width="445px" style="margin-left: 0px" CssClass="FBtxtbox" Height="26px"></asp:TextBox>
+
         </div>
+      <div class ="floating-box">
+          <asp:Label ID="lblURL" runat="server" Text="Site URL"></asp:Label>
+           <asp:TextBox ID="txtURL" runat="server" Width="445px" style="margin-left: 0px" CssClass="FBtxtbox" Height="26px"></asp:TextBox>
+      </div>
 
 
        

@@ -30,6 +30,7 @@ namespace TermProject
             newMerchant.groupName = txtName.Text;
             newMerchant.email = txtEmail.Text;
             newMerchant.address = txtAddress.Text;
+            newMerchant.url = txtURL.Text;
 
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
@@ -37,6 +38,7 @@ namespace TermProject
             command.Parameters.AddWithValue("@GroupName", newMerchant.groupName);
             command.Parameters.AddWithValue("@Email", newMerchant.email);
             command.Parameters.AddWithValue("@Address", newMerchant.address);
+            command.Parameters.AddWithValue("@URL", newMerchant.url);
             DB.DoUpdateUsingCmdObj(command);
 
             DB = new DBConnect();

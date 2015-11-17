@@ -80,10 +80,12 @@ namespace TermProjectWS
 
             return false;
         }
-//------------------------------------------------------------------------------------------------------------------------
+
         public Boolean Purchase(String ProductID, int Quantity, String APIKey, string[] customercardinfo)
         {
-
+            //copied and pasted code from project3ws and modiefied to work with this project
+            //my verify method was super weird and very specific to the previous project
+            //however i still use the basic functionality with the verifyinfo stored procedure
             DBConnect db = new DBConnect();
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
@@ -105,7 +107,7 @@ namespace TermProjectWS
             SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
             outputparam.Direction = ParameterDirection.Output;
             command.Parameters.Add(outputparam);
-
+            Project3WebRef.TheWebService pxy = new Project3WebRef.TheWebService();
             SqlCommand c = new SqlCommand();
             c.CommandType = CommandType.StoredProcedure;
             c.CommandText = "TPVerifyInfo";
@@ -120,6 +122,7 @@ namespace TermProjectWS
             return false;
         }
 
+//------------------------------------project3ws stuff---------------------------------------------------------------
         //[WebMethod]
         //public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)
         //{
