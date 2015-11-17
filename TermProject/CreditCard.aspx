@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 style="width: 775px">Cards On File
     </h1>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Height="267px" Width="811px" style="margin-right: 27px">
+    <asp:GridView ID="gvCreditCards" runat="server" AutoGenerateColumns="False" Height="267px" Width="811px" style="margin-right: 27px">
         <Columns>
             <asp:BoundField DataField="CreditCardID" HeaderText="CreditCardID" />
             <asp:BoundField DataField="Name" HeaderText="Name" />
@@ -17,10 +17,11 @@
     </asp:GridView>
     <br />
     <br />
-    <asp:Button ID="Button1" runat="server" Height="49px" style="margin-left: 117px" Text="APPLY FOR AMAZON CREDIT CARD" Width="357px" />
     <br />
     <br />
     <br />
     <br />
+    <asp:Button ID="Button2" runat="server" Height="50px" style="margin-left: 55px" Text="APPLY FOR AMAZON CREDIT CARD" Width="238px" />
+    <asp:Button ID="btnAddNewCard" runat="server" Height="50px" style="margin-left: 55px" Text="ADD NEW CREDIT CARD" Width="238px" />
     <br />
 </asp:Content>
