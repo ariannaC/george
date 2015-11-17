@@ -40,9 +40,13 @@ namespace TermProject
 
         protected void lnkbtnLogOut_Click(object sender, EventArgs e)
         {
-            //empty cart
-            //empty email cookie?
-            Response.Redirect("~/Login");
+            Session.Abandon();
+            Response.Redirect("~/Login.aspx");
+        }
+
+        protected void btnAccount_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreditCard.aspx");
         }
     }
 }

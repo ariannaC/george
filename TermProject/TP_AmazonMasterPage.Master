@@ -40,11 +40,12 @@
 
     <form id="form1" runat="server">
 
-    <div class="banner" style="height: 38px; margin-left: 0px; margin-bottom: 15px; width: 1210px; margin-top: 11px; margin-right: 7px;">
+    <div class="banner" style="height: 38px; margin-left: 0px; margin-bottom: 15px; width: 1169px; margin-top: 11px; margin-right: 7px;">
          <ul>
+             <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Width="84px">Account</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton> 
-            <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click">Logout</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Width="75px">Logout</asp:LinkButton>
         </ul>
        
       <div class="welcome" position="absolute" style="width: 273px; height: 29px; margin-left: 24px;" >

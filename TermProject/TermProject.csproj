@@ -63,11 +63,13 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MerchantProducts.aspx" />
+    <Content Include="NewCardApplication.aspx" />
     <Content Include="Product.aspx" />
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
+    <Content Include="stylesheets\NewCreditCard.css" />
     <Content Include="stylesheets\ProductStyle.css" />
     <Content Include="stylesheets\Registration.css" />
     <Content Include="Properties\Settings.settings">
@@ -124,6 +126,13 @@
     </Compile>
     <Compile Include="MerchantProducts.aspx.designer.cs">
       <DependentUpon>MerchantProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewCardApplication.aspx.cs">
+      <DependentUpon>NewCardApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewCardApplication.aspx.designer.cs">
+      <DependentUpon>NewCardApplication.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
