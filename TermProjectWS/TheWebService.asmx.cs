@@ -80,38 +80,45 @@ namespace TermProjectWS
 
             return false;
         }
+//------------------------------------------------------------------------------------------------------------------------
+        public Boolean Purchase(String ProductID, int Quantity, String APIKey, string[] customercardinfo)
+        {
 
-        public Boolean Purchase(String ProductID, int Quantity, String APIKey, Customer cust)
-             {
-                 DBConnect db = new DBConnect();
-                 SqlCommand command = new SqlCommand();
-                 command.CommandType = CommandType.StoredProcedure;
-                 command.CommandText = "PurchaseItem";
-                 command.Parameters.AddWithValue("@ProductID", ProductID);
-                 command.Parameters.AddWithValue("@Quantity", Quantity);
-                 command.Parameters.AddWithValue("@APIKey", APIKey);
-                 command.Parameters.AddWithValue("@Email", cust.email);
-                 command.Parameters.AddWithValue("@Name", cust.name);
-                 command.Parameters.AddWithValue("@ShippingAddress", cust.shippingAddress);
-                 command.Parameters.AddWithValue("@ShippingCity", cust.shippingCity);
-                 command.Parameters.AddWithValue("@ShippingState", cust.shippingState);
-                 command.Parameters.AddWithValue("@ShippingCountry", cust.shippingCountry);
-                 command.Parameters.AddWithValue("@ShippingZipCode", cust.shippingZipcode);
-                 command.Parameters.AddWithValue("@BillingAddress", cust.billingAddress);
-                 command.Parameters.AddWithValue("@BillingCity", cust.billingCity);
-                 command.Parameters.AddWithValue("@BillingState", cust.billingState);
-                 command.Parameters.AddWithValue("@BillingZip", cust.billingZipcode);
-                 SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
-                 outputparam.Direction = ParameterDirection.Output;
-                 command.Parameters.Add(outputparam);
-                 int RETVAL;
-                 RETVAL = int.Parse(command.Parameters["@RETVAL"].Value.ToString());
-                 if (RETVAL == 1)
-                 {
-                     return true;
-                 }
-                 return false;
-             }
+            DBConnect db = new DBConnect();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PurchaseItem";
+            command.Parameters.AddWithValue("@ProductID", ProductID);
+            command.Parameters.AddWithValue("@Quantity", Quantity);
+            command.Parameters.AddWithValue("@APIKey", APIKey);
+            command.Parameters.AddWithValue("@Email", customercardinfo[0]);
+            command.Parameters.AddWithValue("@Name", customercardinfo[1]);
+            command.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
+            command.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
+            command.Parameters.AddWithValue("@ShippingState", customercardinfo[4]);
+            command.Parameters.AddWithValue("@ShippingCountry", customercardinfo[5]);
+            command.Parameters.AddWithValue("@ShippingZipCode", customercardinfo[6]);
+            command.Parameters.AddWithValue("@BillingAddress", customercardinfo[7]);
+            command.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
+            command.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
+            command.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
+            SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
+            outputparam.Direction = ParameterDirection.Output;
+            command.Parameters.Add(outputparam);
+
+            SqlCommand c = new SqlCommand();
+            c.CommandType = CommandType.StoredProcedure;
+            c.CommandText = "TPVerifyInfo";
+            c.Parameters.AddWithValue("@CreditCardNum", customercardinfo[11]);
+            c.Parameters.AddWithValue("@CVV", customercardinfo[12]);
+            int RETVAL;
+            RETVAL = int.Parse(command.Parameters["@RETVAL"].Value.ToString());
+            if (RETVAL == 1)
+            {
+                return true;
+            }
+            return false;
+        }
 
         //[WebMethod]
         //public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)

@@ -8,6 +8,7 @@ using TP_Amazon_ClassLibrary;
 using System.Data.SqlClient;
 using Utilities;
 using System.Data.SqlTypes;
+using System.Data;
 
 namespace TermProject
 {
@@ -31,39 +32,41 @@ namespace TermProject
             newMerchant.address = txtAddress.Text;
 
             SqlCommand command = new SqlCommand();
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "RegisterMerchant";
             command.Parameters.AddWithValue("@GroupName", newMerchant.groupName);
             command.Parameters.AddWithValue("@Email", newMerchant.email);
             command.Parameters.AddWithValue("@Address", newMerchant.address);
             DB.DoUpdateUsingCmdObj(command);
 
+            DB = new DBConnect();
             SqlCommand key = new SqlCommand();
-            key.CommandType = System.Data.CommandType.StoredProcedure;
+            key.CommandType = CommandType.StoredProcedure;
             key.CommandText = "InsertKey";
-            command.Parameters.AddWithValue("@GroupName", newMerchant.groupName);
-            string apikey = DB.GetDataSetUsingCmdObj(key).ToString();
+            key.Parameters.AddWithValue("@GroupName", newMerchant.groupName);
+            DataSet ds = DB.GetDataSetUsingCmdObj(key);
+            string apikey = ds.Tables[0].Rows[0]["APIKey"].ToString();
             lblGeneralError.Text = "Your APIKey is " + apikey;
             
  
             //Stored procedure to insert new merchant into a merchant table
 
             //if "Remember Me" is checked, store userName in cookie
-            if (chkbxRemeberMe.Checked)
-            {
-                HttpCookie emailCookie = new HttpCookie("Login_Cookie");//cookie's name
-                emailCookie.Values["email"] = txtEmail.Text;           //set cookies value
+            //if (chkbxRemeberMe.Checked)
+            //{
+            //    HttpCookie emailCookie = new HttpCookie("Login_Cookie");//cookie's name
+            //    emailCookie.Values["email"] = txtEmail.Text;           //set cookies value
 
-                emailCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                emailCookie.Expires = DateTime.Now.AddYears(1);
-                Response.Cookies.Add(emailCookie);
-            }
-            else
-            {
-                //remove user's email from username textbox
-                Response.Cookies.Remove("mycookie");
-            }
-            Response.Redirect("Login.aspx");
+            //    emailCookie.Values["LastVisited"] = DateTime.Now.ToString();
+            //    emailCookie.Expires = DateTime.Now.AddYears(1);
+            //    Response.Cookies.Add(emailCookie);
+            //}
+            //else
+            //{
+            //    //remove user's email from username textbox
+            //    Response.Cookies.Remove("mycookie");
+            //}
+            //Response.Redirect("Login.aspx");
 
 
 
