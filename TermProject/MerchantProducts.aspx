@@ -22,11 +22,12 @@
 
     </div>
     
-    <asp:GridView ID="gvMerchantProducts" runat="server" Height="237px" Width="900px" AutoGenerateColumns="False">
+    <asp:GridView ID="gvMerchantProducts" runat="server" Height="237px" Width="917px" AutoGenerateColumns="False">
         <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ID" />
             <asp:BoundField DataField="Name" HeaderText="Name" />
             <asp:BoundField DataField="Department" HeaderText="Department" />
+            <asp:BoundField DataField="img URL" />
             <asp:CommandField ShowSelectButton="True" />
         </Columns>
     </asp:GridView>
