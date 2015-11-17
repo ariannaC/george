@@ -20,7 +20,10 @@ namespace TP_Amazon_ClassLibrary
             objCommand.CommandText = "AddTPCustomer";
             objCommand.Parameters.AddWithValue("@Email", newCustomer.email );
             objCommand.Parameters.AddWithValue("@password", newCustomer.password);
-            objCommand.Parameters.AddWithValue("@Name", newCustomer.name);
+            objCommand.Parameters.AddWithValue("@address", newCustomer.shippingAddress);
+            objCommand.Parameters.AddWithValue("@city", newCustomer.shippingAddress);
+            objCommand.Parameters.AddWithValue("@state", newCustomer.shippingState);
+            objCommand.Parameters.AddWithValue("@zipcode", newCustomer.shippingZipcode);
 
             //integer to determine if value was added into DB or not
             int result= objDB.DoUpdateUsingCmdObj(objCommand);
@@ -47,10 +50,10 @@ namespace TP_Amazon_ClassLibrary
             DBConnect objDB = new DBConnect();
             myDS = objDB.GetDataSetUsingCmdObj(objCommand);
 
-            bool returnvalue;
+            bool returnvalue = true;
 
             //if the values are found in the DB return true
-            if (myDS.Tables[0].Rows.Count == 1)
+            if (myDS.Tables[0].Rows.Count <= 1)
             {
                 returnvalue = true;
             }
@@ -60,6 +63,7 @@ namespace TP_Amazon_ClassLibrary
             {
                 returnvalue = false;
             }
+
             return returnvalue;
             
  

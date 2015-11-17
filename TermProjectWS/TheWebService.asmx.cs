@@ -122,6 +122,70 @@ namespace TermProjectWS
             return false;
         }
 
+
+        [WebMethod]
+        public void updateName(string name, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateAccountName";
+            sqlCommand.Parameters.AddWithValue("@Name", name);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void updateCardNumber(float cardNumber, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateCardNumber";
+            sqlCommand.Parameters.AddWithValue("@CardNumber", cardNumber);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateExpMonth(int expMonth, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateExpMonth";
+            sqlCommand.Parameters.AddWithValue("@ExpMonth", expMonth);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateExpYear(int expYear, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateExpYear";
+            sqlCommand.Parameters.AddWithValue("@ExpYear", expYear);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+        [WebMethod]
+        public void UpdateCSV(int CSV, int AccountID)
+        {
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "UpdateCSV";
+            sqlCommand.Parameters.AddWithValue("@CSV", CSV);
+            sqlCommand.Parameters.AddWithValue("@AccountID", AccountID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+        }
+
+
+
+
 //------------------------------------project3ws stuff---------------------------------------------------------------
         //[WebMethod]
         //public void VerifyCard(Customer fred, CreditCardClass cc, object[] stupid)
