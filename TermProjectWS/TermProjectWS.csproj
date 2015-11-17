@@ -62,6 +62,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\TermProjectWS.pubxml" />
     <None Include="Web References\Project3WebRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

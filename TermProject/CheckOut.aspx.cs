@@ -16,7 +16,7 @@ namespace TermProject
 
         protected void btnAddCreditCard_Click(object sender, EventArgs e)
         {
-           // 
+            Response.Redirect("NewCardApplication.aspx");
         }
     }
 }

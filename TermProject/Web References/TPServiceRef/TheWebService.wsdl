@@ -1,101 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="GetDepartments">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetDepartmentsResponse">
+      <s:element name="HelloWorld">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentsResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="tns:CreditCardClass" />
+            <s:element minOccurs="0" maxOccurs="1" name="arthur" type="tns:CustomerClass" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetProductCatalog">
+      <s:complexType name="CreditCardClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CCID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CVV" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CardNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountNumber" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditLimit" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountBalance" type="s:float" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CustomerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HelloWorldResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="DepartmentNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="HelloWorldResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetProductCatalogResponse">
+      <s:element name="UpdateCustomer">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetProductCatalogResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="fred" type="tns:CustomerClass" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="tns:CreditCardClass" />
+            <s:element minOccurs="0" maxOccurs="1" name="stupid" type="tns:ArrayOfAnyType" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RegisterSite">
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateCustomerResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SiteID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="APIKey" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCustomerResult" type="tns:ArrayOfString" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RegisterSiteResponse">
+      <s:element name="GetCreditLimit">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="RegisterSiteResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCreditLimitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCreditLimitResult" type="s:float" />
           </s:sequence>
         </s:complexType>
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="GetDepartmentsSoapIn">
-    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
   </wsdl:message>
-  <wsdl:message name="GetDepartmentsSoapOut">
-    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
-  <wsdl:message name="GetProductCatalogSoapIn">
-    <wsdl:part name="parameters" element="tns:GetProductCatalog" />
+  <wsdl:message name="UpdateCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
   </wsdl:message>
-  <wsdl:message name="GetProductCatalogSoapOut">
-    <wsdl:part name="parameters" element="tns:GetProductCatalogResponse" />
+  <wsdl:message name="UpdateCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
   </wsdl:message>
-  <wsdl:message name="RegisterSiteSoapIn">
-    <wsdl:part name="parameters" element="tns:RegisterSite" />
+  <wsdl:message name="GetCreditLimitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCreditLimit" />
   </wsdl:message>
-  <wsdl:message name="RegisterSiteSoapOut">
-    <wsdl:part name="parameters" element="tns:RegisterSiteResponse" />
+  <wsdl:message name="GetCreditLimitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCreditLimitResponse" />
   </wsdl:message>
   <wsdl:portType name="TheWebServiceSoap">
-    <wsdl:operation name="GetDepartments">
-      <wsdl:input message="tns:GetDepartmentsSoapIn" />
-      <wsdl:output message="tns:GetDepartmentsSoapOut" />
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetProductCatalog">
-      <wsdl:input message="tns:GetProductCatalogSoapIn" />
-      <wsdl:output message="tns:GetProductCatalogSoapOut" />
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input message="tns:UpdateCustomerSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="RegisterSite">
-      <wsdl:input message="tns:RegisterSiteSoapIn" />
-      <wsdl:output message="tns:RegisterSiteSoapOut" />
+    <wsdl:operation name="GetCreditLimit">
+      <wsdl:input message="tns:GetCreditLimitSoapIn" />
+      <wsdl:output message="tns:GetCreditLimitSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="TheWebServiceSoap" type="tns:TheWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetDepartments">
-      <soap:operation soapAction="http://tempuri.org/GetDepartments" style="document" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -103,8 +124,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProductCatalog">
-      <soap:operation soapAction="http://tempuri.org/GetProductCatalog" style="document" />
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -112,8 +133,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegisterSite">
-      <soap:operation soapAction="http://tempuri.org/RegisterSite" style="document" />
+    <wsdl:operation name="GetCreditLimit">
+      <soap:operation soapAction="http://tempuri.org/GetCreditLimit" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -124,8 +145,8 @@
   </wsdl:binding>
   <wsdl:binding name="TheWebServiceSoap12" type="tns:TheWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetDepartments">
-      <soap12:operation soapAction="http://tempuri.org/GetDepartments" style="document" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -133,8 +154,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProductCatalog">
-      <soap12:operation soapAction="http://tempuri.org/GetProductCatalog" style="document" />
+    <wsdl:operation name="UpdateCustomer">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCustomer" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -142,8 +163,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="RegisterSite">
-      <soap12:operation soapAction="http://tempuri.org/RegisterSite" style="document" />
+    <wsdl:operation name="GetCreditLimit">
+      <soap12:operation soapAction="http://tempuri.org/GetCreditLimit" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -154,10 +175,10 @@
   </wsdl:binding>
   <wsdl:service name="TheWebService">
     <wsdl:port name="TheWebServiceSoap" binding="tns:TheWebServiceSoap">
-      <soap:address location="http://localhost:27714/TheWebService.asmx" />
+      <soap:address location="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx" />
     </wsdl:port>
     <wsdl:port name="TheWebServiceSoap12" binding="tns:TheWebServiceSoap12">
-      <soap12:address location="http://localhost:27714/TheWebService.asmx" />
+      <soap12:address location="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

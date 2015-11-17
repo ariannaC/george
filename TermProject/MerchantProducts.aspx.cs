@@ -32,11 +32,11 @@ namespace TermProject
 
         public void showDepartments()
         {
-            TPServiceRef.TheWebService pxy = new TPServiceRef.TheWebService();
-            string depNumber = txtDepartmentNumber.Text;
-            DataSet ds = pxy.GetProductCatalog(depNumber);
-            gvMerchantProducts.DataSource = ds;
-            gvMerchantProducts.DataBind();
+            //TPServiceRef.TheWebService pxy = new TPServiceRef.TheWebService();
+            //string depNumber = txtDepartmentNumber.Text;
+            //DataSet ds = pxy.GetProductCatalog(depNumber);
+            //gvMerchantProducts.DataSource = ds;
+            //gvMerchantProducts.DataBind();
 
         }
 

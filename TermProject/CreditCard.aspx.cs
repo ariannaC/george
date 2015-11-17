@@ -14,7 +14,13 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             DBConnect objdb = new DBConnect();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "TPgetCustomerCard";
+            DataSet ds = objdb.GetDataSetUsingCmdObj(command);
+            gvCreditCards.DataSource = ds;
+            gvCreditCards.DataBind();
         }
 
 
@@ -25,7 +31,7 @@ namespace TermProject
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "GetAllCC";
             DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
-            gvCreditCards.DataSource = ds;
+          //  gvCreditCards.DataSource = ds;
             gvCreditCards.DataBind();
  
  
