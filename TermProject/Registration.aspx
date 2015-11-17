@@ -68,7 +68,7 @@
         <div class="floating-box">
             <asp:Label ID="lblZip" runat="server" Text="Zipcode"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox5" runat="server" Height="22px" MaxLength="5" CssClass="FBtxtbox" Width="454px"></asp:TextBox>
+            <asp:TextBox ID="txtZipcode" runat="server" Height="22px" MaxLength="5" CssClass="FBtxtbox" Width="454px"></asp:TextBox>
         </div>
 
 

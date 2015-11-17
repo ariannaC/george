@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 style="width: 775px">Cards On File
     </h1>
-    <asp:GridView ID="gvCreditCards" runat="server" AutoGenerateColumns="False" Height="267px" Width="811px" style="margin-right: 27px">
+    <asp:GridView ID="gvCreditCards" runat="server" AutoGenerateColumns="False" Height="267px" Width="811px" style="margin-right: 27px" OnRowUpdating="gvCreditCards_RowUpdating">
         <Columns>
             <asp:BoundField DataField="CreditCardID" HeaderText="CreditCardID" />
             <asp:BoundField DataField="Name" HeaderText="Name" />

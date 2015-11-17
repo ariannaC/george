@@ -15,13 +15,21 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBConnect dbobj = new DBConnect();
-            SqlCommand objCommand = new SqlCommand();
-            objCommand.CommandType = CommandType.StoredProcedure;
-            objCommand.CommandText = "GetDepartments";
-           ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
-           ddlDepartments.DataTextField = "DepartmentName";
-            ddlDepartments.DataBind();  
+            if (Session["emailSession"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+
+                DBConnect dbobj = new DBConnect();
+                SqlCommand objCommand = new SqlCommand();
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GetDepartments";
+                ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
+                ddlDepartments.DataTextField = "DepartmentName";
+                ddlDepartments.DataBind();
+            }
         }
 
         protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)

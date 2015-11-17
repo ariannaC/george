@@ -20,44 +20,48 @@ namespace TermProject
         {
             Register register = new Register();
             Customer newCustomer = new Customer();
-            newCustomer.name = txtName.Text;
-            newCustomer.email = txtEmail.Text;
-            newCustomer.password = txtpassword.Text;
-            
-            
             //all fields are valid
-            if (ValidFields())
-            {
-                //Add new Customer to TP_Customer DB
-                register.AddNewCustomer(newCustomer);
+          
+                newCustomer.name = txtName.Text;
+                newCustomer.email = txtEmail.Text;
+                newCustomer.password = txtpassword.Text;
+                newCustomer.shippingAddress = txtAddress.Text;
+                newCustomer.shippingCity = txtCity.Text;
+                newCustomer.shippingState = txtState.Text;
+                newCustomer.shippingZipcode = 19000;
 
-                //if "Remember Me" is checked, store userName in cookie
-                if (chkbxRemeberMe.Checked)
+      //if (ValidFields())
+      //  {
+      //          //Add new Customer to TP_Customer DB
+                if (register.AddNewCustomer(newCustomer) == true)
                 {
-                    HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                    myCookie.Values["email"] = txtEmail.Text;
-                    myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                    myCookie.Expires = new DateTime(2025, 1, 1);
-                    Response.Cookies.Add(myCookie);
+                    //if "Remember Me" is checked, store userName in cookie
+                    if (chkbxRemeberMe.Checked)
+                    {
+                        HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                        myCookie.Values["email"] = txtEmail.Text;
+                        myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                        myCookie.Expires = new DateTime(2025, 1, 1);
+                        Response.Cookies.Add(myCookie);
+                    }
+                    else
+                    {
+                        //remove user's email from username textbox
+                        Response.Cookies.Remove("mycookie");
+                    }
                 }
-                else
-                {
-                    //remove user's email from username textbox
-                    Response.Cookies.Remove("mycookie");
-                }
-
                 Response.Redirect("~/Login.aspx");
-            }
+           
 
             //not all fields are valid
-            else 
-            {
-                clearFields();
-                lblGeneralError.Text = "Error. Try Again.";
-            }
+            //else 
+            //{
+            //    clearFields();
+            //    lblGeneralError.Text = "Error. Try Again.";
+            //}
 
-
-        }//end of Registerbutton click event
+        }
+       // }//end of Registerbutton click event
 
 
         public bool ValidFields()

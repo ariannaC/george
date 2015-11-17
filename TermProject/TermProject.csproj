@@ -196,6 +196,10 @@
       <Project>{50a20593-4a47-426f-8741-b5a1179d8203}</Project>
       <Name>TP_Amazon_ClassLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TermProjectWS\TermProjectWS.csproj">
+      <Project>{1baaa74a-5be5-4b27-8213-797d14494c49}</Project>
+      <Name>TermProjectWS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{d23deb4d-3ab8-4063-9932-4f7499ec069d}</Project>
       <Name>Utilities</Name>

@@ -32,7 +32,7 @@ namespace TP
           
             bool loginWorked = register.ValidLogin(txtEmail.Text, txtPassword.Text);     
             
-            //if cookie exists
+            //if session exists, load cookie value into txtbx
             if (Session["email"] !=null)
             {
                 HttpCookie emailCookie = Request.Cookies["Login_Cookie"];
@@ -41,8 +41,11 @@ namespace TP
             }
 
             //if user enters a valid username and password
-            if (loginWorked == true)
+            if (loginWorked)
             {
+                //store email in session then redirect  
+                Session["emailSession"] = txtEmail.Text;
+                Response.Redirect("~/CheckOut.aspx");
                     //if "Remember Me" is checked, store userName in cookie
                     if (chkbxRemeberMe.Checked)
                     {
@@ -58,7 +61,8 @@ namespace TP
                         //remove user's email from username textbox
                         Response.Cookies.Remove("mycookie"); 
                     }
-                    Response.Redirect("~/Product.aspx");
+            
+           
 
             }//end of loginWorked if statement
 
@@ -81,3 +85,6 @@ namespace TP
 
 
 }//end of namespace
+
+
+
