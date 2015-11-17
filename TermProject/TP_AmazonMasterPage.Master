@@ -26,10 +26,10 @@
             margin-right: 62px;
             margin-top: 3px;
         }
-        ..btn-group-justified {
+        .btn-group-justified {
             margin-bottom: 3px;
         }
-        ..btn-group-justified {
+        .btn-group-justified {
             margin-bottom: 4px;
         }
     </style>

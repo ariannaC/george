@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class ="contentHolderco">
+    <div class ="contentHolderco">
     <h2 style="margin-bottom: 10px">SHIPPING ADDRESS </h2>
      <div class="floating-box">
             &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
@@ -43,14 +43,14 @@
             <div class="floating-box">
             &nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label3" runat="server" Text="City"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox3" runat="server" style="margin-left: 0px" Width="461px" CssClass="FBtxtbox" Height="30px"></asp:TextBox>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="TextBox3" runat="server" style="margin-left: 7px" Width="461px" CssClass="FBtxtbox" Height="30px"></asp:TextBox>
         </div>
 
             <div class="floating-box">
             &nbsp;<asp:Label ID="Label4" runat="server" Text="State"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Height="26px" Width="461px" MaxLength="2" style="margin-left: 11px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" Height="26px" Width="461px" MaxLength="2" style="margin-left: 7px"></asp:TextBox>
         </div>
         <div class="floating-box">
             <asp:Label ID="Label5" runat="server" Text="Zipcode"></asp:Label>
@@ -70,7 +70,7 @@
     <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="378px" style="margin-left: 14px; margin-right: 10px; margin-bottom: 0px">
     </asp:DropDownList>
     &nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnAddCreditCard" runat="server" Text="Add credit/debit card" style="margin-bottom: 0px" />
+    <asp:Button ID="btnAddCreditCard" runat="server" Text="ADD NEW CREDIT CARD" style="margin-bottom: 0px" OnClick="btnAddCreditCard_Click" />
     <br />
     <asp:CheckBox ID="chkbxSaveCard" runat="server" Text="Save Card" />
         </div>
