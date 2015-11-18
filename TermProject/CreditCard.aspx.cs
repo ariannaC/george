@@ -16,25 +16,42 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-             DBConnect objdb = new DBConnect();
-            SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "TPgetCustomerCard";
-            DataSet ds = objdb.GetDataSetUsingCmdObj(command);
-            gvCreditCards.DataSource = ds;
-            gvCreditCards.DataBind();
+            if (Session["emailSession"] == null)
+            {
+                Response.Redirect("Login.aspx");
+                return;
+            }
+            
+            // DBConnect objdb = new DBConnect();
+            //SqlCommand command = new SqlCommand();
+            //command.CommandType = CommandType.StoredProcedure;
+            //command.CommandText = "TPgetCustomerCard";
+            //DataSet ds = objdb.GetDataSetUsingCmdObj(command);
+            //gvCreditCards.DataSource = ds;
+            //gvCreditCards.DataBind();
+
+
+            string email = Session["emailSession"].ToString();
+
+            loadCreditCards(email);
+
         }
 
 
-        public void loadCreditCards()
+        public void loadCreditCards(string email)
         {
             DBConnect objdb = new DBConnect();
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.CommandText = "GetAllCC";
+            sqlCommand.CommandText = "TPgetCustomerCard";
+            sqlCommand.Parameters.AddWithValue("@Email",email);
             DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
-            gvCreditCards.DataSource = dataset;
-            gvCreditCards.DataBind();
+
+            if (dataset.Tables[0].Rows.Count > 0)
+            {
+                gvCreditCards.DataSource = dataset;
+                gvCreditCards.DataBind();
+            }
         }
 
 
@@ -82,6 +99,11 @@ namespace TermProject
 
             gvCreditCards.EditIndex = -1;
         
+        }
+
+        protected void btnAddNewCard_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/NewCardApplication.aspx");
         } 
            // showAccounts();
 
