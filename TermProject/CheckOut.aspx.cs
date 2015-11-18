@@ -42,6 +42,8 @@ namespace TermProject
             if (dataset.Tables[0].Rows.Count > 0)
             {
                 ddlCreditCardList.DataSource = dataset;
+                ddlCreditCardList.DataTextField = "CardNumber";
+                ddlCreditCardList.DataValueField = "CardNumber";
                 ddlCreditCardList.DataBind();
             }
         }
