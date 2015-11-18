@@ -32,6 +32,7 @@ namespace TermProject
             int CSV;
             int expMonth;
             int expYear;
+            string email = Session["emailSession"].ToString();
 
             //conditions
             bool validCardNumber = float.TryParse(txtCardNumber.Text, out cardNumber);
@@ -59,6 +60,7 @@ namespace TermProject
             command.Parameters.AddWithValue("@CreditLimit", 1000);
             command.Parameters.AddWithValue("@AccountBalance", 0);
             command.Parameters.AddWithValue("@Name", name);
+            command.Parameters.AddWithValue("@Email", email);
             db.DoUpdateUsingCmdObj(command);
 
             //CHECK IF CC WAS ADDED SUCCESSFULLY

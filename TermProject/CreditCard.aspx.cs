@@ -22,13 +22,13 @@ namespace TermProject
                 return;
             }
             
-             DBConnect objdb = new DBConnect();
-            SqlCommand command = new SqlCommand();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "TPgetCustomerCard";
-            DataSet ds = objdb.GetDataSetUsingCmdObj(command);
-            gvCreditCards.DataSource = ds;
-            gvCreditCards.DataBind();
+            // DBConnect objdb = new DBConnect();
+            //SqlCommand command = new SqlCommand();
+            //command.CommandType = CommandType.StoredProcedure;
+            //command.CommandText = "TPgetCustomerCard";
+            //DataSet ds = objdb.GetDataSetUsingCmdObj(command);
+            //gvCreditCards.DataSource = ds;
+            //gvCreditCards.DataBind();
 
 
             string email = Session["emailSession"].ToString();
@@ -46,8 +46,12 @@ namespace TermProject
             sqlCommand.CommandText = "TPgetCustomerCard";
             sqlCommand.Parameters.AddWithValue("@Email",email);
             DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
-            gvCreditCards.DataSource = dataset;
-            gvCreditCards.DataBind();
+
+            if (dataset.Tables[0].Rows.Count > 0)
+            {
+                gvCreditCards.DataSource = dataset;
+                gvCreditCards.DataBind();
+            }
         }
 
 

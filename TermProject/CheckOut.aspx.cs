@@ -23,6 +23,8 @@ namespace TermProject
 
             string email = Session["emailSession"].ToString();
 
+
+
             loadCreditCards(email);
 
 
@@ -34,13 +36,15 @@ namespace TermProject
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "TPgetCustomerCard";
-            sqlCommand.Parameters.AddWithValue("@email",email);
+            sqlCommand.Parameters.AddWithValue("@email", email);
             DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
-            ddlCreditCardList.DataSource = dataset;
-            ddlCreditCardList.DataBind();
-          
-        }
 
+            if (dataset.Tables[0].Rows.Count > 0)
+            {
+                ddlCreditCardList.DataSource = dataset;
+                ddlCreditCardList.DataBind();
+            }
+        }
 
 
         
