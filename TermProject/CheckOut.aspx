@@ -67,7 +67,7 @@
     <div>
     <asp:Label ID="Label1" runat="server" Text="Select Existing Card"></asp:Label>
     &nbsp;
-    <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="378px" style="margin-left: 14px; margin-right: 10px; margin-bottom: 0px">
+    <asp:DropDownList ID="ddlCreditCardList" runat="server" Height="27px" Width="378px" style="margin-left: 14px; margin-right: 10px; margin-bottom: 0px">
     </asp:DropDownList>
     &nbsp;&nbsp;&nbsp;
     <asp:Button ID="btnAddCreditCard" runat="server" Text="ADD NEW CREDIT CARD" style="margin-bottom: 0px" OnClick="btnAddCreditCard_Click" />

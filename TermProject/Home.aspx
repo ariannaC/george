@@ -7,7 +7,7 @@
     <div style="width: 1083px">
     <asp:Label ID="lblselectDep" runat="server" Text="Select a Department"></asp:Label>
     &nbsp;&nbsp;&nbsp;
-    <asp:DropDownList ID="ddlDepartments" runat="server" Height="24px" Width="420px" AutoPostBack="True">
+    <asp:DropDownList ID="ddlDepartments" runat="server" Height="24px" Width="420px" AutoPostBack="True" OnSelectedIndexChanged="ddlDepartments_SelectedIndexChanged">
     </asp:DropDownList>
     </div>
 
