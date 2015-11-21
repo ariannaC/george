@@ -29,8 +29,11 @@ namespace TermProject
                 ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
                 ddlDepartments.DataTextField = "DepartmentName";
                 ddlDepartments.DataBind();
+                loadProductsIntoGrid(); 
+
+               
             }
-        }
+        }//end of pageload
 
         protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -55,11 +58,18 @@ namespace TermProject
             //display data from each item in Product DB into correct template feilds
             //display product name into label
             //display product url image into image
-         //  for(int i = 0; i <   ; i++)
-            {
-                //Label lblProductName = (Label)gvRow.FindControl("lblProductName"); 
-               // Label productName = (Label)gvProducts.Rows[i].FindControl("lblProductName");
-            }
+
+           //foreach(GridViewRow row in gvProducts.Rows )
+           //{
+           //     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+           //     {
+           //        lblProductName.Text =  product.ItemArray[2].ToString();
+
+
+           //        lblProductName = (Label)gvProducts.Rows[i].FindControl("lblProductName"); 
+           //        // Label productName = (Label)gvProducts.Rows[i].FindControl("lblProductName");
+           //     }
+           //}
   
         }
 

@@ -15,10 +15,11 @@ namespace TermProject
 
             if (!IsPostBack)
             {
-                if (!(Request.Cookies["Login_Cookie"] == null))
+                if (!(Session["emailSession"] == null))
                 {
-                    HttpCookie emailCookie = Request.Cookies["Login_Cookie"];
-                    lblWelcomeUser.Text = "Welcome " + emailCookie.Values["email"].ToString();   
+                    string email = Session["emailSession"].ToString();
+
+                    lblWelcomeUser.Text = "Welcome " + email;   
                 }
             }
         }
@@ -30,7 +31,7 @@ namespace TermProject
 
         protected void lnkbtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Product.aspx");
+            Response.Redirect("~/ProductCatalog.aspx");
         }
 
         protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
