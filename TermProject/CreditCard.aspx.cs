@@ -21,8 +21,8 @@ namespace TermProject
                 Response.Redirect("Login.aspx");
                 return;
             }
-            
-            // DBConnect objdb = new DBConnect();
+
+            //DBConnect objdb = new DBConnect();
             //SqlCommand command = new SqlCommand();
             //command.CommandType = CommandType.StoredProcedure;
             //command.CommandText = "TPgetCustomerCard";
@@ -44,13 +44,15 @@ namespace TermProject
             SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.CommandText = "TPgetCustomerCard";
-            sqlCommand.Parameters.AddWithValue("@Email",email);
+            sqlCommand.Parameters.AddWithValue("@email",email);
             DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
 
             if (dataset.Tables[0].Rows.Count > 0)
             {
-                gvCreditCards.DataSource = dataset;
-                gvCreditCards.DataBind();
+               // gvCreditCards.DataSource = dataset;
+               // gvCreditCards.DataBind();
+                GridView1.DataSource = dataset;
+                GridView1.DataBind();
             }
         }
 
@@ -61,25 +63,25 @@ namespace TermProject
             int rowIndex = e.RowIndex;
             //get accountID value from textbox field
             int accountID = int.Parse(gvCreditCards.Rows[rowIndex].Cells[1].Text);
-           // MerchantStore.MerchantStore pxy = new MerchantStore.MerchantStore();
+            // MerchantStore.MerchantStore pxy = new MerchantStore.MerchantStore();
             TPServiceRef.TheWebService pxy = new TPServiceRef.TheWebService();
-  
+
             //string accountNumber = gvAccounts.Rows[rowIndex].Cells[1].Text;
 
             // Retrieve a reference to the TextBox in the row for the Name
             TextBox TBoxName;
             TBoxName = (TextBox)gvCreditCards.Rows[rowIndex].Cells[2].Controls[0];
             string name = TBoxName.Text;
-           // pxy.updateName(name, accountID);
+            // pxy.updateName(name, accountID);
 
             // Retrieve a reference to the TextBox in the row for the CardNumber
             TextBox TBoxCardNum;
             TBoxCardNum = (TextBox)gvCreditCards.Rows[rowIndex].Cells[3].Controls[0];
             float cardnum = float.Parse(TBoxCardNum.Text);
-          //  pxy.updateCardNumber(cardnum, accountID);
+            //  pxy.updateCardNumber(cardnum, accountID);
 
             // Retrieve a reference to the TextBox in the row for the expMonth
-             TextBox TBoxmonth;
+            TextBox TBoxmonth;
             TBoxmonth = (TextBox)gvCreditCards.Rows[rowIndex].Cells[4].Controls[0];
             int expMonth = int.Parse(TBoxmonth.Text);
             //pxy.UpdateExpMonth(expMonth, accountID);
@@ -89,16 +91,16 @@ namespace TermProject
             TextBox TBoxYear;
             TBoxYear = (TextBox)gvCreditCards.Rows[rowIndex].Cells[5].Controls[0];
             int expYear = int.Parse(TBoxYear.Text);
-           // pxy.UpdateExpYear(expYear, accountID);
+            // pxy.UpdateExpYear(expYear, accountID);
 
             // Retrieve a reference to the TextBox in the row for the CSV
             TextBox TBoxCSV;
             TBoxCSV = (TextBox)gvCreditCards.Rows[rowIndex].Cells[6].Controls[0];
             int csv = int.Parse(TBoxCSV.Text);
-           // pxy.UpdateCSV(csv, accountID);
+            // pxy.UpdateCSV(csv, accountID);
 
             gvCreditCards.EditIndex = -1;
-        
+
         }
 
         protected void btnAddNewCard_Click(object sender, EventArgs e)

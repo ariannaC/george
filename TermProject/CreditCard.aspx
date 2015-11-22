@@ -20,4 +20,6 @@
     <asp:Button ID="Button2" runat="server" Height="50px" style="margin-left: 55px" Text="APPLY FOR AMAZON CREDIT CARD" Width="238px" />
     <asp:Button ID="btnAddNewCard" runat="server" Height="50px" style="margin-left: 55px" Text="ADD NEW CREDIT CARD" Width="238px" OnClick="btnAddNewCard_Click" />
     <br />
+    <asp:GridView ID="GridView1" runat="server">
+    </asp:GridView>
 </asp:Content>
