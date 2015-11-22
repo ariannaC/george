@@ -16,25 +16,27 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["emailSession"] == null)
+            if (!IsPostBack)
             {
-                Response.Redirect("Login.aspx");
-                return;
+                if (Session["emailSession"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                    return;
+                }
+
+                //DBConnect objdb = new DBConnect();
+                //SqlCommand command = new SqlCommand();
+                //command.CommandType = CommandType.StoredProcedure;
+                //command.CommandText = "TPgetCustomerCard";
+                //DataSet ds = objdb.GetDataSetUsingCmdObj(command);
+                //gvCreditCards.DataSource = ds;
+                //gvCreditCards.DataBind();
+
+
+                string email = Session["emailSession"].ToString();
+
+                loadCreditCards(email);
             }
-
-            //DBConnect objdb = new DBConnect();
-            //SqlCommand command = new SqlCommand();
-            //command.CommandType = CommandType.StoredProcedure;
-            //command.CommandText = "TPgetCustomerCard";
-            //DataSet ds = objdb.GetDataSetUsingCmdObj(command);
-            //gvCreditCards.DataSource = ds;
-            //gvCreditCards.DataBind();
-
-
-            string email = Session["emailSession"].ToString();
-
-            loadCreditCards(email);
-
         }
 
 
@@ -56,59 +58,25 @@ namespace TermProject
             }
         }
 
-
-
-        protected void gvCreditCards_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            //get accountID value from textbox field
-            int accountID = int.Parse(gvCreditCards.Rows[rowIndex].Cells[1].Text);
-            // MerchantStore.MerchantStore pxy = new MerchantStore.MerchantStore();
-            TPServiceRef.TheWebService pxy = new TPServiceRef.TheWebService();
-
-            //string accountNumber = gvAccounts.Rows[rowIndex].Cells[1].Text;
-
-            // Retrieve a reference to the TextBox in the row for the Name
-            TextBox TBoxName;
-            TBoxName = (TextBox)gvCreditCards.Rows[rowIndex].Cells[2].Controls[0];
-            string name = TBoxName.Text;
-            // pxy.updateName(name, accountID);
-
-            // Retrieve a reference to the TextBox in the row for the CardNumber
-            TextBox TBoxCardNum;
-            TBoxCardNum = (TextBox)gvCreditCards.Rows[rowIndex].Cells[3].Controls[0];
-            float cardnum = float.Parse(TBoxCardNum.Text);
-            //  pxy.updateCardNumber(cardnum, accountID);
-
-            // Retrieve a reference to the TextBox in the row for the expMonth
-            TextBox TBoxmonth;
-            TBoxmonth = (TextBox)gvCreditCards.Rows[rowIndex].Cells[4].Controls[0];
-            int expMonth = int.Parse(TBoxmonth.Text);
-            //pxy.UpdateExpMonth(expMonth, accountID);
-
-
-            // Retrieve a reference to the TextBox in the row for the expYear
-            TextBox TBoxYear;
-            TBoxYear = (TextBox)gvCreditCards.Rows[rowIndex].Cells[5].Controls[0];
-            int expYear = int.Parse(TBoxYear.Text);
-            // pxy.UpdateExpYear(expYear, accountID);
-
-            // Retrieve a reference to the TextBox in the row for the CSV
-            TextBox TBoxCSV;
-            TBoxCSV = (TextBox)gvCreditCards.Rows[rowIndex].Cells[6].Controls[0];
-            int csv = int.Parse(TBoxCSV.Text);
-            // pxy.UpdateCSV(csv, accountID);
-
-            gvCreditCards.EditIndex = -1;
-
-        }
-
         protected void btnAddNewCard_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/NewCardApplication.aspx");
+        }
+
+        protected void btnEditCard_Click(object sender, EventArgs e)
+        {
+            for (int row = 0; row < GridView1.Rows.Count; row++)
+            {
+                CheckBox cb = (CheckBox)GridView1.Rows[row].FindControl("cbEdit");
+
+                if (cb.Checked == true)
+                {
+                    Response.Redirect("NewCardApplication.aspx?cardID=" + GridView1.Rows[row].Cells[1].Text);
+                }
+            }
         } 
            // showAccounts();
-
+        
     
 
     }//end of class

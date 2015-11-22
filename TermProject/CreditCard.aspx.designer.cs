@@ -13,13 +13,13 @@ namespace TermProject {
     public partial class CreditCard {
         
         /// <summary>
-        /// gvCreditCards control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCreditCards;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Button2 control.
@@ -40,12 +40,12 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Button btnAddNewCard;
         
         /// <summary>
-        /// GridView1 control.
+        /// btnEditCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Button btnEditCard;
     }
 }

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <h1>ADD NEW CREDIT CARD
+        <h1 id ="pageHeader" runat ="server">ADD NEW CREDIT CARD
         </h1>
 
     </div>           
