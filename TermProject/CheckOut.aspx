@@ -76,5 +76,7 @@
         </div>
     <br />
 
+        <asp:Button ID="btnCheckOut" runat="server" OnClick="btnCheckOut_Click" Text="Process Order" />
+
        </div>
 </asp:Content>

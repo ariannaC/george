@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using Utilities;
+using TP_Amazon_ClassLibrary;
 
 namespace TermProject
 {
@@ -54,6 +55,15 @@ namespace TermProject
         protected void btnAddCreditCard_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewCardApplication.aspx");
+        }
+
+        protected void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            CartItem Item = new CartItem();
+            Item.AddQuantity(3);
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            cart.AddItem(Item);
+            Session["Cart"] = cart;
         }
     }
 }

@@ -35,6 +35,12 @@ namespace TP_Amazon_ClassLibrary
                 }
             }
 
+            public void AddItem(CartItem Item)
+            {
+                cartItems.Add(Item);
+                
+            }
+
             
         
 

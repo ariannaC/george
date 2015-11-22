@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utilities;
 
 
 
@@ -16,7 +17,7 @@ namespace TP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
 
         }
 
@@ -43,6 +44,16 @@ namespace TP
             //if user enters a valid username and password
             if (loginWorked)
             {
+                Serialize objSerialize = new Serialize();
+                Cart cart = (Cart)objSerialize.ReadCartFromDB(txtEmail.Text);
+                if (cart != null)
+                {
+                    Session["Cart"] = cart;
+                }
+                else
+                {
+                    Session["Cart"] = new Cart();
+                }
                 //store email in session then redirect  
                 Session["emailSession"] = txtEmail.Text;
                 Response.Redirect("~/CheckOut.aspx");
@@ -62,7 +73,11 @@ namespace TP
                         //remove user's email from username textbox
                         Response.Cookies.Remove("mycookie"); 
                     }
-            
+                
+                //gets or sets a new serialized cart object
+                   
+
+                    
            
 
             }//end of loginWorked if statement
