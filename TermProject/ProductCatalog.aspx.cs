@@ -29,7 +29,7 @@ namespace TermProject
                 ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
                 ddlDepartments.DataTextField = "DepartmentName";
                 ddlDepartments.DataBind();
-                loadProductsIntoGrid(); 
+              //  loadProductsIntoGrid(); 
 
                
             }
@@ -59,8 +59,9 @@ namespace TermProject
             //display product name into label
             //display product url image into image
 
-           //foreach(GridViewRow row in gvProducts.Rows )
-           //{
+            foreach(GridViewRow row in gvProducts.Rows)
+          {
+                
            //     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
            //     {
            //        lblProductName.Text =  product.ItemArray[2].ToString();
@@ -69,7 +70,7 @@ namespace TermProject
            //        lblProductName = (Label)gvProducts.Rows[i].FindControl("lblProductName"); 
            //        // Label productName = (Label)gvProducts.Rows[i].FindControl("lblProductName");
            //     }
-           //}
+          }
   
         }
 

@@ -11,8 +11,6 @@
     </asp:DropDownList>
     </div>
 
-    <br />
-
     
 
      <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" Height="247px" style="margin-right: 21px; margin-top: 6px; margin-left: 29px;" Width="856px" OnSelectedIndexChanged="gvProducts_SelectedIndexChanged">
@@ -20,14 +18,13 @@
             
             <asp:TemplateField>
 
-                <ItemTemplate>
+               <ItemTemplate>
                     <div style= margin-left: 5px; margin-right: 2px">
-                            <asp:Label ID="lblProductName" runat="server" Text="Label" width="100%"></asp:Label>
+                    <asp:Label ID="lblProductName" runat="server" Text="Label" width="100%"></asp:Label>
                      </div> 
 
-                     <div style="height: 225px; width: 307px">      
-                            <asp:Image ID="imgProduct" runat="server" width="105%"
-                            ImageUrl='<%# Bind("ImageFile", "Images/Products/{0}") %>' Height="230px" />
+                     <div>      
+                            <img alt="" src="" style="height: 226px; width: 222px" />
                      </div>
                        
                      <div>
@@ -45,13 +42,12 @@
                      </div> 
 
                      <div>      
-                            <asp:Image ID="imgProduct" runat="server" width="100%"
-                            ImageUrl='<%# Bind("ImageFile", "Images/Products/{0}") %>' />
+                              <img alt="" src="" style="height: 226px; width: 222px" />
                      </div>
                        
                      <div>
                              <asp:Button ID="btnView" runat="server" Text="View" style="margin-bottom: 5px" Width="208px"  />
-                        </div>
+                     </div>
                 </ItemTemplate>
 
             </asp:TemplateField>
@@ -66,8 +62,7 @@
                      </div> 
 
                      <div>      
-                            <asp:Image ID="imgProduct" runat="server" width="100%"
-                            ImageUrl='<%# Bind("ImageFile", "Images/Products/{0}") %>' />
+                              <img alt="" src="" style="height: 226px; width: 222px" />
                      </div>
                        
                      <div>
@@ -80,6 +75,11 @@
 
         </Columns>
     </asp:GridView>
+
+    <br />
+
+    
+
     <br />
    <br />
 
