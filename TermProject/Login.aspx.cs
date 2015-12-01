@@ -45,14 +45,14 @@ namespace TP
             if (loginWorked)
             {
                 Serialize objSerialize = new Serialize();
-                Cart cart = (Cart)objSerialize.ReadCartFromDB(txtEmail.Text);
+               TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)objSerialize.ReadCartFromDB(txtEmail.Text);
                 if (cart != null)
                 {
                     Session["Cart"] = cart;
                 }
                 else
                 {
-                    Session["Cart"] = new Cart();
+                    Session["Cart"] = new TP_Amazon_ClassLibrary.Cart();
                 }
                 //store email in session then redirect  
                 Session["emailSession"] = txtEmail.Text;

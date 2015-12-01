@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Amazon_ClassLibrary
 {
+    [Serializable]
     public class CartItem
     {
         //create empty object or add values on creation

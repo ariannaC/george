@@ -41,9 +41,9 @@ namespace TermProject
 
             if (Session["Cart"] != null)
             {
-                Cart cart = (Cart)Session["Cart"];
+                TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
                 Serialize objSerialize = new Serialize();
-                objSerialize.WriteCartToDB(cart, Session["UserName"]);
+                objSerialize.WriteCartToDB(cart, Session["emailSession"]);
             }
 
         }

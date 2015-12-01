@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Amazon_ClassLibrary
 {
+    [Serializable]
     public class Cart
     {
             //internal list of items and constructor which instantiates it

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Amazon_ClassLibrary
 {
+    [Serializable]
     public class Product
     {
         public string ProductID { get; set; }

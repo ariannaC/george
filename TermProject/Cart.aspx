@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TP_AmazonMasterPage.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="TermProject.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TP_AmazonMasterPage.Master" AutoEventWireup="true" CodeBehind="
+    .aspx.cs" Inherits="TermProject.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -14,6 +15,6 @@
             <asp:TextBox ID="txtQuantity" type="number" runat="server"></asp:TextBox>
         </ItemTemplate>
     </asp:Repeater>
-    <asp:Button ID="btnUpdate" runat="server" Text="Button" />
+    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
     <asp:Button ID="btnDelete" runat="server" Text="Button" />
 </asp:Content>
