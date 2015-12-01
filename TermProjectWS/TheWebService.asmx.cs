@@ -32,7 +32,8 @@ namespace TermProjectWS
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "GetDepartments";
             DataSet DepDS = DB.GetDataSetUsingCmdObj(command);
-
+            DepDS.Tables[0].Columns[0].ColumnName = "DepartmentNumber";
+            DepDS.Tables[0].Columns[1].ColumnName = "DepartmentName";
             return DepDS;
         }
 
@@ -48,8 +49,15 @@ namespace TermProjectWS
              command.CommandText = "ProductCatalog";
              command.Parameters.AddWithValue("@DepartmentNumber", DepartmentNumber);
              DataSet ProdDS = DB.GetDataSetUsingCmdObj(command);
+            ProdDS.Tables[0].Columns[0].ColumnName = "ProductID";
+            ProdDS.Tables[0].Columns[1].ColumnName = "Description";
+            ProdDS.Tables[0].Columns[2].ColumnName = "Price";
+            ProdDS.Tables[0].Columns[3].ColumnName = "QuantityOnHand";
+            ProdDS.Tables[0].Columns[4].ColumnName = "DepartmentNumber";
+            ProdDS.Tables[0].Columns[5].ColumnName = "URL";
 
             return ProdDS;
+
         }
 
         [WebMethod]
