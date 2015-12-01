@@ -1,20 +1,43 @@
+
 body
 {
 background-color:#2B3E50;
   color:  #EBEBEB;
-
-
 }
+
+* {
+    box-sizing: border-box;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
 .contentHolder 
 {
-    float:right;
     height: 892px;
-    width:1081px;
     top: 160px;
     margin-bottom: 0px;
-    margin-right: 72px;
       background-color: #4e5d6c;
+      width: 83.33%;
+      margin-right: 8.33%;
+      margin-left: 8.33%;
+      
 }
 
 nav
@@ -72,15 +95,17 @@ a:link, a:visited
     text-align:right;
 }
 
+.banner 
+{ float: right;
+}
+
 .banner ul 
 {
     float: right;
     height: 25px;
-    width: 471px;
-    padding:4px 0px;
-    margin:0px 0px 23px 11px;
-    display:inline-block;
+    display:block;
 }
+
 
 .btn-group-justified {
   display: table;
@@ -89,16 +114,7 @@ a:link, a:visited
   border-collapse: separate;
 }
 
-    .banner ul a 
-    {
-        width:30%;
 
-    }
-
-.banner h1 
-{
-    width: 63%;
-}
 
 /*.contentHolderco 
 {

@@ -32,23 +32,25 @@
         .btn-group-justified {
             margin-bottom: 4px;
         }
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </style>
 
    
 </head>
      <link href="stylesheets/MasterPage.css" rel="stylesheet" />
-<body style="height: 1213px; margin-left: 14px; width: 1299px; margin-right: 88px;">
+<body style="height: 1213px; margin-left: 14px; width: 1231px; margin-right: 88px;">
 
     <form id="form1" runat="server">
-
-    <div class="banner" style="height: 38px; margin-left: 0px; margin-bottom: 15px; width: 1176px; margin-top: 11px; margin-right: 7px;">
+    <div class ="row">
+    <div class="col-5 banner" style="height: 38px;">
          <ul>
-             <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click" Width="84px">Account</asp:LinkButton>
+             <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click">Account</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnCheckOut" runat="server" OnClick="lnkbtnCheckOut_Click">Check Out</asp:LinkButton> 
-            <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click" Width="77px">Logout</asp:LinkButton>
+            <asp:LinkButton ID="lnkbtnLogOut" runat="server" OnClick="lnkbtnLogOut_Click">Logout</asp:LinkButton>
         </ul>
-       
+       </div>
       <div class="welcome" position="absolute" style="width: 273px; height: 29px; margin-left: 24px;" >
           
           <asp:Label ID="lblWelcomeUser" runat="server" Font-Names="Times New Roman" Font-Size="Large"></asp:Label>
@@ -56,7 +58,7 @@
       </div>
        
     </div>
-         <div style="margin-top: 14px">
+         <div class="header" style="margin-top: 14px">
              <h1 style="margin-top: 0px; height: 72px; margin-right: 26px; margin-bottom: 18px; margin-left: 15px; width: 1161px;">ONE STOP MUCNCHIE SHOP</h1>
         </div>
 

@@ -50,7 +50,7 @@
             <div class="floating-box">
             &nbsp;<asp:Label ID="Label4" runat="server" Text="State"></asp:Label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="TextBox4" runat="server" Height="26px" Width="461px" MaxLength="2" style="margin-left: 7px"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" Height="26px" Width="464px" MaxLength="2" style="margin-left: 7px"></asp:TextBox>
         </div>
         <div class="floating-box">
             <asp:Label ID="Label5" runat="server" Text="Zipcode"></asp:Label>
