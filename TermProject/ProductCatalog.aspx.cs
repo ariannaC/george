@@ -15,30 +15,27 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["emailSession"] == null)
+            if (!IsPostBack)
             {
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
+                    if (Session["emailSession"] == null)
+                    {
+                        Response.Redirect("Login.aspx");
+                    }
+                    else
+                    {
 
-                DBConnect dbobj = new DBConnect();
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "GetDepartments";
-                ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
-                ddlDepartments.DataTextField = "DepartmentName";
-                ddlDepartments.DataBind();
-                loadProducts(); 
-
-               
+                        DBConnect dbobj = new DBConnect();
+                        SqlCommand objCommand = new SqlCommand();
+                        objCommand.CommandType = CommandType.StoredProcedure;
+                        objCommand.CommandText = "GetDepartments";
+                        ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
+                        ddlDepartments.DataTextField = "DepartmentName";
+                        ddlDepartments.DataBind();
+                        loadProducts();
+                }
             }
         }//end of pageload
 
-        protected void gvProducts_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         protected void btnViewProduct_Click(object sender, EventArgs e)
         {
@@ -68,7 +65,11 @@ namespace TermProject
 
         protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+            int rowIndex = e.Item.ItemIndex;
+            // Retrieve a value from a control in the Repeater's Items collection
+            string productID = rptProducts.Items[rowIndex].FindControl("lblProductID").ToString();
 
+            //stored procedure 
         }
 
 

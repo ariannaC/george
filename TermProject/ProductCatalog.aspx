@@ -14,7 +14,7 @@
     <br />
     <div style="width:100%">
         <div class="row">
-        <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand">
+        <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand" >
              <ItemTemplate>
                 <div class="col-3">
                                <asp:Label ID="lblName" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
