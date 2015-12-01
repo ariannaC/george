@@ -14,6 +14,7 @@ namespace TP_Amazon_ClassLibrary
         public int QuantityOnHand { get; set; }
         public int DepartmentNumber { get; set; }
         public string URL { get; set; }
+        public string merchantName { get; set; }
 
     }
 }

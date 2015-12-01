@@ -35,6 +35,37 @@ namespace TP_Amazon_ClassLibrary
             return display;
         }
 
+        public String ProductName
+        {
+            get
+            {
+                return this.Product.Description;
+            }
+        }
+
+        public decimal Price
+        {
+            get
+            {
+                return this.Product.Price;
+            }
+        }
+
+        public string MerchantName
+        {
+            get
+            {
+                return this.Product.merchantName;
+            }
+        }
+
+        public float Subtotal
+        {
+            get
+            {
+                return (float)this.Product.Price * this.Quantity;
+            }
+        }
 
 
     }

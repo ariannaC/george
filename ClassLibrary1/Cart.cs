@@ -9,7 +9,7 @@ namespace TP_Amazon_ClassLibrary
     public class Cart
     {
             //internal list of items and constructor which instantiates it
-            private List<CartItem> cartItems;
+            public List<CartItem> cartItems;
             public Cart()
             {
                 cartItems = new List<CartItem>();
@@ -40,6 +40,17 @@ namespace TP_Amazon_ClassLibrary
                 cartItems.Add(Item);
                 
             }
+
+            public void RemoveItem(CartItem Item)
+            {
+                cartItems.Remove(Item);
+            }
+
+            public void ClearCart()
+            {
+                cartItems = new List<CartItem>();
+            }
+
 
             
         
