@@ -28,7 +28,7 @@ namespace TermProject
                 newCustomer.shippingAddress = txtAddress.Text;
                 newCustomer.shippingCity = txtCity.Text;
                 newCustomer.shippingState = txtState.Text;
-                newCustomer.shippingZipcode = 19000;
+                newCustomer.shippingZipcode = 19000; //fix this! 
 
       //if (ValidFields())
       //  {
