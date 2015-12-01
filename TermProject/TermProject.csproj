@@ -60,6 +60,15 @@
     <Content Include="Cart.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="CreditCard.aspx" />
+    <Content Include="Images\Deth.jpg" />
+    <Content Include="Images\Hacky.JPG" />
+    <Content Include="Images\HalfBaked.JPG" />
+    <Content Include="Images\munchies.gif" />
+    <Content Include="Images\NB.jpg" />
+    <Content Include="Images\NerfBazooka.jpg" />
+    <Content Include="Images\pineapple.jpg" />
+    <Content Include="Images\SlimJims.jpg" />
+    <Content Include="Images\SquarePants.jpg" />
     <Content Include="ProductCatalog.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
@@ -71,6 +80,7 @@
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
     <Content Include="stylesheets\NewCreditCard.css" />
+    <Content Include="stylesheets\ProductCatalogStyle.css" />
     <Content Include="stylesheets\ProductStyle.css" />
     <Content Include="stylesheets\Registration.css" />
     <Content Include="Properties\Settings.settings">
@@ -107,7 +117,7 @@
     <Compile Include="CreditCard.aspx.designer.cs">
       <DependentUpon>CreditCard.aspx</DependentUpon>
     </Compile>
-	<Compile Include="Global.asax.cs">
+    <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ProductCatalog.aspx.cs">

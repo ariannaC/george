@@ -29,7 +29,7 @@ namespace TermProject
                 ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
                 ddlDepartments.DataTextField = "DepartmentName";
                 ddlDepartments.DataBind();
-              //  loadProductsIntoGrid(); 
+                loadProducts(); 
 
                
             }
@@ -46,35 +46,27 @@ namespace TermProject
 
         }
 
-        public void loadProductsIntoGrid()
+        public void loadProducts()
         {
+            //display data from each item in Product DB into correct template feilds
+            //display product name into label
+            //display product url image into image
+
             DBConnect dbobj = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "GetAllProducts";
             DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
-            DataRow product = ds.Tables[0].Rows[0];
-
-            //display data from each item in Product DB into correct template feilds
-            //display product name into label
-            //display product url image into image
-
-            foreach(GridViewRow row in gvProducts.Rows)
-          {
-                
-           //     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-           //     {
-           //        lblProductName.Text =  product.ItemArray[2].ToString();
-
-
-           //        lblProductName = (Label)gvProducts.Rows[i].FindControl("lblProductName"); 
-           //        // Label productName = (Label)gvProducts.Rows[i].FindControl("lblProductName");
-           //     }
-          }
-  
+            rptProducts.DataSource = ds;
+            rptProducts.DataBind();
         }
 
         protected void ddlDepartments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
         }
