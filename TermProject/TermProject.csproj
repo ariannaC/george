@@ -60,8 +60,8 @@
     <Content Include="Cart.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="CreditCard.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="ProductCatalog.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="MerchantProducts.aspx" />
     <Content Include="NewCardApplication.aspx" />
@@ -107,7 +107,7 @@
     <Compile Include="CreditCard.aspx.designer.cs">
       <DependentUpon>CreditCard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
+	<Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ProductCatalog.aspx.cs">
