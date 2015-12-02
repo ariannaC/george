@@ -14,12 +14,15 @@
     <br />
     <div style="width:100%">
         <div class="row">
-        <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand" >
+        <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand"  >
              <ItemTemplate>
                 <div class="col-3">
-                               <asp:Label ID="lblName" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
-                               <br />
-                               <asp:Image ID="imgProduct" ImageUrl='<%#Eval("URL").ToString() + ".jpg" %>>'  CssClass="imgProduct" runat="server" /><br />
+                               <asp:Label ID="lblProductDesc" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+                                <asp:HiddenField ID="hidPrice" runat="server" Value='<% #Eval("Price", "{0:c}")%>' />
+                                <asp:HiddenField ID="hidQOH" runat="server" Value='<% #Eval("QuantityOnHand")%>' />
+                                <asp:HiddenField ID="hidImgURL" runat="server" Value ='<% #Eval("URL").ToString() + ".jpg" %>>'/>
+                                <br />
+                    <asp:Image ID="imgProduct" ImageUrl='<% #Eval("URL") %>' CssClass="imgProduct" runat="server" /> 
                                <asp:Button ID="btnViewProduct" runat="server" Text="View" CssClass="btnViewProduct" />
                 </div>
              </ItemTemplate>

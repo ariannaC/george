@@ -67,9 +67,21 @@ namespace TermProject
         {
             int rowIndex = e.Item.ItemIndex;
             // Retrieve a value from a control in the Repeater's Items collection
-            string productID = rptProducts.Items[rowIndex].FindControl("lblProductID").ToString();
+            string productDesc = rptProducts.Items[rowIndex].FindControl("lblProductDesc").ToString();
+            string prodPrice = rptProducts.Items[rowIndex].FindControl("hidPrice").ToString();
+            string QOH = rptProducts.Items[rowIndex].FindControl("hidQOH").ToString();
+            string imgURL = rptProducts.Items[rowIndex].FindControl("hidImgURL").ToString();
 
-            //stored procedure 
+            Session["sessionProdDesc"] = productDesc;
+            Session["sessionProdPrice"] = prodPrice;
+            Session["sessionQOH"] = QOH;
+            Session["sessionImgURL"] = imgURL;
+            Response.Redirect("ProductDetails.aspx");
+            
+
+            //save productdesc in session to bring to next page 
+
+            //stored procedure to get product info where productdesc = ""
         }
 
 

@@ -7,9 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
          <div id="productData">   
-        <asp:Label ID="lblName" runat="server" Text="Label"></asp:Label>
-        <asp:Label ID="lblShortDescription" runat="server" Text="Label"></asp:Label>
-        <asp:Label ID="lblLongDescription" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="lblprodDesc" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="lblUnitPrice" runat="server" Text="Label"></asp:Label>
         <label id="lblQuantity">Quantity&nbsp;</label>
         <asp:TextBox ID="txtQuantity" runat="server"></asp:TextBox>   
