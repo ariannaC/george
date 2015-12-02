@@ -56,7 +56,7 @@ namespace TP
                 }
                 //store email in session then redirect  
                 Session["emailSession"] = txtEmail.Text;
-                Response.Redirect("~/CheckOut.aspx");
+                Response.Redirect("~/ProductCatalog.aspx");
 
                     //if "Remember Me" is checked, store userName in cookie
                     if (chkbxRemeberMe.Checked)

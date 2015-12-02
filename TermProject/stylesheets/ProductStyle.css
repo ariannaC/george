@@ -5,7 +5,10 @@
 {
     float: left;
     padding: 1em 2em;
-    margin-left: 113px;
+    margin-left: 45px;
+    margin-right: 62px;
+    margin-top: 47px;
+    margin-bottom: 17px;
 }
 
 #ddlProducts 
@@ -17,20 +20,37 @@
 #productData 
 {
     padding: 1em 0;
-    width: 400px;
+    width: 446px;
     float: left;
-    height: 278px;
+    height: 307px;
     margin-right: 0px;
+    margin-left: 14px;
 }
 
-#lblprodDesc, #lblUnitPrice 
+.lblprodDesc, .lblUnitPrice 
 {
     display: block;
+    margin-bottom: 0.8em;
+    margin-top: 8px;
+    margin-left: 13px;
+    margin-right: 4px;
+    float:right;
+}
+
+.lblName 
+{
+     display: block;
     margin-bottom: 1em;
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-right: 0px;
+    float:left;
+
 }
 
 #btnAdd {
     margin-right: 1em;
+    margin-top: 53px;
 }
 
 * {

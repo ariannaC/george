@@ -22,6 +22,15 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label lblprodDesc;
         
         /// <summary>
+        /// lblprice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblprice;
+        
+        /// <summary>
         /// lblUnitPrice control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUnitPrice;
+        
+        /// <summary>
+        /// lblQuantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQuantity;
         
         /// <summary>
         /// txtQuantity control.
