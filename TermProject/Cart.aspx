@@ -1,20 +1,36 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TP_AmazonMasterPage.Master" AutoEventWireup="true" CodeBehind="
-    .aspx.cs" Inherits="TermProject.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TP_AmazonMasterPage.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="TermProject.Cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:Repeater ID="rptCart" runat="server">
-        <ItemTemplate>
-            <asp:Label ID="lblProdName" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
-            <asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
-            <asp:Label ID="lblQuantOrdered" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
-            <asp:Label ID="lblSubtotal" runat="server" Text='<%# Eval("Subtotal") %>'></asp:Label>
-            <asp:Label ID="lblMerch" runat="server" Text='<%# Eval("MerchantName") %>'></asp:Label>
-            <asp:TextBox ID="txtQuantity" type="number" runat="server"></asp:TextBox>
-        </ItemTemplate>
-    </asp:Repeater>
-    <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
-    <asp:Button ID="btnDelete" runat="server" Text="Button" />
+    <div style="padding: 15px; width: 100%;">
+        <asp:Repeater ID="rptCart" runat="server">
+            <ItemTemplate>
+                <div style="text-align: center; border: solid; border-color: #98bf21; border-width: 2px; margin-bottom: 15px; width: 30%; float: left; margin-right: 15px; border-radius: 5px;">
+                    <h3>
+                        <asp:Label ID="lblProdName" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label></h3>
+                    <h4>$<asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label></h4>
+                    <p>
+                        <asp:Label ID="lblQuantOrdered" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
+                    </p>
+                    <p>
+                        <asp:Label ID="lblSubtotal" runat="server" Text='<%# Eval("Subtotal") %>'></asp:Label>
+                    </p>
+                    <p>
+                        <asp:Label ID="lblMerch" runat="server" Text='<%# Eval("MerchantName") %>'></asp:Label>
+                    </p>
+                    <p>
+                        <asp:TextBox ID="txtQuantity" type="number" runat="server"></asp:TextBox>
+                    </p>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div style="text-align:center;">
+        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+    </div>
 </asp:Content>

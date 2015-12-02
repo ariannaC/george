@@ -18,7 +18,7 @@ namespace TermProject
 
                 if (Session["Cart"] != null)
                 {
-                    //TEST CODE
+                    
                     //TP_Amazon_ClassLibrary.Product testProduct = new TP_Amazon_ClassLibrary.Product();
                     //testProduct.Description = "Test Product";
                     //testProduct.Price = 20;
