@@ -8,20 +8,21 @@
         <asp:Repeater ID="rptCart" runat="server">
             <ItemTemplate>
                 <div style="text-align: center; border: solid; border-color: #98bf21; border-width: 2px; margin-bottom: 15px; width: 30%; float: left; margin-right: 15px; border-radius: 5px;">
-                    <h3>
+                    <asp:CheckBox ID="chkSelect" runat="server" style="color:deeppink" /> Select
+                     <h3> <b>Name: </b>
                         <asp:Label ID="lblProdName" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label></h3>
-                    <h4>$<asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label></h4>
+                    <h4><b>Price: $</b><asp:Label ID="lblPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label></h4>
                     <p>
-                        <asp:Label ID="lblQuantOrdered" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
+                      <b>Quantity Ordered:  </b>  <asp:Label ID="lblQuantOrdered" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
                     </p>
                     <p>
-                        <asp:Label ID="lblSubtotal" runat="server" Text='<%# Eval("Subtotal") %>'></asp:Label>
+                      <b>Subtotal: $</b><asp:Label ID="lblSubtotal" runat="server" Text='<%# Eval("Subtotal") %>'></asp:Label>
                     </p>
                     <p>
-                        <asp:Label ID="lblMerch" runat="server" Text='<%# Eval("MerchantName") %>'></asp:Label>
+                       <b>Supplier: </b> <asp:Label ID="lblMerch" runat="server" Text='<%# Eval("MerchantName") %>'></asp:Label>
                     </p>
                     <p>
-                        <asp:TextBox ID="txtQuantity" type="number" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantity" placeholder="Update Quantity" type="number" runat="server"></asp:TextBox>
                     </p>
                 </div>
             </ItemTemplate>

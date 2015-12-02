@@ -43,13 +43,19 @@ namespace TermProject
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            //if (Session["Cart"] != null)
-            //{
-            //    TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
-            //    Serialize objSerialize = new Serialize();
-            //    objSerialize.WriteCartToDB(cart, Session["emailSession"]);
-            //}
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            for (int i = 0; i < rptCart.Items.Count; i++)
+            {
+                CheckBox cb = (CheckBox)rptCart.Items[i].FindControl("chkSelect");
+                if (cb.Checked == true)
+                {
+                    TextBox txtQ = (TextBox)rptCart.Items[i].FindControl("txtQuantity");
+                    cart.cartItems[i].Quantity += int.Parse(txtQ.Text);
+                }
+            }
+            rptCart.DataSource = cart.cartItems;
+            rptCart.DataBind();
+            Session["Cart"] = cart;
         }
     }
 }
