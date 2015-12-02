@@ -40,8 +40,7 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.LinkButton btnAccount;
         
         /// <summary>
-        /// lnkbtnView
-        /// control.
+        /// lnkbtnViewCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

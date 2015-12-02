@@ -63,26 +63,57 @@ namespace TermProject
 
         }
 
-        protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void rptProducts_ItemCommand(Object sender, System.Web.UI.WebControls.RepeaterCommandEventArgs e)
         {
             int rowIndex = e.Item.ItemIndex;
             // Retrieve a value from a control in the Repeater's Items collection
-            string productDesc = rptProducts.Items[rowIndex].FindControl("lblProductDesc").ToString();
-            string prodPrice = rptProducts.Items[rowIndex].FindControl("hidPrice").ToString();
-            string QOH = rptProducts.Items[rowIndex].FindControl("hidQOH").ToString();
-            string imgURL = rptProducts.Items[rowIndex].FindControl("hidImgURL").ToString();
+
+            Label prodDescLabel = (Label)rptProducts.Items[rowIndex].FindControl("lblProductDesc");
+            string productDesc = prodDescLabel.Text;
+
+            HiddenField prodPriceLabel = (HiddenField)rptProducts.Items[rowIndex].FindControl("hidPrice");
+            string prodPrice = prodPriceLabel.Value;
+
+            HiddenField QOHLabel = (HiddenField)rptProducts.Items[rowIndex].FindControl("hidQOH");
+            string QOH = QOHLabel.Value;
+
+            HiddenField imgURLLabel = (HiddenField)rptProducts.Items[rowIndex].FindControl("hidImgURL");
+            string imgURL = imgURLLabel.Value; 
 
             Session["sessionProdDesc"] = productDesc;
             Session["sessionProdPrice"] = prodPrice;
+           
             Session["sessionQOH"] = QOH;
             Session["sessionImgURL"] = imgURL;
             Response.Redirect("ProductDetails.aspx");
-            
+
 
             //save productdesc in session to bring to next page 
 
             //stored procedure to get product info where productdesc = ""
+ 
         }
+
+        //protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
+        //{
+        //    int rowIndex = e.Item.ItemIndex;
+        //    // Retrieve a value from a control in the Repeater's Items collection
+        //    string productDesc = rptProducts.Items[rowIndex].FindControl("lblProductDesc").ToString();
+        //    string prodPrice = rptProducts.Items[rowIndex].FindControl("hidPrice").ToString();
+        //    string QOH = rptProducts.Items[rowIndex].FindControl("hidQOH").ToString();
+        //    string imgURL = rptProducts.Items[rowIndex].FindControl("hidImgURL").ToString();
+
+        //    Session["sessionProdDesc"] = productDesc;
+        //    Session["sessionProdPrice"] = prodPrice;
+        //    Session["sessionQOH"] = QOH;
+        //    Session["sessionImgURL"] = imgURL;
+        //    Response.Redirect("ProductDetails.aspx");
+            
+
+        //    //save productdesc in session to bring to next page 
+
+        //    //stored procedure to get product info where productdesc = ""
+        //}
 
 
 
