@@ -11,6 +11,23 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["emailSession"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
+                //retrieve the product info selected
+                string prodDesc = Session["sessionProdDesc"].ToString();
+                string prodPrice = Session["sessionProdPrice"].ToString();
+                int QOH = Int32.Parse(Session["sessionQOH"].ToString());
+                string imgURL = Session["sessionImgURL"].ToString();
+ 
+            }
+
+
+
             
 
         }//pageload
