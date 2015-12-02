@@ -25,11 +25,7 @@ namespace TermProject
                     //testProduct.merchantName = "Princess Bubblegum";
                     //CartItem testItem = new CartItem(testProduct, 5);
 
-                    //TP_Amazon_ClassLibrary.Product testProduct2 = new TP_Amazon_ClassLibrary.Product();
-                    //testProduct2.Description = "Test Product2";
-                    //testProduct2.Price = 20;
-                    //testProduct2.merchantName = "Murderface";
-                    //CartItem testItem2 = new CartItem(testProduct2, 5);
+                   
 
                     TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
                     //cart.AddItem(testItem);
@@ -56,6 +52,45 @@ namespace TermProject
             rptCart.DataSource = cart.cartItems;
             rptCart.DataBind();
             Session["Cart"] = cart;
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            for (int i = 0; i < rptCart.Items.Count; i++)
+            {
+                CheckBox cb = (CheckBox)rptCart.Items[i].FindControl("chkSelect");
+                if (cb.Checked == true)
+                {
+                    TP_Amazon_ClassLibrary.CartItem item = cart.cartItems[i];
+                    cart.RemoveItem(item);
+                }
+            }
+            rptCart.DataSource = cart.cartItems;
+            rptCart.DataBind();
+            Session["Cart"] = cart;
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            cart.ClearCart();
+            rptCart.DataSource = cart.cartItems;
+            rptCart.DataBind();
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            TP_Amazon_ClassLibrary.Product testProduct2 = new TP_Amazon_ClassLibrary.Product();
+            testProduct2.Description = "Test Product2";
+            testProduct2.Price = 20;
+            testProduct2.merchantName = "Murderface";
+            CartItem testItem2 = new CartItem(testProduct2, 5);
+            cart.AddItem(testItem2);
+            Session["Cart"] = cart;
+            rptCart.DataSource = cart.cartItems;
+            rptCart.DataBind();
         }
     }
 }

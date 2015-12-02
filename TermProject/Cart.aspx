@@ -32,6 +32,8 @@
 
     <div style="text-align:center;">
         <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
+        <asp:Button ID="btnClear" runat="server" Text="Clear Cart" OnClick="btnClear_Click" />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
     </div>
 </asp:Content>
