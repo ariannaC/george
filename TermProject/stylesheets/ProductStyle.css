@@ -23,7 +23,7 @@
     margin-right: 0px;
 }
 
-#lblName, #lblShortDescription, #lblLongDescription, #lblUnitPrice 
+#lblprodDesc, #lblUnitPrice 
 {
     display: block;
     margin-bottom: 1em;

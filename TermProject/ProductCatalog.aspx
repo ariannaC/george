@@ -22,7 +22,7 @@
                                 <asp:HiddenField ID="hidQOH" runat="server" Value='<% #Eval("QuantityOnHand")%>' />
                                 <asp:HiddenField ID="hidImgURL" runat="server" Value ='<% #Eval("URL").ToString() + ".jpg" %>>'/>
                                 <br />
-                    <asp:Image ID="imgProduct" ImageUrl='<% #Eval("URL") %>>' CssClass="imgProduct" runat="server" /> 
+                    <asp:Image ID="imgProduct" ImageUrl='<% #Eval("URL") %>' CssClass="imgProduct" runat="server" /> 
                                <asp:Button ID="btnViewProduct" runat="server" Text="View" CssClass="btnViewProduct" />
                 </div>
              </ItemTemplate>
