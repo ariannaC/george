@@ -12,7 +12,7 @@
         </asp:DropDownList>
     </div>
     <br />
-    <div style="width:100%; height: 613px;">
+    <div style="width:100%; padding:15px; text-align:center">
         <div class="row">
         <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand"  >
              <ItemTemplate>
@@ -21,7 +21,7 @@
                                <asp:Label ID="lblProductDesc" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                                 <asp:HiddenField ID="hidPrice" runat="server" Value='<% #Eval("Price", "{0:c}")%>' />
                                 <asp:HiddenField ID="hidQOH" runat="server" Value='<% #Eval("QuantityOnHand")%>' />
-                                <asp:HiddenField ID="hidImgURL" runat="server" Value ='<% #Eval("URL").ToString() + ".jpg" %>>'/>
+                                <asp:HiddenField ID="hidImgURL" runat="server" Value ='<% #Eval("URL") %>'/>
                                 <br />
                     <asp:Image ID="imgProduct" ImageUrl='<% #Eval("URL") %>' CssClass="imgProduct" runat="server" /> 
                                <asp:Button ID="btnViewProduct" runat="server" Text="View" CssClass="btnViewProduct" />

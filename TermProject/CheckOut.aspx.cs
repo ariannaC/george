@@ -59,11 +59,11 @@ namespace TermProject
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
-            TP_Amazon_ClassLibrary.CartItem Item = new TP_Amazon_ClassLibrary.CartItem();
-            Item.AddQuantity(3);
-            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
-            cart.AddItem(Item);
-            Session["Cart"] = cart;
+        //    TP_Amazon_ClassLibrary.CartItem Item = new TP_Amazon_ClassLibrary.CartItem();
+        //    Item.AddQuantity(3);
+        //    TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+        //    cart.AddItem(Item);
+        //    Session["Cart"] = cart;
         }
     }
 }

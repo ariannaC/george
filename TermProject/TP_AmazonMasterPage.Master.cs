@@ -12,7 +12,8 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            lnkbtnViewCart.Text = "Cart(" + cart.TotalQuantity + ")";
             if (!IsPostBack)
             {
                 if (!(Session["emailSession"] == null))

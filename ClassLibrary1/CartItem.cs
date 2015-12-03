@@ -68,6 +68,13 @@ namespace TP_Amazon_ClassLibrary
             }
         }
 
+        public string URL
+        {
+            get
+            {
+                return this.Product.URL;
+            }
+        }
 
     }
 }
