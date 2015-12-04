@@ -60,6 +60,7 @@
     <Content Include="Cart.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="CreditCard.aspx" />
+    <Content Include="CustomerAccountPage.aspx" />
     <Content Include="Images\Deth.jpg" />
     <Content Include="Images\Hacky.JPG" />
     <Content Include="Images\HalfBaked.JPG" />
@@ -77,6 +78,7 @@
     <Content Include="ProductDetails.aspx" />
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="stylesheets\AccountStyle.css" />
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
     <Content Include="stylesheets\NewCreditCard.css" />
@@ -116,6 +118,13 @@
     </Compile>
     <Compile Include="CreditCard.aspx.designer.cs">
       <DependentUpon>CreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAccountPage.aspx.cs">
+      <DependentUpon>CustomerAccountPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerAccountPage.aspx.designer.cs">
+      <DependentUpon>CustomerAccountPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

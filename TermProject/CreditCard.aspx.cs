@@ -53,8 +53,8 @@ namespace TermProject
             {
                // gvCreditCards.DataSource = dataset;
                // gvCreditCards.DataBind();
-                GridView1.DataSource = dataset;
-                GridView1.DataBind();
+                gvCreditCard.DataSource = dataset;
+                gvCreditCard.DataBind();
             }
         }
 
@@ -65,15 +65,20 @@ namespace TermProject
 
         protected void btnEditCard_Click(object sender, EventArgs e)
         {
-            for (int row = 0; row < GridView1.Rows.Count; row++)
+            for (int row = 0; row < gvCreditCard.Rows.Count; row++)
             {
-                CheckBox cb = (CheckBox)GridView1.Rows[row].FindControl("cbEdit");
+                CheckBox cb = (CheckBox)gvCreditCard.Rows[row].FindControl("cbEdit");
 
                 if (cb.Checked == true)
                 {
-                    Response.Redirect("NewCardApplication.aspx?cardID=" + GridView1.Rows[row].Cells[1].Text);
+                    Response.Redirect("NewCardApplication.aspx?cardID=" + gvCreditCard.Rows[row].Cells[1].Text);
                 }
             }
+        }
+
+        protected void btnEditName_Click(object sender, EventArgs e)
+        {
+
         } 
            // showAccounts();
         
