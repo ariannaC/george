@@ -5,5 +5,8 @@
     <Setting Name="TermProject_TPServiceRef_TheWebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx</Value>
     </Setting>
+    <Setting Name="TermProject_MunchieServiceRef_TheWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49222/TheWebService.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

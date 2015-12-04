@@ -45,6 +45,7 @@ namespace TermProject
            // Response.Redirect("~/Cart.aspx");
             TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
             TP_Amazon_ClassLibrary.Product product = new TP_Amazon_ClassLibrary.Product();
+            product.ProductID = Session["sessionProdID"].ToString();
             product.Description = Session["sessionProdDesc"].ToString();
             product.Price = decimal.Parse(lblUnitPrice.Text.Substring(1));
             product.merchantName = "One Stop Munchie Shop";

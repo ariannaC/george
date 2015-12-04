@@ -33,5 +33,15 @@ namespace TermProject.Properties {
                 return ((string)(this["TermProject_TPServiceRef_TheWebService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:49222/TheWebService.asmx")]
+        public string TermProject_MunchieServiceRef_TheWebService {
+            get {
+                return ((string)(this["TermProject_MunchieServiceRef_TheWebService"]));
+            }
+        }
     }
 }

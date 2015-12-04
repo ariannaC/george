@@ -56,7 +56,7 @@ namespace TP
                 }
                 //store email in session then redirect  
                 Session["emailSession"] = txtEmail.Text;
-                Response.Redirect("~/ProductCatalog.aspx");
+                Response.Redirect("ProductCatalog.aspx");
 
                     //if "Remember Me" is checked, store userName in cookie
                     if (chkbxRemeberMe.Checked)
@@ -93,7 +93,7 @@ namespace TP
 
         protected void btnNewUser_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Registration.aspx");
+            Response.Redirect("Registration.aspx");
         }//end of login button click event 
    
     

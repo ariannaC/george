@@ -4,9 +4,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class ="contentHolderco">
     <h2 style="margin-bottom: 10px">SHIPPING ADDRESS </h2>
+        <br />
+       Name <asp:TextBox ID="txtCustName" runat="server"></asp:TextBox>
      <div class="floating-box">
             &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblAddress" runat="server" Text="Address"></asp:Label>
             &nbsp;&nbsp;
+         
             <asp:TextBox ID="txtAddress" runat="server" Width="459px" style="margin-left: 7px" CssClass="FBtxtbox" Height="26px"></asp:TextBox>
         </div>
             <div class="floating-box">
@@ -25,6 +28,9 @@
             <asp:Label ID="lblZip" runat="server" Text="Zipcode"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox5" runat="server" Width="465px" Height="27px" MaxLength="5" style="margin-left: 13px"></asp:TextBox>
+            <br />
+            <asp:Label ID="lblCountry" runat="server" Text="Country"></asp:Label>
+             <asp:TextBox ID="txtCountry" runat="server" Width="465px" Height="27px" MaxLength="5" style="margin-left: 13px"></asp:TextBox>
         </div>
 
 
@@ -36,6 +42,7 @@
     <h2 style="margin-bottom: 10px">BILLING ADDRESS</h2>
     <asp:CheckBox ID="chkbxSameAsShippingAddress" runat="server" Text="same as shipping address" />
         <div class="floating-box">
+        
             <asp:Label ID="Label2" runat="server" Text="Address"></asp:Label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="TextBox2" runat="server" Width="459px" style="margin-left: 7px" CssClass="FBtxtbox" Height="26px"></asp:TextBox>

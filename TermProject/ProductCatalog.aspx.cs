@@ -78,11 +78,14 @@ namespace TermProject
             string QOH = QOHLabel.Value;
 
             HiddenField imgURLLabel = (HiddenField)rptProducts.Items[rowIndex].FindControl("hidImgURL");
-            string imgURL = imgURLLabel.Value; 
+            string imgURL = imgURLLabel.Value;
+
+            HiddenField prodIDlabel = (HiddenField)rptProducts.Items[rowIndex].FindControl("hidProdID");
+            string productID = prodIDlabel.Value;
 
             Session["sessionProdDesc"] = productDesc;
             Session["sessionProdPrice"] = prodPrice;
-           
+            Session["sessionProdID"] = productID;
             Session["sessionQOH"] = QOH;
             Session["sessionImgURL"] = imgURL;
             Response.Redirect("ProductDetails.aspx");

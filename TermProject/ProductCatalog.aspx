@@ -22,6 +22,7 @@
                                 <asp:HiddenField ID="hidPrice" runat="server" Value='<% #Eval("Price", "{0:c}")%>' />
                                 <asp:HiddenField ID="hidQOH" runat="server" Value='<% #Eval("QuantityOnHand")%>' />
                                 <asp:HiddenField ID="hidImgURL" runat="server" Value ='<% #Eval("URL") %>'/>
+                     <asp:HiddenField ID="hidProdID" runat="server" Value ='<% #Eval("ProductID") %>'/>
                                 <br />
                     <asp:Image ID="imgProduct" ImageUrl='<% #Eval("URL") %>' CssClass="imgProduct" runat="server" /> 
                                <asp:Button ID="btnViewProduct" runat="server" Text="View" CssClass="btnViewProduct" />

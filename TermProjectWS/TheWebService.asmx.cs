@@ -89,6 +89,7 @@ namespace TermProjectWS
             return false;
         }
 
+        [WebMethod]
         public Boolean Purchase(String ProductID, int Quantity, String APIKey, string[] customercardinfo)
         {
             //copied and pasted code from project3ws and modiefied to work with this project
@@ -115,13 +116,15 @@ namespace TermProjectWS
             SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
             outputparam.Direction = ParameterDirection.Output;
             command.Parameters.Add(outputparam);
+            db.DoUpdateUsingCmdObj(command);
             Project3WebRef.TheWebService pxy = new Project3WebRef.TheWebService();
             SqlCommand c = new SqlCommand();
             c.CommandType = CommandType.StoredProcedure;
             c.CommandText = "TPVerifyInfo";
             c.Parameters.AddWithValue("@CreditCardNum", customercardinfo[11]);
             c.Parameters.AddWithValue("@CVV", customercardinfo[12]);
-            int RETVAL;
+            db.DoUpdateUsingCmdObj(c);
+            int RETVAL = 0;
             RETVAL = int.Parse(command.Parameters["@RETVAL"].Value.ToString());
             if (RETVAL == 1)
             {

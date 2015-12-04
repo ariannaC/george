@@ -86,16 +86,9 @@ namespace TermProject
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            //TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
-            //TP_Amazon_ClassLibrary.Product testProduct2 = new TP_Amazon_ClassLibrary.Product();
-            //testProduct2.Description = "Test Product2";
-            //testProduct2.Price = 20;
-            //testProduct2.merchantName = "Murderface";
-            //CartItem testItem2 = new CartItem(testProduct2, 5);
-            //cart.AddItem(testItem2);
-            //Session["Cart"] = cart;
-            //rptCart.DataSource = cart.cartItems;
-            //rptCart.DataBind();
+            Response.Redirect("CheckOut.aspx");
+            
         }
     }
 }
+
