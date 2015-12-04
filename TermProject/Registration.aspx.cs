@@ -30,35 +30,35 @@ namespace TermProject
                 newCustomer.shippingState = txtState.Text;
                 newCustomer.shippingZipcode = 19000; //fix this! 
 
-      //if (ValidFields())
-      //  {
-      //          //Add new Customer to TP_Customer DB
-                if (register.AddNewCustomer(newCustomer) == true)
+                if (ValidFields())
                 {
-                    //if "Remember Me" is checked, store userName in cookie
-                    if (chkbxRemeberMe.Checked)
+                    //          //Add new Customer to TP_Customer DB
+                    if (register.AddNewCustomer(newCustomer) == true)
                     {
-                        HttpCookie myCookie = new HttpCookie("Login_Cookie");
-                        myCookie.Values["email"] = txtEmail.Text;
-                        myCookie.Values["LastVisited"] = DateTime.Now.ToString();
-                        myCookie.Expires = new DateTime(2025, 1, 1);
-                        Response.Cookies.Add(myCookie);
+                        //if "Remember Me" is checked, store userName in cookie
+                        if (chkbxRemeberMe.Checked)
+                        {
+                            HttpCookie myCookie = new HttpCookie("Login_Cookie");
+                            myCookie.Values["email"] = txtEmail.Text;
+                            myCookie.Values["LastVisited"] = DateTime.Now.ToString();
+                            myCookie.Expires = new DateTime(2025, 1, 1);
+                            Response.Cookies.Add(myCookie);
+                        }
+                        else
+                        {
+                            //remove user's email from username textbox
+                            Response.Cookies.Remove("mycookie");
+                        }
                     }
-                    else
-                    {
-                        //remove user's email from username textbox
-                        Response.Cookies.Remove("mycookie");
-                    }
-                }
-                Response.Redirect("~/Login.aspx");
-           
+                    Response.Redirect("~/Login.aspx");
 
-            //not all fields are valid
-            //else 
-            //{
-            //    clearFields();
-            //    lblGeneralError.Text = "Error. Try Again.";
-            //}
+                }
+                //not all fields are valid
+                else
+                {
+                    clearFields();
+                    lblGeneralError.Text = "Error. Try Again.";
+                }
 
         }
        // }//end of Registerbutton click event

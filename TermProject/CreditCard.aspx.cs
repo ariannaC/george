@@ -24,38 +24,26 @@ namespace TermProject
                     return;
                 }
 
-                //DBConnect objdb = new DBConnect();
-                //SqlCommand command = new SqlCommand();
-                //command.CommandType = CommandType.StoredProcedure;
-                //command.CommandText = "TPgetCustomerCard";
-                //DataSet ds = objdb.GetDataSetUsingCmdObj(command);
-                //gvCreditCards.DataSource = ds;
-                //gvCreditCards.DataBind();
-
+               
 
                 string email = Session["emailSession"].ToString();
 
                 loadCreditCards(email);
+                loadCustomerAccountSettings();
             }
         }
 
 
         public void loadCreditCards(string email)
         {
-            DBConnect objdb = new DBConnect();
-            SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.CommandText = "TPgetCustomerCard";
-            sqlCommand.Parameters.AddWithValue("@email",email);
-            DataSet dataset = objdb.GetDataSetUsingCmdObj(sqlCommand);
-
-            if (dataset.Tables[0].Rows.Count > 0)
-            {
-               // gvCreditCards.DataSource = dataset;
-               // gvCreditCards.DataBind();
-                gvCreditCard.DataSource = dataset;
-                gvCreditCard.DataBind();
-            }
+            DBConnect dbobj = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TPgetCustomerCard";
+            objCommand.Parameters.AddWithValue("@email", email);
+            DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+            rptPaymentOptions.DataSource = ds;
+            rptPaymentOptions.DataBind();
         }
 
         protected void btnAddNewCard_Click(object sender, EventArgs e)
@@ -81,7 +69,28 @@ namespace TermProject
 
         } 
            // showAccounts();
-        
+        public void loadCustomerAccountSettings()
+        {
+           string email = Session["emailSession"].ToString();
+           string customerName = lblCustomerName.Text;
+           string customerEmail = lblEmail.Text;
+           string password = lblpassword.Text;
+
+           DBConnect dbobj = new DBConnect();
+           SqlCommand objCommand = new SqlCommand();
+           objCommand.CommandType = CommandType.StoredProcedure;
+           objCommand.CommandText = "TP_GetCustNameEmailPw";
+           objCommand.Parameters.AddWithValue("@email", email);
+           DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+           lblCustomerName.Text = ds.Tables[0].Rows[0]["Name"].ToString();
+           lblEmail.Text = ds.Tables[0].Rows[0]["Email"].ToString();
+        }
+
+        protected void rptPaymentOptions_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            int rowIndex = e.Item.ItemIndex;
+            // Retrieve a value from a control in the Repeater's Items collection
+        }
     
 
     }//end of class

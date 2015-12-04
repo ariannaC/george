@@ -20,7 +20,11 @@ namespace TermProject
                 {
                     string email = Session["emailSession"].ToString();
 
-                    lblWelcomeUser.Text = "Welcome " + email;   
+                    lblWelcomeUser.Text = "Welcome " + email;
+                }
+                else 
+                {
+                    Response.Redirect("Login.aspx");
                 }
             }
         }

@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TP_AmazonMasterPage.Master" AutoEventWireup="true" CodeBehind="CreditCard.aspx.cs" Inherits="TermProject.CreditCard" EnableViewState="true" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="stylesheets/CreditCardStyle.css" rel="stylesheet" />
+    <style type="text/css">
+        .row {
+            width: 697px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Account Information</h1>
@@ -17,17 +22,17 @@
             </div>
              <div class="sectionSetting">
                  
-                 <asp:Label ID="lblEmail" runat="server" CssClass="sectionLabel" Text="Email:"></asp:Label>
+                 <asp:Label runat="server" CssClass="sectionLabel" Text="Email:"></asp:Label>
                  
                 <asp:Button ID="btnEditEmail" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" />
-                  <asp:Label ID="Label3" runat="server" CssClass="sectionLabel"></asp:Label>
+                  <asp:Label ID="lblEmail" runat="server" CssClass="sectionLabel"></asp:Label>
             </div>
              <div class="sectionSetting">
                  
                  <asp:Label ID="Label4" runat="server" CssClass="sectionLabel" Text="Password"></asp:Label>
                  
                 <asp:Button ID="btnPassword" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" />
-                  <asp:Label ID="Label5" runat="server" CssClass="sectionLabel"></asp:Label>
+                  <asp:Label ID="lblpassword" runat="server" CssClass="sectionLabel"></asp:Label>
 
             </div>
              <div class="sectionSetting">
@@ -50,10 +55,30 @@
     </div>
 
     <div class="section">
-            <h2 style="width: 751px" class="h2">Cards On File
-            </h2>
-            <br />
-            <br />
+            <h2 style="width: 751px" class="h2">Manage Payment Options</h2>
+
+        <div style="width:96%; padding:15px; text-align:center">
+            <div class="row">
+                <asp:Repeater ID="rptPaymentOptions" runat="server" OnItemCommand="rptPaymentOptions_ItemCommand">
+                    <ItemTemplate>
+                     <div style="text-align:left; border: solid; border-color: #98bf21; border-width: 2px;">
+                        <asp:Label runat="server" Text="Card Number: "></asp:Label>
+                        <asp:Label runat="server" Text='<%# Bind("CardNumber") %>' ID="lblCardNumber"></asp:Label><br />
+                        <asp:Label ID="Label5" runat="server" Text="Exp Date:"></asp:Label>
+                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("ExpMonth") %>'></asp:Label>
+                         <asp:Label ID="Label3" runat="server" Text=' <%# Bind("ExpYear") %>'></asp:Label><br />
+                        <asp:Label ID="Label8" runat="server" Text="Card Holder Name:"></asp:Label>
+                         <asp:Label ID="Label9" runat="server" Text='<%# Bind("NameOnCard") %>'></asp:Label><br /><br />
+                        
+                         <asp:Button ID="btnEdit" runat="server" Text="Edit" />
+
+                            </div>
+
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </div>
+
             <asp:GridView ID="gvCreditCard" runat="server" Height="72px" style="margin-left: 20px; margin-right: 18px; margin-bottom: 21px" Width="725px">
                 <Columns>
                     <asp:TemplateField HeaderText="Edit">

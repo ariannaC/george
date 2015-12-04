@@ -105,6 +105,7 @@ ul
     margin-left: 16.66%;
     margin-right: 16.66%;
     border-color:white;
+    border-width:4px;
     width: 753px;
     height: 318px;
     margin-bottom: 20px;
@@ -135,5 +136,11 @@ ul
 .sectionSetting 
 {
     width:100%;
+}
+
+.repeater 
+{
+    border: solid; 
+    border-color: #98bf21;
 }
 

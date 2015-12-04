@@ -49,15 +49,6 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label lblCustomerName;
         
         /// <summary>
-        /// lblEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
-        
-        /// <summary>
         /// btnEditEmail control.
         /// </summary>
         /// <remarks>
@@ -67,13 +58,13 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Button btnEditEmail;
         
         /// <summary>
-        /// Label3 control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
         /// Label4 control.
@@ -94,13 +85,13 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Button btnPassword;
         
         /// <summary>
-        /// Label5 control.
+        /// lblpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label lblpassword;
         
         /// <summary>
         /// Label6 control.
@@ -137,6 +128,15 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOrders;
+        
+        /// <summary>
+        /// rptPaymentOptions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPaymentOptions;
         
         /// <summary>
         /// gvCreditCard control.
