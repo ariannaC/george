@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Utilities;
+using TP_Amazon_ClassLibrary;
 
 namespace TermProject
 {
@@ -27,7 +29,8 @@ namespace TermProject
 
                 lblprodDesc.Text = prodDesc;
                 lblUnitPrice.Text = prodPrice;
-                
+                lblQuantity.Text = QOH;
+                imgProduct.ImageUrl = imgURL;
  
             }
 
@@ -39,7 +42,17 @@ namespace TermProject
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cart.aspx");
+           // Response.Redirect("~/Cart.aspx");
+            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            TP_Amazon_ClassLibrary.Product product = new TP_Amazon_ClassLibrary.Product();
+            product.Description = Session["sessionProdDesc"].ToString();
+            product.Price = decimal.Parse(lblUnitPrice.Text.Substring(1));
+            product.merchantName = "One Stop Munchie Shop";
+            product.URL = Session["sessionImgURL"].ToString();
+            CartItem Item = new CartItem(product, int.Parse(txtQuantity.Text));
+            cart.AddItem(Item);
+            Session["Cart"] = cart;
+           
         }
 
         protected void imgProduct_Load(object sender, EventArgs e)
@@ -47,10 +60,10 @@ namespace TermProject
             
         }
 
-        protected void txtQuantity_TextChanged(object sender, EventArgs e)
-        {
-            txtQuantity.Text = "1";
-        }
+        //protected void txtQuantity_TextChanged(object sender, EventArgs e)
+        //{
+        //   // txtQuantity.Text = "1";
+        //}
 
         protected void btnCart_Click(object sender, EventArgs e)
         {

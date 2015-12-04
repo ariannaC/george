@@ -52,6 +52,18 @@ namespace TP_Amazon_ClassLibrary
                 cartItems = new List<CartItem>();
             }
 
+            public int TotalQuantity
+            {
+                get
+                {
+                    int total = 0;
+                    for (int i = 0; i < cartItems.Count; i++)
+                    {
+                        total += cartItems[i].Quantity;
+                    }
+                    return total;
+                }
+            }
 
             
         

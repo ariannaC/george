@@ -19,10 +19,11 @@
               <asp:Label ID="lblUnitPrice" runat="server" Text="Label" CssClass="lblUnitPrice" Width="288px"></asp:Label>
 
        
-    <div style="margin-top: 12px">
-
-             <asp:Label ID="lblQuantity" runat="server" Text="Quantity" CssClass="lblName" Height="19px"></asp:Label>
-         <asp:TextBox ID="txtQuantity" runat="server" OnTextChanged="txtQuantity_TextChanged" style="margin-left: 0px; margin-right: 158px; margin-top: 13px; margin-bottom: 26px"></asp:TextBox>   
+    <div >
+        <br />
+            Quantity on Hand <asp:Label ID="lblQuantity" runat="server" Text="Quantity on Hand" CssClass="lblName" Height="19px"></asp:Label>
+        <br />
+         <asp:TextBox ID="txtQuantity" runat="server" style="margin-left: 0px; margin-right: 158px; margin-top: 13px; margin-bottom: 26px"></asp:TextBox>   
        
         <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add to Cart" CssClass="button" />
         <asp:Button ID="btnCart" runat="server" CausesValidation="False" PostBackUrl="~/Cart.aspx" Text="Go to Cart" CssClass="button" OnClick="btnCart_Click" />
