@@ -26,17 +26,6 @@ namespace TermProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asm" +
-            "x")]
-        public string TermProject_TPServiceRef_TheWebService {
-            get {
-                return ((string)(this["TermProject_TPServiceRef_TheWebService"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:49222/TheWebService.asmx")]
         public string TermProject_MunchieServiceRef_TheWebService {
             get {

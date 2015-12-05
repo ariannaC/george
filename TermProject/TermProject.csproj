@@ -92,11 +92,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\MunchieServiceRef\TheWebService.disco" />
-    <Content Include="Web References\TPServiceRef\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
-    <Content Include="Web References\TPServiceRef\TheWebService.disco" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -192,11 +187,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\TPServiceRef\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TP_AmazonMasterPage.Master" />
-    <Content Include="Web References\TPServiceRef\TheWebService.wsdl" />
     <None Include="Properties\PublishProfiles\TermProject.pubxml" />
     <None Include="Web References\MunchieServiceRef\TheWebService.wsdl" />
     <None Include="Web.Debug.config">
@@ -238,17 +227,6 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\TPServiceRef\</RelPath>
-      <UpdateFromURL>http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>TermProject_TPServiceRef_TheWebService</CachedSettingsPropName>
-    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:49222/TheWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MunchieServiceRef\</RelPath>

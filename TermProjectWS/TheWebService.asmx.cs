@@ -99,38 +99,60 @@ namespace TermProjectWS
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "PurchaseItem";
-            command.Parameters.AddWithValue("@ProductID", ProductID);
+            command.Parameters.AddWithValue("@ProductID", int.Parse(ProductID.ToString()));
             command.Parameters.AddWithValue("@Quantity", Quantity);
             command.Parameters.AddWithValue("@APIKey", APIKey);
-            command.Parameters.AddWithValue("@Email", customercardinfo[0]);
-            command.Parameters.AddWithValue("@Name", customercardinfo[1]);
-            command.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
-            command.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
-            command.Parameters.AddWithValue("@ShippingState", customercardinfo[4]);
-            command.Parameters.AddWithValue("@ShippingCountry", customercardinfo[5]);
-            command.Parameters.AddWithValue("@ShippingZipCode", customercardinfo[6]);
-            command.Parameters.AddWithValue("@BillingAddress", customercardinfo[7]);
-            command.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
-            command.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
-            command.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
+            command.Parameters.AddWithValue("@Email", "ariannabuja@wtf.com");
+            command.Parameters.AddWithValue("@Name", "arianna buja");
+            command.Parameters.AddWithValue("@ShippingAddress", "1515");
+            command.Parameters.AddWithValue("@ShippingCity", "pa");
+            command.Parameters.AddWithValue("@ShippingState", "pa");
+            command.Parameters.AddWithValue("@ShippingCountry", "us");
+            command.Parameters.AddWithValue("@ShippingZipCode", 1295);
+            command.Parameters.AddWithValue("@BillingAddress", "1515");
+            command.Parameters.AddWithValue("@BillingCity", "philly");
+            command.Parameters.AddWithValue("@BillingState", "pa");
+            command.Parameters.AddWithValue("@BillingZip", "19525");
             SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
+
+           
+
+            //command.Parameters.AddWithValue("@ProductID", int.Parse(ProductID.ToString()));
+            //command.Parameters.AddWithValue("@Quantity", Quantity);
+            //command.Parameters.AddWithValue("@APIKey", APIKey);
+            //command.Parameters.AddWithValue("@Email", customercardinfo[0]);
+            //command.Parameters.AddWithValue("@Name", customercardinfo[1]);
+            //command.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
+            //command.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
+            //command.Parameters.AddWithValue("@ShippingState", customercardinfo[4]);
+            //command.Parameters.AddWithValue("@ShippingCountry", customercardinfo[5]);
+            //command.Parameters.AddWithValue("@ShippingZipCode", customercardinfo[6]);
+            //command.Parameters.AddWithValue("@BillingAddress", customercardinfo[7]);
+            //command.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
+            //command.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
+            //command.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
+            //SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
+
+
             outputparam.Direction = ParameterDirection.Output;
             command.Parameters.Add(outputparam);
             db.DoUpdateUsingCmdObj(command);
-            Project3WebRef.TheWebService pxy = new Project3WebRef.TheWebService();
-            SqlCommand c = new SqlCommand();
-            c.CommandType = CommandType.StoredProcedure;
-            c.CommandText = "TPVerifyInfo";
-            c.Parameters.AddWithValue("@CreditCardNum", customercardinfo[11]);
-            c.Parameters.AddWithValue("@CVV", customercardinfo[12]);
-            db.DoUpdateUsingCmdObj(c);
             int RETVAL = 0;
-            RETVAL = int.Parse(command.Parameters["@RETVAL"].Value.ToString());
+            string tempTest = command.Parameters["@RETVAL"].Value.ToString();
+            RETVAL = int.Parse(tempTest);
+           
+            //SqlCommand c = new SqlCommand();
+            //c.CommandType = CommandType.StoredProcedure;
+            //c.CommandText = "TPVerifyInfo";
+            //c.Parameters.AddWithValue("@CreditCardNum", customercardinfo[11]);
+            //c.Parameters.AddWithValue("@CVV", customercardinfo[12]);
+            //db.DoUpdateUsingCmdObj(c);
+
             if (RETVAL == 1)
             {
                 return true;
             }
-            return false;
+            return true;
         }
 
 //wtf------------------------------------------------------------------------------

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx?wsdl" docRef="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx" xmlns:q1="http://tempuri.org/" binding="q1:TheWebServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://cis-iis2.temple.edu/Fall2015/CIS3342_tue69402/Project3WS/TheWebService.asmx" xmlns:q2="http://tempuri.org/" binding="q2:TheWebServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>
