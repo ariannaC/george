@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AuntFreida.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="CreditCard.aspx" />
@@ -70,6 +71,7 @@
     <Content Include="Images\pineapple.jpg" />
     <Content Include="Images\SlimJims.jpg" />
     <Content Include="Images\SquarePants.jpg" />
+    <Content Include="MerchantInfo.ascx" />
     <Content Include="ProductCatalog.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
@@ -98,6 +100,13 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuntFreida.aspx.cs">
+      <DependentUpon>AuntFreida.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuntFreida.aspx.designer.cs">
+      <DependentUpon>AuntFreida.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +137,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MerchantInfo.ascx.cs">
+      <DependentUpon>MerchantInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MerchantInfo.ascx.designer.cs">
+      <DependentUpon>MerchantInfo.ascx</DependentUpon>
     </Compile>
     <Compile Include="ProductCatalog.aspx.cs">
       <DependentUpon>ProductCatalog.aspx</DependentUpon>

@@ -69,7 +69,7 @@
                          <asp:Label ID="Label3" runat="server" Text=' <%# Bind("ExpYear") %>'></asp:Label><br />
                         <asp:Label ID="Label8" runat="server" Text="Card Holder Name:"></asp:Label>
                          <asp:Label ID="Label9" runat="server" Text='<%# Bind("NameOnCard") %>'></asp:Label><br /><br />
-                        
+                         <asp:HiddenField ID="hdnCardID" Value='<%# Bind("CCID") %>' runat="server" />
                          <asp:Button ID="btnEdit" runat="server" Text="Edit" />
 
                             </div>
@@ -94,7 +94,6 @@
 
             <asp:Button ID="Button2" runat="server"  style=" margin-top: 0px;" Text="APPLY FOR AMAZON CREDIT CARD" Width="237px" CssClass="sectionBtn" />
             <asp:Button ID="btnAddNewCard" runat="server"   Text="ADD NEW CREDIT CARD"  OnClick="btnAddNewCard_Click" CssClass="sectionBtn" />
-            <asp:Button ID="btnEditCard" runat="server"   Text="EDIT CREDIT CARD" Width="238px" OnClick="btnEditCard_Click" CssClass="sectionBtn" />
                 </div>
 
 

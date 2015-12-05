@@ -51,19 +51,6 @@ namespace TermProject
             Response.Redirect("~/NewCardApplication.aspx");
         }
 
-        protected void btnEditCard_Click(object sender, EventArgs e)
-        {
-            for (int row = 0; row < gvCreditCard.Rows.Count; row++)
-            {
-                CheckBox cb = (CheckBox)gvCreditCard.Rows[row].FindControl("cbEdit");
-
-                if (cb.Checked == true)
-                {
-                    Response.Redirect("NewCardApplication.aspx?cardID=" + gvCreditCard.Rows[row].Cells[1].Text);
-                }
-            }
-        }
-
         protected void btnEditName_Click(object sender, EventArgs e)
         {
 
@@ -90,6 +77,8 @@ namespace TermProject
         {
             int rowIndex = e.Item.ItemIndex;
             // Retrieve a value from a control in the Repeater's Items collection
+            HiddenField hdnCardID = (HiddenField)rptPaymentOptions.Items[rowIndex].FindControl("hdnCardID");
+            Response.Redirect("NewCardApplication.aspx?cardID=" + hdnCardID.Value);
         }
     
 

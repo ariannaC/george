@@ -50,7 +50,7 @@ namespace TermProject
                             Response.Cookies.Remove("mycookie");
                         }
                     }
-                    Response.Redirect("~/Login.aspx");
+                    Response.Redirect("Login.aspx");
 
                 }
                 //not all fields are valid
@@ -114,7 +114,7 @@ namespace TermProject
 
         protected void btnRegisterforBusinessAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/RegisterMerchant.aspx");
+            Response.Redirect("RegisterMerchant.aspx");
         }
 
     
