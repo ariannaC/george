@@ -30,8 +30,14 @@ namespace TP
             //Register object from the Register class in the "TP_Amazon_ClassLibrary"
             Register register = new Register();
             Customer newCustomer = new Customer();
-          
-            bool loginWorked = register.ValidLogin(txtEmail.Text, txtPassword.Text);     
+
+            bool loginWorked;
+            if (ddlLoginType.SelectedValue == "0")
+            {
+               loginWorked = register.ValidLogin(txtEmail.Text, txtPassword.Text);     
+            }
+
+            else loginWorked = register.ValidMerchantLogin(txtEmail.Text, txtPassword.Text);     
             
             //if session exists, load cookie value into txtbx
             if (Session["email"] !=null)
@@ -56,8 +62,17 @@ namespace TP
                 }
                 //store email in session then redirect  
                 Session["emailSession"] = txtEmail.Text;
-                Response.Redirect("ProductCatalog.aspx");
 
+                if (ddlLoginType.SelectedValue == "0")
+                {
+                    Response.Redirect("ProductCatalog.aspx");
+
+                }
+
+                else
+                {
+                    Response.Redirect("AuntFreida.aspx");
+                }
                     //if "Remember Me" is checked, store userName in cookie
                     if (chkbxRemeberMe.Checked)
                     {

@@ -53,7 +53,7 @@ namespace TP_Amazon_ClassLibrary
             bool returnvalue = true;
 
             //if the values are found in the DB return true
-            if (myDS.Tables[0].Rows.Count <= 1)
+            if ((myDS.Tables[0].Rows.Count <= 1) && (myDS.Tables[0].Rows[0]["password"].ToString() == password))
             {
                 returnvalue = true;
             }
@@ -67,6 +67,36 @@ namespace TP_Amazon_ClassLibrary
             return returnvalue;
             
  
+        }
+
+        public bool ValidMerchantLogin(string email, string password)
+        {
+            DataSet myDS = new DataSet();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_ValidMerchantLogin";
+            objCommand.Parameters.AddWithValue("@email", email);
+            objCommand.Parameters.AddWithValue("@password", password);
+            DBConnect objDB = new DBConnect();
+            myDS = objDB.GetDataSetUsingCmdObj(objCommand);
+
+            bool returnvalue = true;
+
+            //if the values are found in the DB return true
+            if ((myDS.Tables[0].Rows.Count <= 1) && (myDS.Tables[0].Rows[0]["password"].ToString() == password))
+            {
+                returnvalue = true;
+            }
+
+            //the user does not exist in the DB
+            else
+            {
+                returnvalue = false;
+            }
+
+            return returnvalue;
+
+
         }
 
         //public bool AddCard(CreditCardClass cc, Customer matilda)

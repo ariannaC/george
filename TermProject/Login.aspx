@@ -52,6 +52,15 @@
            
                
           
+                     <asp:DropDownList ID="ddlLoginType" runat="server">
+                         <asp:ListItem Selected="True" Value="0">Customer</asp:ListItem>
+                         <asp:ListItem Value="1">Merchant</asp:ListItem>
+                     </asp:DropDownList>
+               
+          
+           
+               
+          
         </div>
 
 
