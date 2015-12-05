@@ -14,8 +14,7 @@ namespace TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
+           
                 DBConnect db = new DBConnect();
                 string merchEmail = Session["emailSession"].ToString();
                 SqlCommand command = new SqlCommand();
@@ -25,7 +24,7 @@ namespace TermProject
                 DataSet ds = db.GetDataSetUsingCmdObj(command);
                 gvMerchAccount.DataSource = ds;
                 gvMerchAccount.DataBind();
-            }
+            
 
         }
 

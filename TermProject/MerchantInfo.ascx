@@ -12,5 +12,5 @@
 <asp:Label ID="lblURL" runat="server" Text="URL"></asp:Label>
 <asp:TextBox ID="txtUrl" runat="server"></asp:TextBox>
 <br />
-<asp:Button ID="btnSave" runat="server" Text="Save" />
+<asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
 <br />

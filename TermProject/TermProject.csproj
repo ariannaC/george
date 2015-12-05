@@ -72,6 +72,7 @@
     <Content Include="Images\SlimJims.jpg" />
     <Content Include="Images\SquarePants.jpg" />
     <Content Include="MerchantInfo.ascx" />
+    <Content Include="PasswordChange.ascx" />
     <Content Include="ProductCatalog.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
@@ -144,6 +145,13 @@
     </Compile>
     <Compile Include="MerchantInfo.ascx.designer.cs">
       <DependentUpon>MerchantInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordChange.ascx.cs">
+      <DependentUpon>PasswordChange.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordChange.ascx.designer.cs">
+      <DependentUpon>PasswordChange.ascx</DependentUpon>
     </Compile>
     <Compile Include="ProductCatalog.aspx.cs">
       <DependentUpon>ProductCatalog.aspx</DependentUpon>
