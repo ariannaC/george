@@ -63,12 +63,6 @@ namespace TermProject
                     rptPaymentOptions.DataSource = ds;
                     rptPaymentOptions.DataBind();
                 }
-                //Repeater will not be used
-                protected void rptPaymentOptions_ItemCommand(object source, RepeaterCommandEventArgs e)
-                {
-                    int rowIndex = e.Item.ItemIndex;
-                    // Retrieve a value from a control in the Repeater's Items collection
-                }
 
         //Edit Credit Card Methods
         protected void btnAddNewCard_Click(object sender, EventArgs e)
