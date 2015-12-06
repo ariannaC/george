@@ -54,13 +54,12 @@
 
 
 
-h1 
+/*h1 
 {
     text-align:center;
     width: 833px;
     height: 45px;
-    top: 50px;
-}
+}*/
 
 .box {
     position:relative;
@@ -106,8 +105,8 @@ ul
     margin-right: 16.66%;
     border-color:white;
     border-width:4px;
-    width: 753px;
-    height: 318px;
+    width: 785px;
+    height: 198px;
     margin-bottom: 20px;
 }
 
@@ -120,22 +119,29 @@ ul
 
 .sectionBtn 
 {
-    width: 16%;
-    margin-left:8px;
+    margin-left:0px;
     margin-right:14px;
     float:right;
 }
 
 .sectionLabel 
 {
-     width: 83%;
-     float:left;
-     height:26px;
+     float:left; 
+     margin-left: 22px;
 }
+
+.sectionLabel2 
+{
+     float:left;
+     margin-left: 0px;
+    }
+
 
 .sectionSetting 
 {
-    width:100%;
+    width:98%;
+    height: 56px;
+    margin-bottom: 3px;
 }
 
 .repeater 
@@ -144,3 +150,7 @@ ul
     border-color: #98bf21;
 }
 
+.lblError 
+{
+    margin-left:30px;
+}

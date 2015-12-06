@@ -31,6 +31,15 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// lblCustomerName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCustomerName;
+        
+        /// <summary>
         /// btnEditName control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,31 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Button btnEditName;
         
         /// <summary>
-        /// lblCustomerName control.
+        /// btnUpdateName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCustomerName;
+        protected global::System.Web.UI.WebControls.Button btnUpdateName;
+        
+        /// <summary>
+        /// txtName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// lblNameError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNameError;
         
         /// <summary>
         /// btnEditEmail control.
@@ -67,6 +94,33 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
+        /// btnUpdateEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateEmail;
+        
+        /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// lblEmailError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEmailError;
+        
+        /// <summary>
         /// Label4 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +130,13 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// btnPassword control.
+        /// btnEditPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPassword;
+        protected global::System.Web.UI.WebControls.Button btnEditPassword;
         
         /// <summary>
         /// lblpassword control.
@@ -94,31 +148,31 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Label lblpassword;
         
         /// <summary>
-        /// Label6 control.
+        /// btnUpdatePassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Button btnUpdatePassword;
         
         /// <summary>
-        /// Button5 control.
+        /// txtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// Label7 control.
+        /// lblPasswordError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.Label lblPasswordError;
         
         /// <summary>
         /// lblOrders control.
@@ -139,13 +193,13 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Repeater rptPaymentOptions;
         
         /// <summary>
-        /// gvCreditCard control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCreditCard;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Button2 control.
