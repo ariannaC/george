@@ -43,7 +43,7 @@
 
     <form id="form1" runat="server">
     <div class ="row">
-    <div class="col-5 banner" style="height: 38px;">
+    <div class="col-5 banner" style="height: 38px; margin-right: 3px; margin-bottom: 11px;">
          <ul>
              <asp:LinkButton ID="btnAccount" runat="server" OnClick="btnAccount_Click">Account</asp:LinkButton>
             <asp:LinkButton ID="lnkbtnViewCart" runat="server" OnClick="lnkbtnViewCart_Click">View Cart</asp:LinkButton>
@@ -59,7 +59,7 @@
        
     </div>
          <div class="header" style="margin-top: 14px">
-             <h1 style="margin-top: 0px; height: 72px; margin-right: 26px; margin-bottom: 18px; margin-left: 15px; width: 1161px;">ONE STOP MUNCHIE SHOP</h1>
+             <h1 style="margin-top: 45px; height: 72px; margin-right: 26px; margin-bottom: 18px; margin-left: 15px; width: 1161px;">ONE STOP MUNCHIE SHOP</h1>
         </div>
 
         <nav>

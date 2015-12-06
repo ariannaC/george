@@ -31,11 +31,11 @@ body
 
 .contentHolder 
 {
-     height: 892px;
+     height: 1011px;
     top: 160px;
      margin-bottom: 0px;
       background-color: #4e5d6c;
-      width: 90%;
+      width: 92%;
       margin-right: 5%;
       margin-left: 5%;
       
@@ -105,6 +105,7 @@ a:link, a:visited
     float: right;
     height: 25px;
     display:block;
+    margin-top: 9px;
 }
 
 

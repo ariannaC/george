@@ -14,33 +14,41 @@
            
            
              <div class="sectionSetting">
-                 
-                 <asp:Label ID="Label1" runat="server" CssClass="sectionLabel" Text="Name:"></asp:Label>
-                 
-                <asp:Button ID="btnEditName" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" OnClick="btnEditName_Click" />
-                  <asp:Label ID="lblCustomerName" runat="server" CssClass="sectionLabel"></asp:Label>
+               
+                 <asp:Label ID="Label1" runat="server" CssClass="sectionLabel" Text="Name:" Width="87px"></asp:Label>
+                 <asp:Label ID="lblCustomerName" runat="server" CssClass="sectionLabel"></asp:Label>
+                <asp:Button ID="btnEditName" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 8px;" CssClass="sectionBtn" Height="30px" OnClick="btnEditName_Click" />
+               <asp:Button ID="btnUpdateName" runat="server" Text="Update" Width="87px" style="margin-bottom: 3px; margin-top: 9px;" CssClass="sectionBtn" Height="30px" OnClick="btnUpdateName_Click" Visible="False" />
+                 <asp:TextBox ID="txtName" runat="server" style="margin-left: 12px" Width="210px" Visible="False"></asp:TextBox><br/>
+                 <asp:Label ID="lblNameError" runat="server"  style="margin-left: px" CssClass="lblError"></asp:Label>
+               
             </div>
              <div class="sectionSetting">
                  
-                 <asp:Label runat="server" CssClass="sectionLabel" Text="Email:"></asp:Label>
+                 <asp:Label runat="server" CssClass="sectionLabel" Text="Email:" Width="92px"></asp:Label>
                  
-                <asp:Button ID="btnEditEmail" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" />
-                  <asp:Label ID="lblEmail" runat="server" CssClass="sectionLabel"></asp:Label>
-            </div>
-             <div class="sectionSetting">
-                 
-                 <asp:Label ID="Label4" runat="server" CssClass="sectionLabel" Text="Password"></asp:Label>
-                 
-                <asp:Button ID="btnPassword" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" />
-                  <asp:Label ID="lblpassword" runat="server" CssClass="sectionLabel"></asp:Label>
+                <asp:Button ID="btnEditEmail" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" OnClick="btnEditEmail_Click" />
+                  <asp:Label ID="lblEmail" runat="server" CssClass="sectionLabel" Width="137px"></asp:Label>
+                                <asp:Button ID="btnUpdateEmail" runat="server" Text="Update" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" OnClick="btnUpdateEmail_Click" Visible="False" />
 
+                 <asp:TextBox ID="txtEmail" runat="server" style="margin-left: 11px" Width="213px" Visible="False"></asp:TextBox><br />
+                 <asp:Label ID="lblEmailError" runat="server" CssClass="lblError"></asp:Label>
             </div>
              <div class="sectionSetting">
-                 
-                 <asp:Label ID="Label6" runat="server" CssClass="sectionLabel" Text="Name:"></asp:Label>
-                 
-                <asp:Button ID="Button5" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" />
-                  <asp:Label ID="Label7" runat="server" CssClass="sectionLabel"></asp:Label>
+                 <asp:Label ID="Label4" runat="server" CssClass="sectionLabel" Text="Password" Width="89px" Height="17px"></asp:Label> 
+                <asp:Button ID="btnEditPassword" runat="server" Text="Edit" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" OnClick="btnEditPassword_Click" />
+                  <asp:Label ID="lblpassword" runat="server" CssClass="sectionLabel" Height="23px" Width="140px"></asp:Label>
+                  <asp:Button ID="btnUpdatePassword" runat="server" Text="Update" Width="87px" style="margin-bottom: 3px; margin-top: 12px;" CssClass="sectionBtn" Height="30px" OnClick="btnUpdatePassword_Click" Visible="False" />
+                 <asp:TextBox ID="txtPassword" runat="server" style="margin-left: 9px" Width="214px" Visible="False"></asp:TextBox> 
+             
+                 <br />
+             
+                 <asp:Label ID="lblPasswordError" runat="server" CssClass="lblError"></asp:Label>
+
+
+                 <br/>
+
+
             </div>
             
     </div>
@@ -79,7 +87,7 @@
             </div>
         </div>
 
-            <asp:GridView ID="gvCreditCard" runat="server" Height="72px" style="margin-left: 20px; margin-right: 18px; margin-bottom: 21px" Width="725px">
+            <asp:GridView ID="GridView1" runat="server" Height="72px" style="margin-left: 20px; margin-right: 18px; margin-bottom: 21px" Width="725px">
                 <Columns>
                     <asp:TemplateField HeaderText="Edit">
                         <ItemTemplate>
