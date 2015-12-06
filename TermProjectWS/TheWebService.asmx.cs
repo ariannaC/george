@@ -98,24 +98,31 @@ namespace TermProjectWS
             DBConnect db = new DBConnect();
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "PurchaseItem";
-            command.Parameters.AddWithValue("@ProductID", int.Parse(ProductID.ToString()));
-            command.Parameters.AddWithValue("@Quantity", Quantity);
-            command.Parameters.AddWithValue("@APIKey", APIKey);
-            command.Parameters.AddWithValue("@Email", "ariannabuja@wtf.com");
-            command.Parameters.AddWithValue("@Name", "arianna buja");
-            command.Parameters.AddWithValue("@ShippingAddress", "1515");
-            command.Parameters.AddWithValue("@ShippingCity", "pa");
-            command.Parameters.AddWithValue("@ShippingState", "pa");
-            command.Parameters.AddWithValue("@ShippingCountry", "us");
-            command.Parameters.AddWithValue("@ShippingZipCode", 1295);
-            command.Parameters.AddWithValue("@BillingAddress", "1515");
-            command.Parameters.AddWithValue("@BillingCity", "philly");
-            command.Parameters.AddWithValue("@BillingState", "pa");
-            command.Parameters.AddWithValue("@BillingZip", "19525");
-            SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
+            command.CommandText = "UpdateProduct";
+            command.Parameters.AddWithValue("@productID", int.Parse(ProductID.ToString()));
+            command.Parameters.AddWithValue("@quantity", Quantity);
+            command.Parameters.AddWithValue("@API", APIKey);
+            db.DoUpdateUsingCmdObj(command);
+            //-------------------------update product-------------------------------------------------
 
-           
+            //-------------------------------update customer--------------------------------------------
+            SqlCommand hank = new SqlCommand();
+            hank.CommandType = CommandType.StoredProcedure;
+            hank.CommandText = "UpdateCustomer";
+            hank.Parameters.AddWithValue("@Quantity", Quantity);
+            hank.Parameters.AddWithValue("@Email", "ariannabuja@wtf.com");
+            hank.Parameters.AddWithValue("@Name", "arianna buja");
+            hank.Parameters.AddWithValue("@ShippingAddress", "1515");
+            hank.Parameters.AddWithValue("@ShippingCity", "pa");
+            hank.Parameters.AddWithValue("@ShippingState", "pa");
+            hank.Parameters.AddWithValue("@ShippingCountry", "us");
+            hank.Parameters.AddWithValue("@ShippingZipCode", 1295);
+            hank.Parameters.AddWithValue("@BillingAddress", "1515");
+            hank.Parameters.AddWithValue("@BillingCity", "philly");
+            hank.Parameters.AddWithValue("@BillingState", "pa");
+            hank.Parameters.AddWithValue("@BillingZip", "19525");
+            
+                   
 
             //command.Parameters.AddWithValue("@ProductID", int.Parse(ProductID.ToString()));
             //command.Parameters.AddWithValue("@Quantity", Quantity);
@@ -134,12 +141,10 @@ namespace TermProjectWS
             //SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
 
 
-            outputparam.Direction = ParameterDirection.Output;
-            command.Parameters.Add(outputparam);
-            db.DoUpdateUsingCmdObj(command);
-            int RETVAL = 0;
-            string tempTest = command.Parameters["@RETVAL"].Value.ToString();
-            RETVAL = int.Parse(tempTest);
+            
+           // int RETVAL = 0;
+           // string tempTest = command.Parameters["@RETVAL"].Value.ToString();
+            //RETVAL = int.Parse(tempTest);
            
             //SqlCommand c = new SqlCommand();
             //c.CommandType = CommandType.StoredProcedure;
@@ -148,7 +153,7 @@ namespace TermProjectWS
             //c.Parameters.AddWithValue("@CVV", customercardinfo[12]);
             //db.DoUpdateUsingCmdObj(c);
 
-            if (RETVAL == 1)
+            if (db.DoUpdateUsingCmdObj(hank) > 0)
             {
                 return true;
             }

@@ -58,6 +58,15 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.Button btnChangePassword;
         
         /// <summary>
+        /// btnAPI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAPI;
+        
+        /// <summary>
         /// ucMerch control.
         /// </summary>
         /// <remarks>

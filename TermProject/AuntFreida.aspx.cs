@@ -38,5 +38,21 @@ namespace TermProject
         {
             ucMerch.Visible = true;
         }
+
+        protected void btnAPI_Click(object sender, EventArgs e)
+        {
+            Label lblAPI = new Label();
+            DBConnect db = new DBConnect();
+            string merchEmail = Session["emailSession"].ToString();
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "GetAPI";
+            command.Parameters.AddWithValue("@email", merchEmail);
+            DataSet ds = db.GetDataSetUsingCmdObj(command);
+            string api = ds.Tables[0].Rows[0]["APIKey"].ToString();
+            lblAPI.Text = api;
+
+            
+        }
     }
 }
