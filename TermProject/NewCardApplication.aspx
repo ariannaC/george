@@ -75,6 +75,8 @@
             </div>
     <div class="floating-box">
 
+        <asp:Label ID="lblError" runat="server"></asp:Label>
+
     </div>
      <div class="floating-box">
 
