@@ -82,6 +82,10 @@
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="stylesheets\AccountStyle.css" />
+    <Content Include="stylesheets\bootstrap-theme.css" />
+    <Content Include="stylesheets\bootstrap-theme.min.css" />
+    <Content Include="stylesheets\bootstrap.css" />
+    <Content Include="stylesheets\bootstrap.min.css" />
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
     <Content Include="stylesheets\NewCreditCard.css" />
@@ -92,6 +96,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="stylesheets\bootstrap-theme.css.map" />
+    <Content Include="stylesheets\bootstrap-theme.min.css.map" />
+    <Content Include="stylesheets\bootstrap.css.map" />
+    <Content Include="stylesheets\bootstrap.min.css.map" />
     <None Include="Web References\MunchieServiceRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

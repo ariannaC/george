@@ -32,7 +32,7 @@ namespace TermProject
 
                 if (ValidFields())
                 {
-                    //          //Add new Customer to TP_Customer DB
+                    //Add new Customer to TP_Customer DB
                     if (register.AddNewCustomer(newCustomer) == true)
                     {
                         //if "Remember Me" is checked, store userName in cookie
@@ -79,6 +79,10 @@ namespace TermProject
             if (txtEmail.Text.IndexOf("@") == -1 || txtEmail.Text.IndexOf(".") == -1)
             {
                 validInput = false;
+            }
+            else 
+            {
+
             }
 
             //passwords dont match

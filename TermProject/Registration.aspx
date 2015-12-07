@@ -7,26 +7,34 @@
     <title></title>
     <style type="text/css">
         #form1 {
-            height: 1323px;
-            width: 901px;
+            height: 1095px;
+            width: 934px;
             margin-right: 62px;
-            margin-bottom: 39px;
+            margin-bottom: 12px;
             margin-left: 37px;
+            margin-top: 30px;
         }
     </style>
     <link href="stylesheets/Registration.css" rel="stylesheet" />
+
 </head>
-<body style="height: 1357px; width: 1059px; margin-top: 21px; margin-bottom: 39px; margin-right: 10px;">
+
+<body style="height: 1202px; width: 1134px; margin-top: 23px; margin-bottom: 39px; margin-right: 10px;">
     <form id="form1" runat="server">
        
-  &nbsp;<div class ="content">
+
+        
+        <div class ="laurenscontent" style="top:500px; margin-top: 14px;">
        <asp:Button ID="btnCancel" runat="server" CssClass="cancelbtn" Text="X" BackColor="#FF3300" Font-Bold="True" Height="23px" OnClick="btnCancel_Click" Width="30px" />
        <h1>Register </h1>
      
             <div class="floating-box">
                 
                 <asp:Label ID="Label1" runat="server" Text="Email" CssClass="FBlabel"></asp:Label>
-               <asp:TextBox ID="txtEmail" runat="server"   CssClass="FBtxtbox" Height="23px" Width="454px"></asp:TextBox>
+               <asp:TextBox ID="txtEmail" runat="server"   CssClass="FBtxtbox" Height="23px" AutoCompleteType="Email" Width="454px"></asp:TextBox>
+               
+              
+
             </div>
      
         <div class="floating-box">
