@@ -47,19 +47,26 @@ namespace TermProject
             {
                 // Button1.Text = "EDIT CARD";
                 //  pageHeader.InnerText = "Edit the Selected Credit Card";
-                int expM = Int32.Parse(ddlExpMonth.SelectedItem.Text);
-                int expY = Int32.Parse(ddlExpYear.SelectedItem.Text);
-                int cvv = Int32.Parse(txtCSV.Text);
-                int cardID = Int32.Parse(Request["cardID"].ToString());
-                SqlCommand stacey = new SqlCommand();
-                stacey.CommandType = CommandType.StoredProcedure;
-                stacey.CommandText = "TP_UpdateCardInfo";
-                stacey.Parameters.AddWithValue("@CCID", cardID);
-                stacey.Parameters.AddWithValue("@CVV", cvv);
-                stacey.Parameters.AddWithValue("@NameOnCard", txtNameOnCard.Text);
-                stacey.Parameters.AddWithValue("@ExpMonth", expM);
-                stacey.Parameters.AddWithValue("@ExpYear", expY);
-                db.DoUpdateUsingCmdObj(stacey);
+                if ((txtCardNumber.Text != "") && (txtCSV.Text != "") && (txtNameOnCard.Text != ""))
+                {
+                    int expM = Int32.Parse(ddlExpMonth.SelectedItem.Text);
+                    int expY = Int32.Parse(ddlExpYear.SelectedItem.Text);
+                    int cvv = Int32.Parse(txtCSV.Text);
+                    int cardID = Int32.Parse(Request["cardID"].ToString());
+                    SqlCommand stacey = new SqlCommand();
+                    stacey.CommandType = CommandType.StoredProcedure;
+                    stacey.CommandText = "TP_UpdateCardInfo";
+                    stacey.Parameters.AddWithValue("@CCID", cardID);
+                    stacey.Parameters.AddWithValue("@CVV", cvv);
+                    stacey.Parameters.AddWithValue("@NameOnCard", txtNameOnCard.Text);
+                    stacey.Parameters.AddWithValue("@ExpMonth", expM);
+                    stacey.Parameters.AddWithValue("@ExpYear", expY);
+                    db.DoUpdateUsingCmdObj(stacey);
+                }
+                else 
+                {
+                    lblError.Text = "Fields cannot be blank";
+                }
             }
 
             //Add new Credit Card Methods

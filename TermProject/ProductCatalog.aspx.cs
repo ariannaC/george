@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using Utilities;
 using TP_Amazon_ClassLibrary;
 
+
 namespace TermProject
 {
     public partial class Home : System.Web.UI.Page
@@ -23,14 +24,14 @@ namespace TermProject
                     }
                     else
                     {
-
-                        DBConnect dbobj = new DBConnect();
-                        SqlCommand objCommand = new SqlCommand();
-                        objCommand.CommandType = CommandType.StoredProcedure;
-                        objCommand.CommandText = "GetDepartments";
-                        ddlDepartments.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
+                        //bind departments to dropdown using webservice method
+                        MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
+                        ddlDepartments.DataSource = pxy.GetDepartments();
                         ddlDepartments.DataTextField = "DepartmentName";
                         ddlDepartments.DataBind();
+
+                       
+                        
                         loadProducts();
                 }
             }
@@ -58,9 +59,14 @@ namespace TermProject
             rptProducts.DataBind();
         }
 
+
         protected void ddlDepartments_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
+            string department = ddlDepartments.SelectedIndex.ToString();
+            DataSet ds = pxy.GetProductCatalog(department);
+            rptProducts.DataSource = ds;
+            rptProducts.DataBind();
         }
 
         protected void rptProducts_ItemCommand(Object sender, System.Web.UI.WebControls.RepeaterCommandEventArgs e)

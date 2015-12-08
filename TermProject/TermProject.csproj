@@ -82,6 +82,10 @@
     <Content Include="RegisterMerchant.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="stylesheets\AccountStyle.css" />
+    <Content Include="stylesheets\bootstrap-theme.css" />
+    <Content Include="stylesheets\bootstrap-theme.min.css" />
+    <Content Include="stylesheets\bootstrap.css" />
+    <Content Include="stylesheets\bootstrap.min.css" />
     <Content Include="stylesheets\CreditCardStyle.css" />
     <Content Include="stylesheets\MasterPage.css" />
     <Content Include="stylesheets\NewCreditCard.css" />
@@ -92,11 +96,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </Content>
+    <Content Include="stylesheets\bootstrap-theme.css.map" />
+    <Content Include="stylesheets\bootstrap-theme.min.css.map" />
+    <Content Include="stylesheets\bootstrap.css.map" />
+    <Content Include="stylesheets\bootstrap.min.css.map" />
     <None Include="Web References\MunchieServiceRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\MunchieServiceRef\TheWebService.disco" />
+    <Content Include="Validate.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -214,6 +223,13 @@
     </Compile>
     <Compile Include="TP_AmazonMasterPage.Master.designer.cs">
       <DependentUpon>TP_AmazonMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\MunchieServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -31,28 +31,28 @@ namespace TermProject
 
         protected void lnkbtnViewCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cart.aspx");
+            Response.Redirect("Cart.aspx");
         }
 
         protected void lnkbtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/ProductCatalog.aspx");
+            Response.Redirect("ProductCatalog.aspx");
         }
 
         protected void lnkbtnCheckOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/CheckOut.aspx");   
+            Response.Redirect("CheckOut.aspx");   
         }
 
         protected void lnkbtnLogOut_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("~/Login.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         protected void btnAccount_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/CreditCard.aspx");
+            Response.Redirect("CreditCard.aspx");
         }
     }
 }

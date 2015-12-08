@@ -3,12 +3,15 @@
 
 #imgProduct 
 {
-    float: left;
-    padding: 1em 2em;
-    margin-left: 45px;
-    margin-right: 62px;
-    margin-top: 47px;
+    margin-top: 24px;
     margin-bottom: 17px;
+}
+.imgbox {
+    float:right;
+    width:45%;
+    top:0px;
+    height: 399px;
+    margin-top: 0px;
 }
 
 #ddlProducts 
@@ -19,60 +22,56 @@
 
 #productData 
 {
-    padding: 1em 0;
-    width: 446px;
     float: left;
-    height: 307px;
     margin-right: 0px;
-    margin-left: 14px;
+    margin-left: 11px;
+    margin-top: 12px;
+    height: 400px;
+    width: 523px;
 }
 
 .lblprodDesc, .lblUnitPrice 
 {
     display: block;
-    margin-bottom: 0.8em;
-    margin-top: 8px;
-    margin-left: 13px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    margin-left: 5px;
     margin-right: 4px;
+    width:276px;
     float:right;
 }
 
 .lblName 
 {
      display: block;
-    margin-bottom: 1em;
-    margin-top: 8px;
-    margin-left: 16px;
+    margin-bottom: 0.2em;
+    margin-top: 0px;
+    margin-left: 0px;
     margin-right: 0px;
     float:left;
 
 }
 
-#btnAdd {
-    margin-right: 1em;
-    margin-top: 53px;
+
+
+.floating-box 
+{
+    float: left;
+    width: 440px;
+    height: 37px;
+    margin: 18px 3px 11px 5px;
+}
+.floating-boxx 
+{
+    float: left;
+    width: 462px;
+    height: 32px;
+    margin: 0px 3px 5px 5px;
 }
 
-* {
-    box-sizing: border-box;
+
+
+.linkbutton 
+{
+    background-color:#2B3E50;
 }
-
-.row:after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-

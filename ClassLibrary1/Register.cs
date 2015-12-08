@@ -18,6 +18,7 @@ namespace TP_Amazon_ClassLibrary
             SqlCommand objCommand = new SqlCommand();
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "AddTPCustomer";
+            objCommand.Parameters.AddWithValue("@Name", newCustomer.name);
             objCommand.Parameters.AddWithValue("@Email", newCustomer.email );
             objCommand.Parameters.AddWithValue("@password", newCustomer.password);
             objCommand.Parameters.AddWithValue("@address", newCustomer.shippingAddress);

@@ -213,5 +213,28 @@ namespace TermProject
             Response.Redirect("NewCardApplication.aspx?cardID=" + hdnCardID.Value);
         }
 
+        public void loadPurchaseIDs()
+        {
+            string email = Session["emailSession"].ToString();
+
+            DBConnect dbobj = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GetPurchaseIDs";
+            objCommand.Parameters.AddWithValue("@email", email);
+            DataSet ds = dbobj.GetDataSetUsingCmdObj(objCommand);
+            ddlPurchaseID.DataSource = ds;
+            ddlPurchaseID.DataTextField = "PurchaseID";
+            ddlPurchaseID.DataValueField = "PurchaseID";
+            ddlPurchaseID.DataBind();
+ 
+        }
+
+
+
+
+
+
+
     }//end of class
 }//edn of namespace
