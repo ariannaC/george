@@ -100,6 +100,7 @@
     <Content Include="stylesheets\bootstrap-theme.min.css.map" />
     <Content Include="stylesheets\bootstrap.css.map" />
     <Content Include="stylesheets\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\TermProjectTest.pubxml" />
     <None Include="Web References\MunchieServiceRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
