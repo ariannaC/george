@@ -85,7 +85,9 @@ namespace TermProject
                     purcInfo[11] = ddlCreditCardList.SelectedItem.Text;
                     purcInfo[12] = ddlCreditCardList.SelectedValue;
                     prxy.Purchase(prodID, prodQuantity, apikey, purcInfo);
-                    
+                   
+                    //Email, CardNum,  Products
+                    insertIntoPurchase(purcInfo[0], purcInfo[11], prodID);
                 }
             }
           //  string emailBody = "<p>Works!!</p>s";
@@ -95,8 +97,41 @@ namespace TermProject
             //emailSender.SendMail("tue69402@temple.edu", "no-reply@munchiestore.com", "Reservation Confirmation", emailBody, "tue69402@temple.edu");
            
         }
-    }
-}
+
+
+
+        public void insertIntoPurchase(string email, string CardNum, string ProductID)
+        {
+            //Email, CardNum, SaleTotal, Products
+            DBConnect objdb = new DBConnect();
+            SqlCommand sqlCommand = new SqlCommand();
+            sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandText = "TP_InsertIntoPurchase";
+            sqlCommand.Parameters.AddWithValue("@email", email);
+            sqlCommand.Parameters.AddWithValue("@CardNum", CardNum);
+            //sqlCommand.Parameters.AddWithValue("@SaleTotal", SaleTotal);
+            sqlCommand.Parameters.AddWithValue("@products", ProductID);
+            objdb.DoUpdateUsingCmdObj(sqlCommand);
+
+            //
+ 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }//end of class
+}//end of namespace
+
 //ommand.Parameters.AddWithValue("@Email", customercardinfo[0]);
 //            command.Parameters.AddWithValue("@Name", customercardinfo[1]);
 //            command.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
@@ -108,3 +143,4 @@ namespace TermProject
 //            command.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
 //            command.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
 //            command.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
+

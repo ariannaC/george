@@ -29,7 +29,7 @@ namespace TermProject
 
                 lblprodDesc.Text = prodDesc;
                 lblUnitPrice.Text = prodPrice;
-                lblQuantity.Text = QOH;
+                //lblQuantity.Text = "";
                 imgProduct.ImageUrl = imgURL;
  
             }
@@ -42,17 +42,25 @@ namespace TermProject
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-           // Response.Redirect("~/Cart.aspx");
-            TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
-            TP_Amazon_ClassLibrary.Product product = new TP_Amazon_ClassLibrary.Product();
-            product.ProductID = Session["sessionProdID"].ToString();
-            product.Description = Session["sessionProdDesc"].ToString();
-            product.Price = decimal.Parse(lblUnitPrice.Text.Substring(1));
-            product.merchantName = "One Stop Munchie Shop";
-            product.URL = Session["sessionImgURL"].ToString();
-            CartItem Item = new CartItem(product, int.Parse(txtQuantity.Text));
-            cart.AddItem(Item);
-            Session["Cart"] = cart;
+            if (txtQuantity.Text != "")
+            {
+                // Response.Redirect("~/Cart.aspx");
+                TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+                TP_Amazon_ClassLibrary.Product product = new TP_Amazon_ClassLibrary.Product();
+                product.ProductID = Session["sessionProdID"].ToString();
+                product.Description = Session["sessionProdDesc"].ToString();
+                product.Price = decimal.Parse(lblUnitPrice.Text.Substring(1));
+                product.merchantName = "One Stop Munchie Shop";
+                product.URL = Session["sessionImgURL"].ToString();
+                CartItem Item = new CartItem(product, int.Parse(txtQuantity.Text));
+                cart.AddItem(Item);
+                Session["Cart"] = cart;
+                lblQOHError.Text = "";
+            }
+            else 
+            {
+                lblQOHError.Text = "Select a Quantity!";
+            }
            
         }
 
@@ -68,7 +76,7 @@ namespace TermProject
 
         protected void btnCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cart.aspx");
+            Response.Redirect("Cart.aspx");
         }
 
 

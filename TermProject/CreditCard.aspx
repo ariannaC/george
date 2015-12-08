@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Account Information</h1>
-        <div class="section">
+        <div class="section" style=" border: solid; border-color: #98bf21; border-width: 2px;">
         <asp:Label ID="lblSettings" runat="server" Text="Account Settings" CssClass="h2"></asp:Label>
            
            
@@ -54,17 +54,24 @@
     </div>
 
 
-    <div class="section">
+    <div class="section"  style="border: solid; border-color: #98bf21; border-width: 2px;">
         <asp:Label ID="lblOrders" runat="server" Text="Orders"></asp:Label>
         <div>
-            <asp:DropDownList ID="ddlPurchaseID" runat="server" style="margin-left: 19px" Width="138px">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label6" runat="server" Text="OrderID"></asp:Label>
+            <asp:DropDownList ID="ddlPurchaseID" runat="server" style="margin-left: 12px" Width="230px" OnSelectedIndexChanged="ddlPurchaseID_SelectedIndexChanged">
             </asp:DropDownList>
         </div>
         <div>
+            <asp:GridView ID="gvPurchasedProducts" runat="server" AutoGenerateColumns="False" Height="102px" ShowFooter="True" style="margin-left: 86px; margin-bottom: 8px" Width="236px">
+                <Columns>
+                    <asp:BoundField DataField="Products" HeaderText="Products" />
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" style=" border: solid; border-color: #98bf21; border-width: 2px;">
             <h2 style="width: 751px" class="h2">Manage Payment Options</h2>
 
         <div style="width:96%; padding:15px; text-align:center">

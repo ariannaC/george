@@ -28,7 +28,7 @@
                              <div class="floating-box">
                               <asp:Label ID="Label1" runat="server" CssClass="lblName" Text="Product:" Width="151px" Height="29px"></asp:Label>
                               <asp:Label ID="lblprodDesc" runat="server" Text="Label"  Height="25px" style="margin-left: 7px; margin-top: 4px; margin-bottom: 0px" CssClass="lblUnitPrice"></asp:Label><br />
-                            </div><br />
+                            </div><br /><br />
                              <div class="floating-box">
                               <asp:Label ID="lblprice" runat="server" Text="Price" CssClass="lblName" Width="148px" Height="32px" ></asp:Label> 
                               <asp:Label ID="lblUnitPrice" runat="server" Text="Label" CssClass="lblUnitPrice"  Height="26px"></asp:Label>
@@ -37,18 +37,20 @@
                   
                                 <br />
                                 <div class="floating-box">
-                                     <asp:Label ID="lblQuantity" runat="server" Text="Quantity" CssClass="lblName" Height="19px" Width="143px"></asp:Label>
+                                     <asp:Label ID="lblQuantity" runat="server" Text="Quantity on hand" CssClass="lblName" Height="19px" Width="143px"></asp:Label>
     
                                  <asp:TextBox ID="txtQuantity" runat="server" style="margin-left: 0px; margin-right: 10px; margin-top: 4px; margin-bottom: 5px" CssClass="lblUnitPrice" Width="275px"></asp:TextBox>   
-                                </div><br />
+                                 &nbsp;<asp:Label ID="lblQOHError" runat="server"></asp:Label>
+                                      </div><br />
                              <br /><br />
                              <div class="floating-box">
                                 <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add to Cart" CssClass="button" />
-                                <asp:Button ID="btnCart" runat="server" CausesValidation="False" PostBackUrl="~/Cart.aspx" Text="Go to Cart" CssClass="button" OnClick="btnCart_Click" />
+                                &nbsp;<asp:Button ID="btnCart" runat="server" CausesValidation="False" PostBackUrl="~/Cart.aspx" Text="Go to Cart" CssClass="button" OnClick="btnCart_Click" />
                           </div>
     
                   
                      </div>
+                        
               </div>
      
             
