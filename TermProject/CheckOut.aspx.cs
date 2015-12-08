@@ -88,7 +88,11 @@ namespace TermProject
                     
                 }
             }
-
+          //  string emailBody = "<p>Works!!</p>s";
+           // TP_Amazon_ClassLibrary.Cart cart = (TP_Amazon_ClassLibrary.Cart)Session["Cart"];
+            cart.ClearCart();
+            //Email emailSender = new Email();
+            //emailSender.SendMail("tue69402@temple.edu", "no-reply@munchiestore.com", "Reservation Confirmation", emailBody, "tue69402@temple.edu");
            
         }
     }

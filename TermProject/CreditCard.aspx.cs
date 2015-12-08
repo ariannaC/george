@@ -67,7 +67,7 @@ namespace TermProject
         //Edit Credit Card Methods
         protected void btnAddNewCard_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/NewCardApplication.aspx");
+            Response.Redirect("NewCardApplication.aspx");
         }
 
         //Edit Account Settings

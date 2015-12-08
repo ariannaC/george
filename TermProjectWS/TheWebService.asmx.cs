@@ -109,39 +109,18 @@ namespace TermProjectWS
             SqlCommand hank = new SqlCommand();
             hank.CommandType = CommandType.StoredProcedure;
             hank.CommandText = "UpdateCustomer";
-            hank.Parameters.AddWithValue("@Quantity", Quantity);
-            hank.Parameters.AddWithValue("@Email", "ariannabuja@wtf.com");
-            hank.Parameters.AddWithValue("@Name", "arianna buja");
-            hank.Parameters.AddWithValue("@ShippingAddress", "1515");
-            hank.Parameters.AddWithValue("@ShippingCity", "pa");
-            hank.Parameters.AddWithValue("@ShippingState", "pa");
-            hank.Parameters.AddWithValue("@ShippingCountry", "us");
-            hank.Parameters.AddWithValue("@ShippingZipCode", 1295);
-            hank.Parameters.AddWithValue("@BillingAddress", "1515");
-            hank.Parameters.AddWithValue("@BillingCity", "philly");
-            hank.Parameters.AddWithValue("@BillingState", "pa");
-            hank.Parameters.AddWithValue("@BillingZip", "19525");
-            
-                   
-
-            //command.Parameters.AddWithValue("@ProductID", int.Parse(ProductID.ToString()));
-            //command.Parameters.AddWithValue("@Quantity", Quantity);
-            //command.Parameters.AddWithValue("@APIKey", APIKey);
-            //command.Parameters.AddWithValue("@Email", customercardinfo[0]);
-            //command.Parameters.AddWithValue("@Name", customercardinfo[1]);
-            //command.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
-            //command.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
-            //command.Parameters.AddWithValue("@ShippingState", customercardinfo[4]);
-            //command.Parameters.AddWithValue("@ShippingCountry", customercardinfo[5]);
-            //command.Parameters.AddWithValue("@ShippingZipCode", customercardinfo[6]);
-            //command.Parameters.AddWithValue("@BillingAddress", customercardinfo[7]);
-            //command.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
-            //command.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
-            //command.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
-            //SqlParameter outputparam = new SqlParameter("@RETVAL", DbType.Int32);
-
-
-            
+            hank.Parameters.AddWithValue("@Email", customercardinfo[0]);
+            hank.Parameters.AddWithValue("@Name", customercardinfo[1]);
+            hank.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
+            hank.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
+            hank.Parameters.AddWithValue("@ShippingState", customercardinfo[4]);
+            hank.Parameters.AddWithValue("@ShippingCountry", customercardinfo[5]);
+            hank.Parameters.AddWithValue("@ShippingZipCode", customercardinfo[6]);
+            hank.Parameters.AddWithValue("@BillingAddress", customercardinfo[7]);
+            hank.Parameters.AddWithValue("@BillingCity", customercardinfo[8]);
+            hank.Parameters.AddWithValue("@BillingState", customercardinfo[9]);
+            hank.Parameters.AddWithValue("@BillingZip", customercardinfo[10]);
+         
            // int RETVAL = 0;
            // string tempTest = command.Parameters["@RETVAL"].Value.ToString();
             //RETVAL = int.Parse(tempTest);
