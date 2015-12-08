@@ -48,7 +48,17 @@ namespace TermProject
             product.ProductID = Session["sessionProdID"].ToString();
             product.Description = Session["sessionProdDesc"].ToString();
             product.Price = decimal.Parse(lblUnitPrice.Text.Substring(1));
-            product.merchantName = "One Stop Munchie Shop";
+
+            string prodMerchName = Session["sessionProdMerch"].ToString();
+            if (prodMerchName == "One Stop Munchie Shop")
+            {
+                product.merchantName = "One Stop Munchie Shop";
+            }
+            else
+            {
+                product.merchantName = "Apocalypse Trading Co.";
+            }
+
             product.URL = Session["sessionImgURL"].ToString();
             CartItem Item = new CartItem(product, int.Parse(txtQuantity.Text));
             cart.AddItem(Item);
@@ -68,7 +78,7 @@ namespace TermProject
 
         protected void btnCart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Cart.aspx");
+            Response.Redirect("Cart.aspx");
         }
 
 

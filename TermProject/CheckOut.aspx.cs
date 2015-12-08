@@ -85,7 +85,14 @@ namespace TermProject
                     purcInfo[11] = ddlCreditCardList.SelectedItem.Text;
                     purcInfo[12] = ddlCreditCardList.SelectedValue;
                     prxy.Purchase(prodID, prodQuantity, apikey, purcInfo);
-                    
+
+                }
+                else
+                {
+                    int prodQuantity = cart.cartItems[i].Quantity;
+                    string prodID = cart.cartItems[i].Product.ProductID.ToString();
+                    ApocalypseWebRef.TP_WebService apocprxy = new ApocalypseWebRef.TP_WebService();
+                    apocprxy.Purchase(prodID, prodQuantity, "Apocalypse Trading Co", "403f3304-f069-485a-b971-f47778dbbc77", purcInfo);
                 }
             }
           //  string emailBody = "<p>Works!!</p>s";

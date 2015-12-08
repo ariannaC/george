@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:49222/TheWebService.asmx?wsdl" filename="TheWebService.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost:49222/TheWebService.asmx?disco" filename="TheWebService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://cis-iis2.temple.edu/fall2015/cis3342_tue69402/TermProjectWS/TheWebService.asmx?wsdl" filename="TheWebService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://cis-iis2.temple.edu/fall2015/cis3342_tue69402/TermProjectWS/TheWebService.asmx?disco" filename="TheWebService.disco" />
   </Results>
 </DiscoveryClientResultsFile>

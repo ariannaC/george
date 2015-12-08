@@ -26,7 +26,30 @@ namespace TermProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:49222/TheWebService.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/fall2015/cis3342_tuf33757/TermProjectWS/TP_WebService." +
+            "asmx")]
+        public string TermProject_ApocalypseWebRef_TP_WebService {
+            get {
+                return ((string)(this["TermProject_ApocalypseWebRef_TP_WebService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/Fall2015/CIS3342_tud23846/TermProjectWS/MerchantStore." +
+            "asmx")]
+        public string TermProject_JungleServiceRef_MerchantStore {
+            get {
+                return ((string)(this["TermProject_JungleServiceRef_MerchantStore"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://cis-iis2.temple.edu/fall2015/cis3342_tue69402/TermProjectWS/TheWebService." +
+            "asmx")]
         public string TermProject_MunchieServiceRef_TheWebService {
             get {
                 return ((string)(this["TermProject_MunchieServiceRef_TheWebService"]));

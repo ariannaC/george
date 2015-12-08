@@ -101,13 +101,27 @@
     <Content Include="stylesheets\bootstrap.css.map" />
     <Content Include="stylesheets\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\TermProjectTest.pubxml" />
-    <None Include="Web References\MunchieServiceRef\Reference.map">
+    <None Include="Web References\ApocalypseWebRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\MunchieServiceRef\TheWebService.disco" />
+    <None Include="Web References\ApocalypseWebRef\TP_WebService.wsdl" />
+    <None Include="Web References\JungleServiceRef\MerchantStore.wsdl" />
+    <None Include="Web References\JungleServiceRef\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Validate.aspx" />
-    <Content Include="Web.config" />
+    <None Include="Web References\ApocalypseWebRef\TP_WebService.disco" />
+    <None Include="Web References\JungleServiceRef\MerchantStore.disco" />
+    <Content Include="Web References\MunchieServiceRef\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\MunchieServiceRef\TheWebService.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -232,6 +246,16 @@
     <Compile Include="Validate.aspx.designer.cs">
       <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\ApocalypseWebRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\JungleServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\MunchieServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,7 +272,7 @@
   <ItemGroup>
     <Content Include="TP_AmazonMasterPage.Master" />
     <None Include="Properties\PublishProfiles\TermProject.pubxml" />
-    <None Include="Web References\MunchieServiceRef\TheWebService.wsdl" />
+    <Content Include="Web References\MunchieServiceRef\TheWebService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -277,16 +301,38 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:49222/TheWebService.asmx">
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/Fall2015/CIS3342_tud23846/TermProjectWS/MerchantStore.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\JungleServiceRef\</RelPath>
+      <UpdateFromURL>http://cis-iis2.temple.edu/Fall2015/CIS3342_tud23846/TermProjectWS/MerchantStore.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TermProject_JungleServiceRef_MerchantStore</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/fall2015/cis3342_tue69402/TermProjectWS/TheWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MunchieServiceRef\</RelPath>
-      <UpdateFromURL>http://localhost:49222/TheWebService.asmx</UpdateFromURL>
+      <UpdateFromURL>http://cis-iis2.temple.edu/fall2015/cis3342_tue69402/TermProjectWS/TheWebService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TermProject_MunchieServiceRef_TheWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://cis-iis2.temple.edu/fall2015/cis3342_tuf33757/TermProjectWS/TP_WebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ApocalypseWebRef\</RelPath>
+      <UpdateFromURL>http://cis-iis2.temple.edu/fall2015/cis3342_tuf33757/TermProjectWS/TP_WebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TermProject_ApocalypseWebRef_TP_WebService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

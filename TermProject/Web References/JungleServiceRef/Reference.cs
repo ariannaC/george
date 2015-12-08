@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace TermProject.MunchieServiceRef {
+namespace TermProject.JungleServiceRef {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -27,22 +27,22 @@ namespace TermProject.MunchieServiceRef {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="TheWebServiceSoap", Namespace="http://tempuri.org/")]
-    public partial class TheWebService : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    [System.Web.Services.WebServiceBindingAttribute(Name="MerchantStoreSoap", Namespace="http://tempuri.org/")]
+    public partial class MerchantStore : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback PurchaseOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RegisterSiteOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDepartmentsOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetProductCatalogOperationCompleted;
         
-        private System.Threading.SendOrPostCallback RegisterSiteOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback PurchaseOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public TheWebService() {
-            this.Url = global::TermProject.Properties.Settings.Default.TermProject_MunchieServiceRef_TheWebService;
+        public MerchantStore() {
+            this.Url = global::TermProject.Properties.Settings.Default.TermProject_JungleServiceRef_MerchantStore;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -77,16 +77,88 @@ namespace TermProject.MunchieServiceRef {
         }
         
         /// <remarks/>
+        public event PurchaseCompletedEventHandler PurchaseCompleted;
+        
+        /// <remarks/>
+        public event RegisterSiteCompletedEventHandler RegisterSiteCompleted;
+        
+        /// <remarks/>
         public event GetDepartmentsCompletedEventHandler GetDepartmentsCompleted;
         
         /// <remarks/>
         public event GetProductCatalogCompletedEventHandler GetProductCatalogCompleted;
         
         /// <remarks/>
-        public event RegisterSiteCompletedEventHandler RegisterSiteCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Purchase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Purchase(string ProductNumber, int Quantity, string SiteID, string APIKey, string[] CustomerInfo) {
+            object[] results = this.Invoke("Purchase", new object[] {
+                        ProductNumber,
+                        Quantity,
+                        SiteID,
+                        APIKey,
+                        CustomerInfo});
+            return ((bool)(results[0]));
+        }
         
         /// <remarks/>
-        public event PurchaseCompletedEventHandler PurchaseCompleted;
+        public void PurchaseAsync(string ProductNumber, int Quantity, string SiteID, string APIKey, string[] CustomerInfo) {
+            this.PurchaseAsync(ProductNumber, Quantity, SiteID, APIKey, CustomerInfo, null);
+        }
+        
+        /// <remarks/>
+        public void PurchaseAsync(string ProductNumber, int Quantity, string SiteID, string APIKey, string[] CustomerInfo, object userState) {
+            if ((this.PurchaseOperationCompleted == null)) {
+                this.PurchaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPurchaseOperationCompleted);
+            }
+            this.InvokeAsync("Purchase", new object[] {
+                        ProductNumber,
+                        Quantity,
+                        SiteID,
+                        APIKey,
+                        CustomerInfo}, this.PurchaseOperationCompleted, userState);
+        }
+        
+        private void OnPurchaseOperationCompleted(object arg) {
+            if ((this.PurchaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.PurchaseCompleted(this, new PurchaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RegisterSite", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool RegisterSite(string SiteID, string Description, string APIKey, string email) {
+            object[] results = this.Invoke("RegisterSite", new object[] {
+                        SiteID,
+                        Description,
+                        APIKey,
+                        email});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email) {
+            this.RegisterSiteAsync(SiteID, Description, APIKey, email, null);
+        }
+        
+        /// <remarks/>
+        public void RegisterSiteAsync(string SiteID, string Description, string APIKey, string email, object userState) {
+            if ((this.RegisterSiteOperationCompleted == null)) {
+                this.RegisterSiteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterSiteOperationCompleted);
+            }
+            this.InvokeAsync("RegisterSite", new object[] {
+                        SiteID,
+                        Description,
+                        APIKey,
+                        email}, this.RegisterSiteOperationCompleted, userState);
+        }
+        
+        private void OnRegisterSiteOperationCompleted(object arg) {
+            if ((this.RegisterSiteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RegisterSiteCompleted(this, new RegisterSiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetDepartments", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -145,78 +217,6 @@ namespace TermProject.MunchieServiceRef {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/RegisterSite", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool RegisterSite(string SiteID, string GroupName, string APIKey, string email, string Address) {
-            object[] results = this.Invoke("RegisterSite", new object[] {
-                        SiteID,
-                        GroupName,
-                        APIKey,
-                        email,
-                        Address});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void RegisterSiteAsync(string SiteID, string GroupName, string APIKey, string email, string Address) {
-            this.RegisterSiteAsync(SiteID, GroupName, APIKey, email, Address, null);
-        }
-        
-        /// <remarks/>
-        public void RegisterSiteAsync(string SiteID, string GroupName, string APIKey, string email, string Address, object userState) {
-            if ((this.RegisterSiteOperationCompleted == null)) {
-                this.RegisterSiteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRegisterSiteOperationCompleted);
-            }
-            this.InvokeAsync("RegisterSite", new object[] {
-                        SiteID,
-                        GroupName,
-                        APIKey,
-                        email,
-                        Address}, this.RegisterSiteOperationCompleted, userState);
-        }
-        
-        private void OnRegisterSiteOperationCompleted(object arg) {
-            if ((this.RegisterSiteCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.RegisterSiteCompleted(this, new RegisterSiteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Purchase", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Purchase(string ProductID, int Quantity, string APIKey, string[] customercardinfo) {
-            object[] results = this.Invoke("Purchase", new object[] {
-                        ProductID,
-                        Quantity,
-                        APIKey,
-                        customercardinfo});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void PurchaseAsync(string ProductID, int Quantity, string APIKey, string[] customercardinfo) {
-            this.PurchaseAsync(ProductID, Quantity, APIKey, customercardinfo, null);
-        }
-        
-        /// <remarks/>
-        public void PurchaseAsync(string ProductID, int Quantity, string APIKey, string[] customercardinfo, object userState) {
-            if ((this.PurchaseOperationCompleted == null)) {
-                this.PurchaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPurchaseOperationCompleted);
-            }
-            this.InvokeAsync("Purchase", new object[] {
-                        ProductID,
-                        Quantity,
-                        APIKey,
-                        customercardinfo}, this.PurchaseOperationCompleted, userState);
-        }
-        
-        private void OnPurchaseOperationCompleted(object arg) {
-            if ((this.PurchaseCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.PurchaseCompleted(this, new PurchaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -232,6 +232,58 @@ namespace TermProject.MunchieServiceRef {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void PurchaseCompletedEventHandler(object sender, PurchaseCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PurchaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PurchaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    public delegate void RegisterSiteCompletedEventHandler(object sender, RegisterSiteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegisterSiteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RegisterSiteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
         }
     }
     
@@ -283,58 +335,6 @@ namespace TermProject.MunchieServiceRef {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    public delegate void RegisterSiteCompletedEventHandler(object sender, RegisterSiteCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class RegisterSiteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal RegisterSiteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    public delegate void PurchaseCompletedEventHandler(object sender, PurchaseCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.79.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PurchaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal PurchaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
             }
         }
     }

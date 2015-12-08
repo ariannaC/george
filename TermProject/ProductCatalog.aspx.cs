@@ -18,21 +18,38 @@ namespace TermProject
         {
             if (!IsPostBack)
             {
-                    if (Session["emailSession"] == null)
-                    {
-                        Response.Redirect("Login.aspx");
-                    }
-                    else
-                    {
-                        //bind departments to dropdown using webservice method
-                        MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
-                        ddlDepartments.DataSource = pxy.GetDepartments();
-                        ddlDepartments.DataTextField = "DepartmentName";
-                        ddlDepartments.DataBind();
+                if (Session["emailSession"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    //bind departments to dropdown using webservice method
+                    MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
+                    ApocalypseWebRef.TP_WebService apocProxy = new ApocalypseWebRef.TP_WebService();
+                    JungleServiceRef.MerchantStore jungProxy = new JungleServiceRef.MerchantStore();
+                    DataSet munchieDS = pxy.GetDepartments();
+                    DataSet apocDS = apocProxy.getDepartment();
+                    DataSet jungDS = jungProxy.GetDepartments();
 
-                       
-                        
-                        loadProducts();
+                    for (int i = 0; i < munchieDS.Tables[0].Rows.Count; i++)
+                    {
+                        ddlDepartments.Items.Add(new ListItem(munchieDS.Tables[0].Rows[i]["DepartmentName"].ToString() + " - OSMS", munchieDS.Tables[0].Rows[i]["DepartmentNumber"].ToString()));
+                    }
+
+                    for (int i = 0; i < apocDS.Tables[0].Rows.Count; i++)
+                    {
+                        ddlDepartments.Items.Add(new ListItem(apocDS.Tables[0].Rows[i][apocDS.Tables[0].Columns[1].ColumnName].ToString() + " - ACO", apocDS.Tables[0].Rows[i][apocDS.Tables[0].Columns[0].ColumnName].ToString()));
+                    }
+
+                    for (int i = 0; i < jungDS.Tables[0].Rows.Count; i++)
+                    {
+                        ddlDepartments.Items.Add(new ListItem(jungDS.Tables[0].Rows[i][jungDS.Tables[0].Columns[1].ColumnName].ToString() + " - Jungle", jungDS.Tables[0].Rows[i][jungDS.Tables[0].Columns[0].ColumnName].ToString() + " - Jungle"));
+                    }
+
+
+
+                    loadProducts();
                 }
             }
         }//end of pageload
@@ -62,11 +79,43 @@ namespace TermProject
 
         protected void ddlDepartments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
-            string department = ddlDepartments.SelectedIndex.ToString();
-            DataSet ds = pxy.GetProductCatalog(department);
-            rptProducts.DataSource = ds;
-            rptProducts.DataBind();
+            if (ddlDepartments.SelectedItem.Text.EndsWith("- OSMS"))
+            {
+                MunchieServiceRef.TheWebService pxy = new MunchieServiceRef.TheWebService();
+                string department = ddlDepartments.SelectedIndex.ToString();
+                DataSet ds = pxy.GetProductCatalog(department);
+                rptProducts.DataSource = ds;
+                rptProducts.DataBind();
+            }
+            else if (ddlDepartments.SelectedItem.Text.EndsWith("- ACO"))
+            {
+                ApocalypseWebRef.TP_WebService apocProxy = new ApocalypseWebRef.TP_WebService();
+                DataSet apocDS = apocProxy.getCatalog(int.Parse(ddlDepartments.SelectedValue));
+                apocDS.Tables[0].Columns[0].ColumnName = "ProductID";
+                apocDS.Tables[0].Columns[1].ColumnName = "Description";
+                apocDS.Tables[0].Columns[2].ColumnName = "Price";
+                apocDS.Tables[0].Columns[3].ColumnName = "QuantityOnHand";
+                apocDS.Tables[0].Columns[4].ColumnName = "DepartmentNumber";
+                apocDS.Tables[0].Columns[5].ColumnName = "URL";
+                rptProducts.DataSource = apocDS;
+                rptProducts.DataBind();
+            }
+            else
+            {
+                string value = ddlDepartments.SelectedValue.Replace(" - Jungle", "");
+                JungleServiceRef.MerchantStore jungProxy = new JungleServiceRef.MerchantStore();
+                DataSet jungDS = jungProxy.GetProductCatalog(value);
+                jungDS.Tables[0].Columns[0].ColumnName = "ProductID";
+                jungDS.Tables[0].Columns[1].ColumnName = "Description";
+                jungDS.Tables[0].Columns[2].ColumnName = "Price";
+                jungDS.Tables[0].Columns[3].ColumnName = "QuantityOnHand";
+                jungDS.Tables[0].Columns[4].ColumnName = "DepartmentNumber";
+                jungDS.Tables[0].Columns[5].ColumnName = "URL";
+                rptProducts.DataSource = jungDS;
+                rptProducts.DataBind();
+            }
+
+
         }
 
         protected void rptProducts_ItemCommand(Object sender, System.Web.UI.WebControls.RepeaterCommandEventArgs e)
@@ -94,13 +143,28 @@ namespace TermProject
             Session["sessionProdID"] = productID;
             Session["sessionQOH"] = QOH;
             Session["sessionImgURL"] = imgURL;
+
+            if (ddlDepartments.SelectedItem.Text.EndsWith("- OSMS"))
+            {
+                Session["sessionProdMerch"] = "One Stop Munchie Shop";
+            }
+            else if (ddlDepartments.SelectedItem.Text.EndsWith("- ACO"))
+            {
+                Session["sessionProdMerch"] = "Apocalypse Trading Co.";
+            }
+
+            else
+            {
+                Session["sessionProdMerch"] = "Jungle Store";
+            }
+
             Response.Redirect("ProductDetails.aspx");
 
 
             //save productdesc in session to bring to next page 
 
             //stored procedure to get product info where productdesc = ""
- 
+
         }
 
         //protected void rptProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -117,7 +181,7 @@ namespace TermProject
         //    Session["sessionQOH"] = QOH;
         //    Session["sessionImgURL"] = imgURL;
         //    Response.Redirect("ProductDetails.aspx");
-            
+
 
         //    //save productdesc in session to bring to next page 
 
