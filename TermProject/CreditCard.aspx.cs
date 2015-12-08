@@ -213,6 +213,7 @@ namespace TermProject
             Response.Redirect("NewCardApplication.aspx?cardID=" + hdnCardID.Value);
         }
 
+        //load purchaseIDs into dropdown
         public void loadPurchaseIDs()
         {
             string email = Session["emailSession"].ToString();
@@ -227,7 +228,24 @@ namespace TermProject
             ddlPurchaseID.DataTextField = "PurchaseID";
             ddlPurchaseID.DataValueField = "PurchaseID";
             ddlPurchaseID.DataBind();
+        }
+
+        public void loadProductsIntoGridView(int purchaseID)
+        {
+
+            DBConnect dbobj = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETPurchases";
+            objCommand.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            dbobj.DoUpdateUsingCmdObj(objCommand);
  
+        }
+
+        protected void ddlPurchaseID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadProductsIntoGridView(int.Parse(ddlPurchaseID.SelectedValue));
+            gvPurchasedProducts.DataBind();
         }
 
 

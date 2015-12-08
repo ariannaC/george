@@ -110,6 +110,8 @@ namespace TermProjectWS
             hank.CommandType = CommandType.StoredProcedure;
             hank.CommandText = "UpdateCustomer";
             hank.Parameters.AddWithValue("@Email", customercardinfo[0]);
+            hank.Parameters.AddWithValue("@productID", int.Parse(ProductID.ToString()));
+            hank.Parameters.AddWithValue("@Quantity", Quantity);
             hank.Parameters.AddWithValue("@Name", customercardinfo[1]);
             hank.Parameters.AddWithValue("@ShippingAddress", customercardinfo[2]);
             hank.Parameters.AddWithValue("@ShippingCity", customercardinfo[3]);
