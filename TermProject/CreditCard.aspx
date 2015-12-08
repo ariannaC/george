@@ -57,6 +57,8 @@
     <div class="section">
         <asp:Label ID="lblOrders" runat="server" Text="Orders"></asp:Label>
         <div>
+            <asp:DropDownList ID="ddlPurchaseID" runat="server" style="margin-left: 19px" Width="138px">
+            </asp:DropDownList>
         </div>
         <div>
         </div>

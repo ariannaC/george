@@ -105,6 +105,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\MunchieServiceRef\TheWebService.disco" />
+    <Content Include="Validate.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -222,6 +223,13 @@
     </Compile>
     <Compile Include="TP_AmazonMasterPage.Master.designer.cs">
       <DependentUpon>TP_AmazonMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\MunchieServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
