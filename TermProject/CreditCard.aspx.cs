@@ -26,6 +26,9 @@ namespace TermProject
                 string email = Session["emailSession"].ToString();
                 loadCreditCards(email);
                 loadCustomerAccountSettings();
+                loadPurchaseIDs();
+
+                loadProductsIntoGridView(int.Parse(ddlPurchaseID.SelectedValue));
             }
         }
 
@@ -238,14 +241,14 @@ namespace TermProject
             objCommand.CommandType = CommandType.StoredProcedure;
             objCommand.CommandText = "TP_GETPurchases";
             objCommand.Parameters.AddWithValue("@PurchaseID", purchaseID);
-            dbobj.DoUpdateUsingCmdObj(objCommand);
- 
+            gvPurchasedProducts.DataSource = dbobj.GetDataSetUsingCmdObj(objCommand);
+            gvPurchasedProducts.DataBind();
         }
 
         protected void ddlPurchaseID_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadProductsIntoGridView(int.Parse(ddlPurchaseID.SelectedValue));
-            gvPurchasedProducts.DataBind();
+            
         }
 
 
