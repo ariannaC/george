@@ -59,13 +59,15 @@
         <div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label6" runat="server" Text="OrderID"></asp:Label>
-            <asp:DropDownList ID="ddlPurchaseID" runat="server" style="margin-left: 12px" Width="230px" OnSelectedIndexChanged="ddlPurchaseID_SelectedIndexChanged">
+            <asp:DropDownList ID="ddlPurchaseID" runat="server" style="margin-left: 12px" Width="230px" OnSelectedIndexChanged="ddlPurchaseID_SelectedIndexChanged" AutoPostBack="True">
             </asp:DropDownList>
         </div>
         <div>
-            <asp:GridView ID="gvPurchasedProducts" runat="server" AutoGenerateColumns="False" Height="102px" ShowFooter="True" style="margin-left: 86px; margin-bottom: 8px" Width="236px">
+            <asp:GridView ID="gvPurchasedProducts" runat="server" AutoGenerateColumns="False" Height="102px" style="margin-left: 86px; margin-bottom: 8px" Width="236px">
                 <Columns>
-                    <asp:BoundField DataField="Products" HeaderText="Products" />
+                    <asp:BoundField DataField="SaleTotal" HeaderText="Sale Total" />
+                    <asp:BoundField DataField="Description" HeaderText="Description" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" />
                 </Columns>
             </asp:GridView>
         </div>
